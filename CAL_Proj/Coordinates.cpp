@@ -39,8 +39,8 @@ float GeographicCoords::getLon() const {
 }
     
 Point GeographicCoords::getPoint(pair<float,float> latRange, pair<float,float> lonRange) const {
-    static float scaleY = 5000000;
-    static float scaleX = 1000000;
+    static float scaleY = 8000000;
+    static float scaleX = 1600000;
     
     float x = floor( ((float) longitude - lonRange.first) * scaleX / (lonRange.second - lonRange.first) );
     float y = scaleY - floor( ((float) latitude - latRange.first) * scaleY / (latRange.second - latRange.first) );

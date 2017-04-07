@@ -8,12 +8,13 @@
 
 #include "Edge.hpp"
 #include "Node.hpp"
+#include "Road.hpp"
 #include "graphviewer.h"
 #include "ViewerFunctions.hpp"
 
 using namespace std;
 
-void viewGraphComplete(Graph & g) {
+GraphViewer * viewGraphComplete(Graph & g) {
     
     GraphViewer * gv = new GraphViewer(600, 600, false);
     
@@ -22,7 +23,7 @@ void viewGraphComplete(Graph & g) {
 
     gv->defineVertexColor("yellow");
     gv->defineEdgeColor("black");
-    gv->defineVertexSize(5);
+    gv->defineVertexSize(1);
     
     // HashMap from imcompatible long IDs to int
     unordered_map<node_id, int> nodeIDs;
@@ -55,15 +56,18 @@ void viewGraphComplete(Graph & g) {
                 break;
             case Transport::SUBWAY:
                 gv->setEdgeColor(edg->getID(), "red");
+                gv->setEdgeThickness(edg->getID(), 4);
                 break;
         }
+        
+        if (edg->getRoad() != nullptr)
+            gv->setEdgeLabel(edg->getID(), edg->getRoad()->getName());
     }
     
     
-    cout << "finished GV functions" << endl;
     gv->rearrange();
+    
     cout << "finished GV rearrange" << endl;
-    
-    
-    getchar();
+        
+    return gv;
 }

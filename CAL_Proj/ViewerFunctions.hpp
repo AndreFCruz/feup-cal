@@ -10,8 +10,9 @@
 #define ViewerFunctions_hpp
 
 #include "Graph.hpp"
+#include "graphviewer.h"
 
-void viewGraphComplete(Graph & g);
+GraphViewer * viewGraphComplete(Graph & g);
 
 
 #endif /* ViewerFunctions_hpp */
