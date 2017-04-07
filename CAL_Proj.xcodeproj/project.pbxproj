@@ -55,8 +55,6 @@
 		65C7A6751E96C64F0003C18D /* connection.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = connection.cpp; sourceTree = "<group>"; };
 		65C7A6771E96C64F0003C18D /* graphviewer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = graphviewer.cpp; sourceTree = "<group>"; };
 		65C7A67B1E96C6570003C18D /* GraphViewerController.jar */ = {isa = PBXFileReference; lastKnownFileType = archive.jar; path = GraphViewerController.jar; sourceTree = "<group>"; };
-		65C7A67D1E96C65C0003C18D /* arestas.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = arestas.txt; sourceTree = "<group>"; };
-		65C7A67E1E96C65C0003C18D /* nos.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = nos.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,8 +72,6 @@
 		65C7A65F1E96C6420003C18D = {
 			isa = PBXGroup;
 			children = (
-				65C7A67D1E96C65C0003C18D /* arestas.txt */,
-				65C7A67E1E96C65C0003C18D /* nos.txt */,
 				65C7A66A1E96C6420003C18D /* CAL_Proj */,
 				65C7A6691E96C6420003C18D /* Products */,
 				65C7A67B1E96C6570003C18D /* GraphViewerController.jar */,

@@ -16,8 +16,7 @@
 
 using namespace std;
 
-//const string HOME = "/Users/andre/Documents/workspace/CAL_GraphParser/map1/";
-const string HOME = "/Users/andre/Documents/workspace/CAL_GraphParser/map2/";
+const string HOME = "/Users/andre/Documents/CAL_Proj/map2/";
 
 const string EDGES_PATH = HOME + "edges.txt";
 const string NODES_PATH = HOME + "nodes.txt";
