@@ -40,6 +40,7 @@ public:
     
     unordered_map<node_id, Node *> getNodes() const;
     unordered_map<edge_id, Edge *> getEdges() const;
+    unordered_map<road_id, Road *> getRoads() const;
     
     unordered_map<Node *, float> dijkstraTree(node_id src_id) const;
     unordered_map<Node *, float> dijkstraTree(Node * src) const;

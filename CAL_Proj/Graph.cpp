@@ -160,6 +160,10 @@ unordered_map<edge_id, Edge *> Graph::getEdges() const {
     return edges;
 }
 
+unordered_map<road_id, Road *> Graph::getRoads() const {
+    return roads;
+}
+
 unordered_map<Node *, float> Graph::dijkstraTree(node_id src_id) const {
     return dijkstraTree(nodes.at(src_id));
 }

@@ -33,6 +33,7 @@ GraphViewer * viewGraphComplete(Graph & g) {
         nodeIDs.insert( pair<node_id, int> (node->getID(), i++) );
     }
     
+    // Add all nodes
     for (auto p : g.getNodes()) {
         Node * node = p.second;
         int id = nodeIDs.at(node->getID());
@@ -40,6 +41,13 @@ GraphViewer * viewGraphComplete(Graph & g) {
 //        cout << id << ". " << node->getPoint().getX() << " . " << node->getPoint().getY() << endl;
         gv->addNode(id, node->getPoint().getX(), node->getPoint().getY());
         
+    }
+    
+    // helper for displaying road names only once
+    unordered_map<road_id, bool> roadNameDisplayed;
+    for (auto p : g.getRoads()) {
+        Road * road = p.second;
+        roadNameDisplayed.insert(make_pair(road->getID(), false));
     }
     
     // Add all edges
@@ -60,8 +68,11 @@ GraphViewer * viewGraphComplete(Graph & g) {
                 break;
         }
         
-        if (edg->getRoad() != nullptr)
-            gv->setEdgeLabel(edg->getID(), edg->getRoad()->getName());
+        Road * road = edg->getRoad();
+        if (road != nullptr && ! roadNameDisplayed[road->getID()]) {
+            gv->setEdgeLabel(edg->getID(), road->getName());
+            roadNameDisplayed[road->getID()] = true;
+        }
     }
     
     
