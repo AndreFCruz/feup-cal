@@ -23,7 +23,6 @@ GraphViewer * viewGraphComplete(Graph & g) {
 
     gv->defineVertexColor("yellow");
     gv->defineEdgeColor("black");
-    gv->defineVertexSize(1);
     
     // Add all nodes
     for (auto p : g.getNodes()) {
@@ -33,6 +32,7 @@ GraphViewer * viewGraphComplete(Graph & g) {
         gv->addNode(node->getParserID(), node->getPoint().getX(), node->getPoint().getY());
         
     }
+    gv->defineVertexSize(1);
     
     // helper for displaying road names only once
     unordered_map<road_id, bool> roadNameDisplayed;
@@ -69,7 +69,7 @@ GraphViewer * viewGraphComplete(Graph & g) {
     
     gv->rearrange();
     
-    cout << "finished GV rearrange" << endl;
+    cout << "Finished Loading GraphViewer." << endl << endl;
         
     return gv;
 }
@@ -78,13 +78,30 @@ GraphViewer * viewGraphComplete(Graph & g) {
 GraphViewer * viewGraphPath(GraphViewer * gv, vector<Node *> path) {
     
     for (Node * node : path) {
-        gv->setVertexColor(node->getParserID(), "green");
-        gv->setVertexSize(node->getParserID(), 3);
+        gv->setVertexColor(node->getParserID(), "red");
+        gv->setVertexSize(node->getParserID(), 80);
     }
     
+    gv->rearrange();
     
     return gv;
 }
 
+GraphViewer * askForPath(GraphViewer * gv, Graph & g) {
+    int originParserID, destParserID;
+    cout << "Start node: "; cin >> originParserID;
+    cout << "Destination node: "; cin >> destParserID;
+    
+    node_id origin, dest;
+    origin = g.getNodeIDFromParserID((int) originParserID);
+    dest = g.getNodeIDFromParserID((int) destParserID);
+    
+    g.dijkstraShortestPath(origin, dest);
+    auto path = g.getPath(origin, dest);
+    
+    viewGraphPath(gv, path);
+    
+    return gv;
+}
 
 

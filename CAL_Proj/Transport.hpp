@@ -31,7 +31,7 @@ private:
     void initializeVelocities();
     
     unsigned int velocities[3] {    // in km/h
-        6, 35, 55
+        6, 32, 45
     };
     
 };

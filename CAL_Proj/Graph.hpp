@@ -23,9 +23,12 @@ using namespace std;
 
 class Graph {
 private:
+    
     unordered_map<node_id, Node *> nodes;
     unordered_map<edge_id, Edge *> edges;
     unordered_map<road_id, Road *> roads;
+    
+    unordered_map<int, node_id> nodeIDs;
     
     void addEdge(Edge * ptr);
     
@@ -39,6 +42,8 @@ public:
     Graph(istream & nodes, istream & edges, istream & roads, istream & subway, istream & bus);
     
     ~Graph();
+    
+    node_id getNodeIDFromParserID(int parserID) const;
     
     unordered_map<node_id, Node *> getNodes() const;
     unordered_map<edge_id, Edge *> getEdges() const;
@@ -56,9 +61,12 @@ public:
     void dijkstraShortestPath(node_id src_id, node_id dest_id = 0);
     void dijkstraShortestPath(Node * src, Node * destination = nullptr);
     
+    void dijkstraShortestPath(node_id src_id, node_id dest_id, Transport::Type type, unsigned int scale = 7);
+    void dijkstraShortestPath(Node * src, Node * dest, Transport::Type type, unsigned int scale = 7);
+    
     vector<Node *> getPath(node_id src_id, node_id dest_id);
     
-    void printShortestPath(node_id src_id, node_id dest_id) const;
+    
     //dijkstra, A-star
     //avaliar conectividade TODO
 };

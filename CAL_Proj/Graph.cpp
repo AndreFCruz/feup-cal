@@ -23,6 +23,7 @@ Graph::Graph(istream & nodes_in, istream & roads_in, istream & edges_in, istream
     while (!nodes_in.eof()) {
         Node * tmp = new Node(nodes_in);
         nodes.insert(make_pair(tmp->getID(), tmp));
+        nodeIDs.insert(make_pair(tmp->getParserID(), tmp->getID()));
     }
     
     string line;
@@ -157,6 +158,10 @@ void Graph::resetNodes() {
         p.second->processing = false;
         p.second->dist = numeric_limits<float>::infinity();
     }
+}
+
+node_id Graph::getNodeIDFromParserID(int parserID) const {
+    return nodeIDs.at(parserID);
 }
 
 unordered_map<node_id, Node *> Graph::getNodes() const {
@@ -347,6 +352,54 @@ void Graph::dijkstraShortestPath(Node * src, Node * destination) {
     }
 }
 
+void Graph::dijkstraShortestPath(node_id src_id, node_id dest_id, Transport::Type type, unsigned int scale) {
+    dijkstraShortestPath(nodes.at(src_id), nodes.at(dest_id), type, scale);
+}
+
+void Graph::dijkstraShortestPath(Node * src, Node * destination, Transport::Type type, unsigned int scale) {
+    resetNodes();
+    
+    Node * v = src;
+    v->dist = 0;
+    
+    vector< Node * > pq;
+    pq.push_back(v);
+    make_heap(pq.begin(), pq.end());
+    
+    nodesReset = false;
+    
+    while( !pq.empty() ) {
+        v = pq.front();
+        pop_heap(pq.begin(), pq.end()); pq.pop_back();
+        
+        if (v == destination)
+            break;
+        
+        for(Edge * edg : v->getEdges()) {
+            unsigned int edgScale = type == edg->getType() ? scale : 1;
+            
+            Node * w = edg->getDest();
+            
+            // Shortest path to w found ?
+            float combinedWeight = v->dist + edg->getWeight() / edgScale;
+            if( combinedWeight < w->dist ) {
+                
+                w->dist = combinedWeight;
+                w->path = v;
+                
+                // if already in pq only update
+                if(!w->processing)
+                {
+                    w->processing = true;
+                    pq.push_back(w);
+                }
+                
+                make_heap(pq.begin(), pq.end(), node_greater_than());
+            }
+        }
+    }
+}
+
 vector<Node *> Graph::getPath(node_id src_id, node_id dest_id){
     
     list<Node*> buffer;
@@ -369,41 +422,4 @@ vector<Node *> Graph::getPath(node_id src_id, node_id dest_id){
     }
     return res;
 }
-
-
-void Graph::printShortestPath(node_id src_id, node_id dest_id) const {
-    
-    unordered_map<Node*, Edge*> ret = dijkstraEdges(src_id, dest_id);
-    
-    if (ret.size() == 0) {
-        cerr << "No Path Found" << endl;
-        return;
-    }
-    
-    Node * src = nodes.at(src_id);
-    Node * dest = nodes.at(dest_id);
-    
-    stack<Edge *> path;
-    // Trace-back Path
-    for (Edge * edg = ret[dest]; edg != nullptr; edg = ret[ edg->getOrigin() ]) {
-        path.push(edg);
-    }
-    
-    cout << "Path from " << src->getID() << " to " << dest->getID() << ":\n\n";
-    
-    float distance = 0, weight = 0; unsigned i = 1;
-    while (! path.empty()) {
-        Edge * edg = path.top(); path.pop();
-        
-        cout << i++ << ". " << *edg << endl;
-        
-        distance += edg->getLength();
-        weight += edg->getWeight();
-    }
-
-    cout << "\nDistance (in km): " << distance << endl;
-    cout << "Weight (time in mins): " << weight * 60 << endl;
-}
-
-
 
