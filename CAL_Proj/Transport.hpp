@@ -11,33 +11,60 @@
 
 #include <unordered_map>
 
+/**
+ * Class used to represent means of Transport.
+ * The difference between means of Transport is the velocity with which they can traverse a certain route.
+ */
 class Transport {
 public:
+
+	/**
+	 * Enumeration containing the different means of transport.
+	 */
     enum Type {
         FOOT,
         BUS,
         SUBWAY
     };
     
+    /**
+     * Getter for the current mean of Transport.
+     * If no mean of transport exists, a new one is created.
+     *
+     * @return The current mean of Transport.
+     */
     static Transport * getInstance();
     
+    /**
+     * Getter for the velocity of the current mean of Transport.
+     *
+     * @return Velocity of the current mean of Transport.
+     */
     unsigned int getVel(Type t) const;
     
+    /**
+     * Getter for the cost of the current mean of Transport, in cents per Kilometer.
+     *
+     * @return Cost of the current mean of Transport.
+     */
     unsigned int getCost(Type t) const;
     
 private:
+
+    /**
+     * Explicit Default constructor.
+     */
     Transport() = default;
     
-    static Transport * singleton_instance;
+    static Transport * singleton_instance;	/**< Transport * singleton_instance. Pointer to the current instance of Transport. */
             
     unsigned int velocities[3] {    // in km/h
         6, 32, 45
-    };
+    };	/**< int[] velocities. Array containing the velocities of the different means of transport, in km/ h. */
     
-    // Costs per Transport, in Cents per Kilometer
     unsigned int costs[3] {
         0, 20, 30
-    };
+    };	/**< int[] costs. Array containing the costs of the different means of transport, in cents/ km. */
     
 };
 
