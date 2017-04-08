@@ -17,7 +17,7 @@
 #include "Graph.hpp"
 
 
-Graph::Graph(istream & nodes_in, istream & roads_in, istream & edges_in, istream & subway) {
+Graph::Graph(istream & nodes_in, istream & roads_in, istream & edges_in, istream & subway, istream & bus) {
     
     // Load Nodes
     while (!nodes_in.eof()) {
@@ -56,23 +56,10 @@ Graph::Graph(istream & nodes_in, istream & roads_in, istream & edges_in, istream
     }
     
     // Load Subway Edges
-    while ( getline(subway, line) ) {
-        unsigned long id;
-        Node * origin, * dest;
-        stringstream ss(line);
-        
-        try {
-            ss >> id; ss.ignore(3, ';');
-            origin = nodes.at(id);
-            ss >> id; ss.ignore(3, ';');
-            dest = nodes.at(id);
-        } catch (out_of_range & e) {
-            cout << e.what() << endl;
-        }
-        
-        this->addEdge(new Edge(origin, dest, nullptr, Transport::SUBWAY));
-        this->addEdge(new Edge(dest, origin, nullptr, Transport::SUBWAY));
-    }
+    loadTransportEdges(subway, Transport::SUBWAY);
+    
+    // Load Bus Edges
+    loadTransportEdges(bus, Transport::BUS);
     
     /** Graph PreProcessing **/
     // Handle Two Way Roads
@@ -87,9 +74,6 @@ Graph::Graph(istream & nodes_in, istream & roads_in, istream & edges_in, istream
         }
     }
     
-    // TODO
-    // add edges with different types of transportation
-
     // Initiate Points from min/max latitude/longitude
     for (auto & n : nodes) {
         n.second->initiatePoint(Node::getLatRange(), Node::getLonRange());
@@ -130,6 +114,29 @@ Graph::~Graph() {
     // Delete edges
     for (auto p : edges)
         delete p.second;
+}
+
+void Graph::loadTransportEdges(istream &input, Transport::Type type) {
+    
+    string line;
+    while ( getline(input, line) ) {
+        unsigned long id;
+        Node * origin, * dest;
+        stringstream ss(line);
+        
+        try {
+            ss >> id; ss.ignore(3, ';');
+            origin = nodes.at(id);
+            ss >> id; ss.ignore(3, ';');
+            dest = nodes.at(id);
+        } catch (out_of_range & e) {
+            cout << e.what() << endl;
+        }
+        
+        this->addEdge(new Edge(origin, dest, nullptr, type));
+        this->addEdge(new Edge(dest, origin, nullptr, type));
+    }
+    
 }
 
 void Graph::addEdge(Edge * ptr) {

@@ -22,19 +22,20 @@ const string EDGES_PATH = HOME + "edges.txt";
 const string NODES_PATH = HOME + "nodes.txt";
 const string ROADS_PATH = HOME + "roads.txt";
 const string SUBWAY_PATH = HOME + "subway.txt";
+const string BUS_PATH = HOME + "bus.txt";
 
 int main() {
     
-    ifstream nodes_ifs(NODES_PATH), roads_ifs(ROADS_PATH), edges_ifs(EDGES_PATH), subway(SUBWAY_PATH);
+    ifstream nodes_ifs(NODES_PATH), roads_ifs(ROADS_PATH), edges_ifs(EDGES_PATH), subway(SUBWAY_PATH), bus(BUS_PATH);
     
-    if (nodes_ifs.is_open() && roads_ifs.is_open() && edges_ifs.is_open() && subway.is_open())
+    if (nodes_ifs.is_open() && roads_ifs.is_open() && edges_ifs.is_open() && subway.is_open() && bus.is_open())
         cerr << "Valid Input\n";
     else {
         cerr << "Invalid Input Files\n";
         return 1;
     }
     
-    Graph g(nodes_ifs, roads_ifs, edges_ifs, subway);
+    Graph g(nodes_ifs, roads_ifs, edges_ifs, subway, bus);
 
     viewGraphComplete(g);
     

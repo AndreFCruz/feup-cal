@@ -61,10 +61,11 @@ GraphViewer * viewGraphComplete(Graph & g) {
                 break;
             case Transport::BUS:
                 gv->setEdgeColor(edg->getID(), "blue");
+                gv->setEdgeThickness(edg->getID(), 4);
                 break;
             case Transport::SUBWAY:
                 gv->setEdgeColor(edg->getID(), "red");
-                gv->setEdgeThickness(edg->getID(), 4);
+                gv->setEdgeThickness(edg->getID(), 5);
                 break;
         }
         
@@ -74,7 +75,6 @@ GraphViewer * viewGraphComplete(Graph & g) {
             roadNameDisplayed[road->getID()] = true;
         }
     }
-    
     
     gv->rearrange();
     

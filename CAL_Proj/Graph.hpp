@@ -31,10 +31,12 @@ private:
     
     void resetNodes();
     
+    void loadTransportEdges(istream & input, Transport::Type type);
+    
     bool nodesReset = true;
     
 public:
-    Graph(istream & nodes, istream & edges, istream & roads, istream & subway);
+    Graph(istream & nodes, istream & edges, istream & roads, istream & subway, istream & bus);
     
     ~Graph();
     
