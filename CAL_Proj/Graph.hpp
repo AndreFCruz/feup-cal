@@ -64,7 +64,24 @@ public:
     void dijkstraShortestPath(node_id src_id, node_id dest_id, Transport::Type type, unsigned int scale = 7);
     void dijkstraShortestPath(Node * src, Node * dest, Transport::Type type, unsigned int scale = 7);
     
+    /**
+     * Altered implementation of Dijkstra's shortest path algorithm,
+     * takes into account a maximum cost, which must not be breached.
+     *
+     * @param src node_id of the start/source node
+     * @param dest node_id of the end/destination node
+     * @param maxCost Maximum cost, in cents, of the path
+     */
     void dijkstraShortestPathWithMaxCost(node_id src, node_id dest, unsigned maxCost);
+    
+    /**
+     * Altered implementation of Dijkstra's shortest path algorithm,
+     * takes into account a maximum cost, which must not be breached.
+     *
+     * @param src Node* to start/source node
+     * @param destination Node* to end/destination node
+     * @param maxCost Maximum cost, in cents, of the path
+     */
     void dijkstraShortestPathWithMaxCost(Node * src, Node * destination, unsigned maxCost);
     
     vector<Edge *> getEdgesFromPath(const vector<Node*> & path);
