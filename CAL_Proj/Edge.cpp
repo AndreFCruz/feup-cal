@@ -71,7 +71,7 @@ ostream& operator<<(ostream & out, const Edge & edg) {
         default:
             out << "Transport type not catalogued.\n";
     }
-    out << "\nLength: " << edg.getLength() << ". Weight (in mins): " << edg.getWeight() * 60 << endl;
+    out << "\nLength: " << edg.getLength() << ". Weight (in mins): " << edg.getWeight() * 60 << ". Cost: " << edg.getCost() << endl;
     
     return out;
 }

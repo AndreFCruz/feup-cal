@@ -427,8 +427,8 @@ void Graph::dijkstraShortestPathWithMaxCost(Node * src, Node * destination, unsi
         v = p.first;
         pop_heap(pq.begin(), pq.end()); pq.pop_back();
         
-        if (v == destination)
-            break;
+//        if (v == destination)
+//            break;
         
         for(Edge * edg : v->getEdges()) {
             Node * w = edg->getDest();

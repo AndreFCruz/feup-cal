@@ -49,8 +49,8 @@ int main() {
     origin = 430006697LL;
     dest = 4773399285LL;
     
-//    g.dijkstraShortestPath(origin, dest, Transport::BUS, 10);
-    g.dijkstraShortestPathWithMaxCost(origin, dest, 50);
+    g.dijkstraShortestPath(origin, dest, Transport::BUS, 4);
+//    g.dijkstraShortestPathWithMaxCost(origin, dest, 100);
     
     auto path = g.getPath(origin, dest);
     auto edges = g.getPathEdges(origin, dest);
@@ -58,6 +58,9 @@ int main() {
     GraphViewer * gv = viewGraphComplete(g);
     viewGraphPath(gv, path);
     widenGraphPathEdges(gv, edges);
+    
+//    for (auto ptr : edges)
+//        cout << *ptr << endl;
     
     printPathStats(edges);
     cout << "Length (nodes): " << getPathLength(path) << endl;
