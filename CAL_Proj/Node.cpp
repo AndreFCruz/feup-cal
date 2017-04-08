@@ -8,6 +8,7 @@
 
 #include "Node.hpp"
 
+int Node::count = 0;
 auto Node::latRange = make_pair((float) 0, (float) 0);
 auto Node::lonRange = make_pair((float) 0, (float) 0);
 
@@ -19,7 +20,7 @@ pair<float,float> Node::getLonRange() {
     return Node::lonRange;
 }
 
-Node::Node(istream & input) : visited(false) {
+Node::Node(istream & input) : parserID(count++) {
     input >> id; input.get();
     
     // ignore degrees
@@ -54,6 +55,10 @@ void Node::setStaticRange() const {
 
 node_id Node::getID() const {
     return id;
+}
+
+int Node::getParserID() const {
+    return parserID;
 }
 
 Edge * Node::getEdge() const {

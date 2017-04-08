@@ -28,16 +28,32 @@ int main() {
     
     ifstream nodes_ifs(NODES_PATH), roads_ifs(ROADS_PATH), edges_ifs(EDGES_PATH), subway(SUBWAY_PATH), bus(BUS_PATH);
     
-    if (nodes_ifs.is_open() && roads_ifs.is_open() && edges_ifs.is_open() && subway.is_open() && bus.is_open())
-        cerr << "Valid Input\n";
+    if ( nodes_ifs.is_open() && roads_ifs.is_open() && edges_ifs.is_open() )
+        cerr << "Valid Parser Input\n";
     else {
-        cerr << "Invalid Input Files\n";
+        cerr << "Invalid Parser Input Files\n";
+        return 1;
+    }
+    
+    if ( subway.is_open() && bus.is_open() )
+        cerr << "Valid Transports Input\n";
+    else {
+        cerr << "Invalid Transports Input Files\n";
         return 1;
     }
     
     Graph g(nodes_ifs, roads_ifs, edges_ifs, subway, bus);
 
-    viewGraphComplete(g);
+    GraphViewer * gv = viewGraphComplete(g);
+    
+//    node_id origin, dest;
+//    cout << "Start node: "; cin >> origin;
+//    cout << "Destination node: "; cin >> dest;
+//    
+//    g.dijkstraShortestPath(origin, dest);
+//    auto path = g.getPath(origin, dest);
+//    
+//    viewGraphPath(gv, path);
     
 //    g.dijkstraShortestPath(430006697LL, 4773399285LL); unsigned i = 1;
 //    for (auto elem : g.getPath(430006697LL, 4773399285LL))

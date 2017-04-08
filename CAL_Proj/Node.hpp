@@ -23,9 +23,12 @@ class Edge;
 
 class Node {
 private:
+    static int count;
+    
     static pair<float,float> latRange;
     static pair<float,float> lonRange;
     
+    int parserID;
     node_id id;
     GeographicCoords coords;
     Point point;
@@ -47,6 +50,7 @@ public:
     Node(istream & input);
     
     node_id getID() const;
+    int getParserID() const;
     
     Edge * getEdge() const; // first order in vec - smallest weight
     Edge * getEdge(Transport::Type type) const;

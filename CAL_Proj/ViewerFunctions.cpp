@@ -25,21 +25,12 @@ GraphViewer * viewGraphComplete(Graph & g) {
     gv->defineEdgeColor("black");
     gv->defineVertexSize(1);
     
-    // HashMap from imcompatible long IDs to int
-    unordered_map<node_id, int> nodeIDs;
-    int i = 0;
-    for (auto & p : g.getNodes()) {
-        Node * node = p.second;
-        nodeIDs.insert( pair<node_id, int> (node->getID(), i++) );
-    }
-    
     // Add all nodes
     for (auto p : g.getNodes()) {
         Node * node = p.second;
-        int id = nodeIDs.at(node->getID());
 
 //        cout << id << ". " << node->getPoint().getX() << " . " << node->getPoint().getY() << endl;
-        gv->addNode(id, node->getPoint().getX(), node->getPoint().getY());
+        gv->addNode(node->getParserID(), node->getPoint().getX(), node->getPoint().getY());
         
     }
     
@@ -53,7 +44,7 @@ GraphViewer * viewGraphComplete(Graph & g) {
     // Add all edges
     for (auto & p : g.getEdges()) {
         Edge * edg = p.second;
-        gv->addEdge(edg->getID(), nodeIDs[edg->getOrigin()->getID()], nodeIDs[edg->getDest()->getID()], EdgeType::DIRECTED);
+        gv->addEdge(edg->getID(), edg->getOrigin()->getParserID(), edg->getDest()->getParserID(), EdgeType::DIRECTED);
         
         switch (edg->getType()) {
             case Transport::FOOT:
@@ -82,3 +73,18 @@ GraphViewer * viewGraphComplete(Graph & g) {
         
     return gv;
 }
+
+
+GraphViewer * viewGraphPath(GraphViewer * gv, vector<Node *> path) {
+    
+    for (Node * node : path) {
+        gv->setVertexColor(node->getParserID(), "green");
+        gv->setVertexSize(node->getParserID(), 3);
+    }
+    
+    
+    return gv;
+}
+
+
+
