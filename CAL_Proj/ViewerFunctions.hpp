@@ -17,14 +17,20 @@ GraphViewer * viewGraphComplete(Graph & g);
 
 GraphViewer * viewGraphPath(GraphViewer * gv, const vector<Node *> & path);
 
+GraphViewer * widenGraphPathEdges(GraphViewer * gv, const vector<Edge *> & edges);
+
 GraphViewer * askForPath(GraphViewer * gv, Graph & g);
 
 float getPathLength(const vector<Node *> & path);
+
+float getPathLength(const vector<Edge *> & edges);
 
 float getPathDuration(const vector<Edge *> & edges);
 
 unsigned getPathCost(const vector<Edge *> & edges);
 
 vector<Node*> getPathFromEdges(const vector<Edge *> & edges);
+
+void printPathStats(const vector<Edge *> & edges);
 
 #endif /* ViewerFunctions_hpp */

@@ -67,8 +67,10 @@ public:
     void dijkstraShortestPathWithMaxCost(node_id src, node_id dest, unsigned maxCost);
     void dijkstraShortestPathWithMaxCost(Node * src, Node * destination, unsigned maxCost);
     
+    vector<Edge *> getEdgesFromPath(const vector<Node*> & path);
     vector<Node *> getPath(node_id src_id, node_id dest_id);
     
+    vector<Edge *> getPathEdges(node_id src_id, node_id dest_id);
     
     //dijkstra, A-star
     //avaliar conectividade TODO

@@ -39,9 +39,6 @@ int main() {
     }
 
     Graph g(nodes_ifs, roads_ifs, edges_ifs, subway_ifs, bus_ifs);
-
-    GraphViewer * gv = viewGraphComplete(g);
-    
     
     // User Interface
 //    askForPath(gv, g);
@@ -53,11 +50,18 @@ int main() {
     dest = 4773399285LL;
     
 //    g.dijkstraShortestPath(origin, dest, Transport::BUS, 10);
-    g.dijkstraShortestPathWithMaxCost(origin, dest, 25);
+    g.dijkstraShortestPathWithMaxCost(origin, dest, 50);
     
     auto path = g.getPath(origin, dest);
+    auto edges = g.getPathEdges(origin, dest);
     
-    viewGraphPath(gv, path);
+//    GraphViewer * gv = viewGraphComplete(g);
+//    viewGraphPath(gv, path);
+//    widenGraphPathEdges(gv, edges);
+    
+    printPathStats(edges);
+    cout << "Length (nodes): " << getPathLength(path) << endl;
+    
     
 //    g.dijkstraShortestPath(430006697LL, 4773399285LL); unsigned i = 1;
 //    for (auto elem : g.getPath(430006697LL, 4773399285LL))

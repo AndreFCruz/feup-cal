@@ -15,11 +15,19 @@
 using namespace std;
 
 float getPathLength(const vector<Node *> & path) {
-    float w = 0;
+    float len = 0;
     for (size_t i = 1; i < path.size(); i++)
-        w += GeographicCoords::getDistance(path[i-1]->getCoords(), path[i]->getCoords());
+        len += GeographicCoords::getDistance(path[i-1]->getCoords(), path[i]->getCoords());
     
-    return w;        
+    return len;
+}
+
+float getPathLength(const vector<Edge *> & edges) {
+    float len = 0;
+    for (const Edge * edg : edges)
+        len += edg->getLength();
+    
+    return len;
 }
 
 float getPathDuration(const vector<Edge *> & edges) {
@@ -115,10 +123,20 @@ GraphViewer * viewGraphPath(GraphViewer * gv, const vector<Node *> & path) {
     
     for (const Node * node : path) {
         gv->setVertexColor(node->getParserID(), "red");
-        gv->setVertexSize(node->getParserID(), 80);
+        gv->setVertexSize(node->getParserID(), 70);
     }
     
-    cout << "Path Length (in km): " << getPathLength(path) << endl;
+    gv->rearrange();
+    
+    return gv;
+}
+
+GraphViewer * widenGraphPathEdges(GraphViewer * gv, const vector<Edge *> & edges) {
+    
+    for (const Edge * edg : edges) {
+        gv->setEdgeThickness(edg->getID(), 12);
+        gv->setEdgeDashed(edg->getID(), true);
+    }
     
     gv->rearrange();
     
@@ -140,6 +158,12 @@ GraphViewer * askForPath(GraphViewer * gv, Graph & g) {
     viewGraphPath(gv, path);
     
     return gv;
+}
+
+void printPathStats(const vector<Edge *> & edges) {
+    cout << "Path Length (km):        " << getPathLength(edges) << endl;
+    cout << "Path Duration (minutes): " << getPathDuration(edges) * 60 << endl;
+    cout << "Path Cost (cents):       " << getPathCost(edges) << endl;
 }
 
 

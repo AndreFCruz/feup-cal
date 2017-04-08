@@ -85,17 +85,8 @@ Graph::Graph(istream & nodes_in, istream & roads_in, istream & edges_in, istream
     
     
     /** TEST **/
-    
-    cout << "END NODE: " << (nodes.at(4737169812LL)->getID() == 4737169812LL ? "pass":"fail") << endl;
-    cout << "END ROAD: " << (roads.at(480140404LL)->getID() == 480140404LL ? "pass":"fail") << endl;
-    
-    auto vec = vector< pair<node_id, Node*> >(nodes.begin(), nodes.end());
-    sort(vec.begin(), vec.end(), [](const pair<node_id, Node*>& p1, const pair<node_id, Node*>& p2) {
-        return p1.second->getNumEdges() > p2.second->getNumEdges();
-    });
-    
-    cout << "** test end **" << endl;
-
+//    cout << "END NODE: " << (nodes.at(4737169812LL)->getID() == 4737169812LL ? "pass":"fail") << endl;
+//    cout << "END ROAD: " << (roads.at(480140404LL)->getID() == 480140404LL ? "pass":"fail") << endl;
     
 }
 
@@ -152,9 +143,12 @@ void Graph::resetNodes() {
     for (auto p : nodes) {
         p.second->setVisited(false);
         p.second->path = nullptr;
+        p.second->edgePath = nullptr;
         p.second->processing = false;
         p.second->dist = numeric_limits<float>::infinity();
     }
+    
+    nodesReset = true;
 }
 
 node_id Graph::getNodeIDFromParserID(int parserID) const {
@@ -334,6 +328,7 @@ void Graph::dijkstraShortestPath(Node * src, Node * destination) {
                 
                 w->dist = v->dist + edg->getWeight();
                 w->path = v;
+                w->edgePath = edg;
                 
                 // if already in pq only update
                 if(!w->processing)
@@ -382,6 +377,7 @@ void Graph::dijkstraShortestPath(Node * src, Node * destination, Transport::Type
                 
                 w->dist = combinedWeight;
                 w->path = v;
+                w->edgePath = edg;
                 
                 // if already in pq only update
                 if(!w->processing)
@@ -447,6 +443,7 @@ void Graph::dijkstraShortestPathWithMaxCost(Node * src, Node * destination, unsi
                 
                 w->dist = combinedWeight;
                 w->path = v;
+                w->edgePath = edg;
                 
                 // if already in pq only update
                 if(!w->processing)
@@ -484,3 +481,16 @@ vector<Node *> Graph::getPath(node_id src_id, node_id dest_id){
     return res;
 }
 
+vector<Edge *> Graph::getPathEdges(node_id src_id, node_id dest_id) {
+    Node * src = nodes.at(src_id);
+    Node * node = nodes.at(dest_id);
+    
+    vector<Edge *> res;
+    while ( node->edgePath != nullptr && node != src ) {
+        Edge * edg = node->edgePath;
+        res.push_back(edg);
+        node = edg->getOrigin();
+    }
+    
+    return res;
+}

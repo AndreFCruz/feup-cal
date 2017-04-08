@@ -43,6 +43,7 @@ public:
     bool processing = false;
     float dist = numeric_limits<float>::infinity();
     Node * path = nullptr;
+    Edge * edgePath = nullptr;
     
     static pair<float,float> getLatRange();
     static pair<float,float> getLonRange();
