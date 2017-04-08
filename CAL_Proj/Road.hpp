@@ -51,7 +51,7 @@ public:
      * Road's constructor from file.
      * Creates a Road with the data passed by the argument input stream.
      *
-     * @param in The input stream to read from in order to build a Road object.
+     * @param input The input stream to read from in order to build a Road object.
      */
     Road(istream & input);
     
@@ -81,7 +81,7 @@ public:
     /**
      * Function used to associate an Edge to the Road.
      *
-     * @param Edge to be associated
+     * @param ptr to be associated
      *
      * @return true if the Edge was added to the container of all associated Edges, false otherwise.
      */

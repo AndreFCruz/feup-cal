@@ -55,9 +55,9 @@ int main() {
     auto path = g.getPath(origin, dest);
     auto edges = g.getPathEdges(origin, dest);
     
-//    GraphViewer * gv = viewGraphComplete(g);
-//    viewGraphPath(gv, path);
-//    widenGraphPathEdges(gv, edges);
+    GraphViewer * gv = viewGraphComplete(g);
+    viewGraphPath(gv, path);
+    widenGraphPathEdges(gv, edges);
     
     printPathStats(edges);
     cout << "Length (nodes): " << getPathLength(path) << endl;
