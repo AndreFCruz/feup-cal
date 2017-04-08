@@ -43,16 +43,17 @@ int main() {
     GraphViewer * gv = viewGraphComplete(g);
     
     
-    // Ask user for Node IDs
+    // User Interface
 //    askForPath(gv, g);
     
-    // Test
+    
+    /** Test **/
     node_id origin, dest;
     origin = 430006697LL;
     dest = 4773399285LL;
     
 //    g.dijkstraShortestPath(origin, dest, Transport::BUS, 10);
-    g.dijkstraShortestPathWithMaxCost(origin, dest, 10);
+    g.dijkstraShortestPathWithMaxCost(origin, dest, 25);
     
     auto path = g.getPath(origin, dest);
     
