@@ -29,9 +29,7 @@ private:
     Transport() = default;
     
     static Transport * singleton_instance;
-        
-    void initializeVelocities();
-    
+            
     unsigned int velocities[3] {    // in km/h
         6, 32, 45
     };

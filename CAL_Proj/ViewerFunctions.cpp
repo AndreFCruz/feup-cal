@@ -22,6 +22,34 @@ float getPathLength(const vector<Node *> & path) {
     return w;        
 }
 
+float getPathDuration(const vector<Edge *> & edges) {
+    float duration = 0;
+    for (const Edge * edg : edges)
+        duration += edg->getWeight();
+    
+    return duration;
+}
+
+unsigned getPathCost(const vector<Edge *> & edges) {
+    unsigned cost = 0;
+    for (const Edge * edg : edges)
+        cost += edg->getCost();
+    
+    return cost;
+}
+
+vector<Node*> getPathFromEdges(const vector<Edge *> & edges) {
+    vector<Node*> res; res.reserve(edges.size() + 1);
+    
+    auto it = edges.begin();
+    for ( ; it != edges.end(); it++)
+        res.push_back((*it)->getOrigin());
+    
+    res.push_back((*it)->getDest());
+    
+    return res;
+}
+
 GraphViewer * viewGraphComplete(Graph & g) {
     
     GraphViewer * gv = new GraphViewer(600, 600, false);

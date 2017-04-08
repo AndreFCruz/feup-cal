@@ -406,7 +406,14 @@ void Graph::dijkstraShortestPathWithMaxCost(node_id src, node_id dest, unsigned 
     dijkstraShortestPathWithMaxCost(nodes.at(src), nodes.at(dest), maxCost);
 }
 
-// maxCost in cents
+/**
+ * Altered implementation of Dijkstra's shortest path algorithm,
+ * takes into account a maximum cost, which must not be breached.
+ * 
+ * @param src Node* to start/source node
+ * @param destination Node* to end/destination node
+ * @param maxCost Maximum cost, in cents, of the path
+ */
 void Graph::dijkstraShortestPathWithMaxCost(Node * src, Node * destination, unsigned maxCost) {
     resetNodes();
     
