@@ -13,6 +13,13 @@ edge_id Edge::edge_count = 0;
 
 Edge::Edge(Node * origin, Node * dest, Road * road, Transport::Type type) : origin(origin), dest(dest), road(road), type(type), edgeID(edge_count++) {
     length = GeographicCoords::getDistance(origin->getCoords(), dest->getCoords());
+    
+    weight = this->length / Transport::getInstance()->getVel(type);
+    cost = this->length * Transport::getInstance()->getCost(type);
+}
+
+unsigned Edge::getCost() const {
+    return cost;
 }
 
 edge_id Edge::getID() const {
@@ -36,7 +43,7 @@ Transport::Type Edge::getType() const {
 }
 
 float Edge::getWeight() const {
-    return this->length / Transport::getInstance()->getVel(type);
+    return weight;
 }
 
 float Edge::getLength() const {

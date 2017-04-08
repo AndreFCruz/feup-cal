@@ -22,3 +22,7 @@ Transport * Transport::getInstance() {
 unsigned int Transport::getVel(Transport::Type t) const {
     return velocities[t];
 }
+
+unsigned int Transport::getCost(Type t) const {
+    return costs[t];
+}

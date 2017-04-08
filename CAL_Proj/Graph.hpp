@@ -49,20 +49,23 @@ public:
     unordered_map<edge_id, Edge *> getEdges() const;
     unordered_map<road_id, Road *> getRoads() const;
     
-    unordered_map<Node *, float> dijkstraTree(node_id src_id) const;
-    unordered_map<Node *, float> dijkstraTree(Node * src) const;
-    
-    float dijkstra(node_id src_id, node_id dest_id) const;
-    float dijkstra(Node * src, Node * end_node) const;
-    
-    unordered_map<Node*, Edge*> dijkstraEdges(node_id src_id, node_id dest_id) const;
-    unordered_map<Node*, Edge*> dijkstraEdges(Node * src, Node * end_node) const;
+//    unordered_map<Node *, float> dijkstraTree(node_id src_id) const;
+//    unordered_map<Node *, float> dijkstraTree(Node * src) const;
+//    
+//    float dijkstra(node_id src_id, node_id dest_id) const;
+//    float dijkstra(Node * src, Node * end_node) const;
+//    
+//    unordered_map<Node*, Edge*> dijkstraEdges(node_id src_id, node_id dest_id) const;
+//    unordered_map<Node*, Edge*> dijkstraEdges(Node * src, Node * end_node) const;
     
     void dijkstraShortestPath(node_id src_id, node_id dest_id = 0);
     void dijkstraShortestPath(Node * src, Node * destination = nullptr);
     
     void dijkstraShortestPath(node_id src_id, node_id dest_id, Transport::Type type, unsigned int scale = 7);
     void dijkstraShortestPath(Node * src, Node * dest, Transport::Type type, unsigned int scale = 7);
+    
+    void dijkstraShortestPathWithMaxCost(node_id src, node_id dest, unsigned maxCost);
+    void dijkstraShortestPathWithMaxCost(Node * src, Node * destination, unsigned maxCost);
     
     vector<Node *> getPath(node_id src_id, node_id dest_id);
     

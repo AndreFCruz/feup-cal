@@ -51,7 +51,9 @@ int main() {
     origin = 430006697LL;
     dest = 4773399285LL;
     
-    g.dijkstraShortestPath(origin, dest, Transport::BUS, 10);
+//    g.dijkstraShortestPath(origin, dest, Transport::BUS, 10);
+    g.dijkstraShortestPathWithMaxCost(origin, dest, 10);
+    
     auto path = g.getPath(origin, dest);
     
     viewGraphPath(gv, path);

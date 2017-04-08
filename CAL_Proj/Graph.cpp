@@ -84,22 +84,19 @@ Graph::Graph(istream & nodes_in, istream & roads_in, istream & edges_in, istream
     // Check Graph conectivity; eliminate non-reachable nodes ?
     
     
-//    /** TEST **/
-//    
-//    cout << "END NODE: " << nodes.at(4737169812)->getID() << endl;
-//    cout << "END ROAD: " << roads.at(480140404)->getID() << endl;
-//    
-//    auto vec = vector< pair<node_id, Node*> >(nodes.begin(), nodes.end());
-//    sort(vec.begin(), vec.end(), [](const pair<node_id, Node*>& p1, const pair<node_id, Node*>& p2) {
-//        return p1.second->getNumEdges() > p2.second->getNumEdges();
-//    });
-//    
-//    cout << "** test end **" << endl;
-//
+    /** TEST **/
     
-//    for (auto p : edges)
-//        if (p.second->getType() == Transport::SUBWAY)
-//            cout << *(p.second) << endl;
+    cout << "END NODE: " << (nodes.at(4737169812LL)->getID() == 4737169812LL ? "pass":"fail") << endl;
+    cout << "END ROAD: " << (roads.at(480140404LL)->getID() == 480140404LL ? "pass":"fail") << endl;
+    
+    auto vec = vector< pair<node_id, Node*> >(nodes.begin(), nodes.end());
+    sort(vec.begin(), vec.end(), [](const pair<node_id, Node*>& p1, const pair<node_id, Node*>& p2) {
+        return p1.second->getNumEdges() > p2.second->getNumEdges();
+    });
+    
+    cout << "** test end **" << endl;
+
+    
 }
 
 Graph::~Graph() {
@@ -176,130 +173,129 @@ unordered_map<road_id, Road *> Graph::getRoads() const {
     return roads;
 }
 
-unordered_map<Node *, float> Graph::dijkstraTree(node_id src_id) const {
-    return dijkstraTree(nodes.at(src_id));
-}
-
-// TODO use fibonacci heap as priority queue ?
-unordered_map<Node *, float> Graph::dijkstraTree(Node * src) const {
-    const float INF = numeric_limits<float>::infinity();
-    typedef pair<unsigned int, Node *> nPair;   // pair of weight - node
-    
-    // Initialize distances HashMap
-    auto distances = unordered_map<Node *, float> ();
-    distances.reserve(nodes.size());
-    for (const auto & p : nodes)
-        distances.insert(make_pair(p.second, INF));
-    distances.at(src) = 0;
-        
-    
-    priority_queue<nPair, vector<nPair>, greater<nPair> > pq;
-    pq.push(make_pair(0, src));
-    
-    while (! pq.empty()) {
-        Node * current = pq.top().second; pq.pop();
-        
-        for (Edge * ptr : current->getEdges()) {
-            float w = ptr->getWeight();
-            Node * dest = ptr->getDest();
-            
-            // If there's a shortest path to dest through current
-            if ( distances[dest] > distances[current] + w ) {
-                distances[dest] = distances[current] + w;
-                pq.push(make_pair(distances[dest], dest));
-            }
-        }
-    }
-    
-    return distances;
-}
-
-float Graph::dijkstra(node_id src_id, node_id dest_id) const {
-    return dijkstra(nodes.at(src_id), nodes.at(dest_id));
-}
-
-float Graph::dijkstra(Node * src, Node * end_node) const {
-    const float INF = numeric_limits<float>::infinity();
-    typedef pair<unsigned int, Node *> nPair;   // pair of weight - node
-    
-    // Initialize distances HashMap
-    auto distances = unordered_map<Node *, float> ();
-    distances.reserve(nodes.size());
-    for (const auto & p : nodes)
-        distances.insert(make_pair(p.second, INF));
-    distances.at(src) = 0;
-    
-    
-    priority_queue<nPair, vector<nPair>, greater<nPair> > pq;
-    pq.push(make_pair(0, src));
-    
-    while (! pq.empty()) {
-        Node * current = pq.top().second; pq.pop();
-        
-        if (current == end_node)
-            return distances[end_node];
-        
-        for (Edge * ptr : current->getEdges()) {
-            float w = ptr->getWeight();
-            Node * dest = ptr->getDest();
-            
-            // If there's a shortest path to dest through current
-            if ( distances[dest] > distances[current] + w ) {
-                distances[dest] = distances[current] + w;
-                pq.push(make_pair(distances[dest], dest));
-            }
-        }
-    }
-    
-    return INF; // node not reachable
-}
-
-unordered_map<Node*, Edge*> Graph::dijkstraEdges(node_id src_id, node_id dest_id) const {
-    return dijkstraEdges(nodes.at(src_id), nodes.at(dest_id));
-}
-
-unordered_map<Node*, Edge*> Graph::dijkstraEdges(Node * src, Node * end_node) const {
-    const float INF = numeric_limits<float>::infinity();
-    typedef pair<unsigned int, Node *> nPair;   // pair of weight - node
-    
-    unordered_map<Node *, Edge*> parentEdges;
-    
-    // Initialize distances HashMap
-    unordered_map<Node *, float> distances;
-    distances.reserve(nodes.size());
-    for (const auto & p : nodes)
-        distances.insert(make_pair(p.second, INF));
-    distances.at(src) = 0;
-    
-    
-    priority_queue<nPair, vector<nPair>, greater<nPair> > pq;
-    pq.push(make_pair(0, src));
-    
-    while (! pq.empty()) {
-        Node * current = pq.top().second; pq.pop();
-        
-        if (current == end_node)
-            break;
-        
-        for (Edge * ptr : current->getEdges()) {
-            float w = ptr->getWeight();
-            Node * dest = ptr->getDest();
-            
-            // If there's a shortest path to dest through current
-            if ( distances[dest] > distances[current] + w ) {
-                distances[dest] = distances[current] + w;
-                pq.push(make_pair(distances[dest], dest));
-                
-                if (parentEdges.find(dest) == parentEdges.end())
-                    parentEdges.insert(make_pair(dest, ptr));
-                else
-                    parentEdges[dest] = ptr;
-            }
-        }
-    }
-    
-    return parentEdges;
-}
+//unordered_map<Node *, float> Graph::dijkstraTree(node_id src_id) const {
+//    return dijkstraTree(nodes.at(src_id));
+//}
+//
+//unordered_map<Node *, float> Graph::dijkstraTree(Node * src) const {
+//    const float INF = numeric_limits<float>::infinity();
+//    typedef pair<unsigned int, Node *> nPair;   // pair of weight - node
+//    
+//    // Initialize distances HashMap
+//    auto distances = unordered_map<Node *, float> ();
+//    distances.reserve(nodes.size());
+//    for (const auto & p : nodes)
+//        distances.insert(make_pair(p.second, INF));
+//    distances.at(src) = 0;
+//        
+//    
+//    priority_queue<nPair, vector<nPair>, greater<nPair> > pq;
+//    pq.push(make_pair(0, src));
+//    
+//    while (! pq.empty()) {
+//        Node * current = pq.top().second; pq.pop();
+//        
+//        for (Edge * ptr : current->getEdges()) {
+//            float w = ptr->getWeight();
+//            Node * dest = ptr->getDest();
+//            
+//            // If there's a shortest path to dest through current
+//            if ( distances[dest] > distances[current] + w ) {
+//                distances[dest] = distances[current] + w;
+//                pq.push(make_pair(distances[dest], dest));
+//            }
+//        }
+//    }
+//    
+//    return distances;
+//}
+//
+//float Graph::dijkstra(node_id src_id, node_id dest_id) const {
+//    return dijkstra(nodes.at(src_id), nodes.at(dest_id));
+//}
+//
+//float Graph::dijkstra(Node * src, Node * end_node) const {
+//    const float INF = numeric_limits<float>::infinity();
+//    typedef pair<unsigned int, Node *> nPair;   // pair of weight - node
+//    
+//    // Initialize distances HashMap
+//    auto distances = unordered_map<Node *, float> ();
+//    distances.reserve(nodes.size());
+//    for (const auto & p : nodes)
+//        distances.insert(make_pair(p.second, INF));
+//    distances.at(src) = 0;
+//    
+//    
+//    priority_queue<nPair, vector<nPair>, greater<nPair> > pq;
+//    pq.push(make_pair(0, src));
+//    
+//    while (! pq.empty()) {
+//        Node * current = pq.top().second; pq.pop();
+//        
+//        if (current == end_node)
+//            return distances[end_node];
+//        
+//        for (Edge * ptr : current->getEdges()) {
+//            float w = ptr->getWeight();
+//            Node * dest = ptr->getDest();
+//            
+//            // If there's a shortest path to dest through current
+//            if ( distances[dest] > distances[current] + w ) {
+//                distances[dest] = distances[current] + w;
+//                pq.push(make_pair(distances[dest], dest));
+//            }
+//        }
+//    }
+//    
+//    return INF; // node not reachable
+//}
+//
+//unordered_map<Node*, Edge*> Graph::dijkstraEdges(node_id src_id, node_id dest_id) const {
+//    return dijkstraEdges(nodes.at(src_id), nodes.at(dest_id));
+//}
+//
+//unordered_map<Node*, Edge*> Graph::dijkstraEdges(Node * src, Node * end_node) const {
+//    const float INF = numeric_limits<float>::infinity();
+//    typedef pair<unsigned int, Node *> nPair;   // pair of weight - node
+//    
+//    unordered_map<Node *, Edge*> parentEdges;
+//    
+//    // Initialize distances HashMap
+//    unordered_map<Node *, float> distances;
+//    distances.reserve(nodes.size());
+//    for (const auto & p : nodes)
+//        distances.insert(make_pair(p.second, INF));
+//    distances.at(src) = 0;
+//    
+//    
+//    priority_queue<nPair, vector<nPair>, greater<nPair> > pq;
+//    pq.push(make_pair(0, src));
+//    
+//    while (! pq.empty()) {
+//        Node * current = pq.top().second; pq.pop();
+//        
+//        if (current == end_node)
+//            break;
+//        
+//        for (Edge * ptr : current->getEdges()) {
+//            float w = ptr->getWeight();
+//            Node * dest = ptr->getDest();
+//            
+//            // If there's a shortest path to dest through current
+//            if ( distances[dest] > distances[current] + w ) {
+//                distances[dest] = distances[current] + w;
+//                pq.push(make_pair(distances[dest], dest));
+//                
+//                if (parentEdges.find(dest) == parentEdges.end())
+//                    parentEdges.insert(make_pair(dest, ptr));
+//                else
+//                    parentEdges[dest] = ptr;
+//            }
+//        }
+//    }
+//    
+//    return parentEdges;
+//}
 
 void Graph::dijkstraShortestPath(node_id src_id, node_id dest_id) {
     dijkstraShortestPath(nodes[src_id], dest_id == 0 ? nullptr : nodes[dest_id]);
@@ -395,6 +391,64 @@ void Graph::dijkstraShortestPath(Node * src, Node * destination, Transport::Type
                 }
                 
                 make_heap(pq.begin(), pq.end(), node_greater_than());
+            }
+        }
+    }
+}
+
+struct node_pair_greater_than {
+    bool operator() (const pair<Node*, unsigned> & p1, const pair<Node*, unsigned> & p2) {
+        return p1.first->dist > p2.first->dist;
+    }
+};
+
+void Graph::dijkstraShortestPathWithMaxCost(node_id src, node_id dest, unsigned maxCost) {
+    dijkstraShortestPathWithMaxCost(nodes.at(src), nodes.at(dest), maxCost);
+}
+
+// maxCost in cents
+void Graph::dijkstraShortestPathWithMaxCost(Node * src, Node * destination, unsigned maxCost) {
+    resetNodes();
+    
+    Node * v = src;
+    v->dist = 0;
+    
+    vector< pair<Node*, unsigned> > pq;
+    pq.push_back(make_pair(v, 0));
+    make_heap(pq.begin(), pq.end());
+    
+    nodesReset = false;
+    
+    while( !pq.empty() ) {
+        auto p = pq.front();
+        v = p.first;
+        pop_heap(pq.begin(), pq.end()); pq.pop_back();
+        
+        if (v == destination)
+            break;
+        
+        for(Edge * edg : v->getEdges()) {
+            Node * w = edg->getDest();
+            
+            // Edge addition exceeds maximum cost ?
+            if (p.second + edg->getCost() > maxCost)
+                continue;
+            
+            // Shortest path to w found ?
+            float combinedWeight = v->dist + edg->getWeight();
+            if( combinedWeight < w->dist ) {
+                
+                w->dist = combinedWeight;
+                w->path = v;
+                
+                // if already in pq only update
+                if(!w->processing)
+                {
+                    w->processing = true;
+                    pq.push_back(make_pair(w, p.second + edg->getCost()));
+                }
+                
+                make_heap(pq.begin(), pq.end(), node_pair_greater_than());
             }
         }
     }

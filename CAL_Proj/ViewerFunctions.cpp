@@ -14,6 +14,14 @@
 
 using namespace std;
 
+float getPathLength(const vector<Node *> & path) {
+    float w = 0;
+    for (size_t i = 1; i < path.size(); i++)
+        w += GeographicCoords::getDistance(path[i-1]->getCoords(), path[i]->getCoords());
+    
+    return w;        
+}
+
 GraphViewer * viewGraphComplete(Graph & g) {
     
     GraphViewer * gv = new GraphViewer(600, 600, false);
@@ -75,12 +83,14 @@ GraphViewer * viewGraphComplete(Graph & g) {
 }
 
 
-GraphViewer * viewGraphPath(GraphViewer * gv, vector<Node *> path) {
+GraphViewer * viewGraphPath(GraphViewer * gv, const vector<Node *> & path) {
     
-    for (Node * node : path) {
+    for (const Node * node : path) {
         gv->setVertexColor(node->getParserID(), "red");
         gv->setVertexSize(node->getParserID(), 80);
     }
+    
+    cout << "Path Length (in km): " << getPathLength(path) << endl;
     
     gv->rearrange();
     

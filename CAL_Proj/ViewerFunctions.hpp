@@ -14,8 +14,9 @@
 
 GraphViewer * viewGraphComplete(Graph & g);
 
-GraphViewer * viewGraphPath(GraphViewer * gv, vector<Node *> path);
+GraphViewer * viewGraphPath(GraphViewer * gv, const vector<Node *> & path);
 
 GraphViewer * askForPath(GraphViewer * gv, Graph & g);
+
 
 #endif /* ViewerFunctions_hpp */

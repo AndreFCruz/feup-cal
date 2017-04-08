@@ -43,10 +43,16 @@ private:
     
     float length;
     
+    float weight;
+    
+    unsigned cost;
+    
     Transport::Type type;
     
 public:
     Edge(Node * origin, Node * dest, Road * road, Transport::Type type = Transport::FOOT);
+    
+    unsigned getCost() const;
     
     edge_id getID() const;
 

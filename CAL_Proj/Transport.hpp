@@ -23,6 +23,8 @@ public:
     
     unsigned int getVel(Type t) const;
     
+    unsigned int getCost(Type t) const;
+    
 private:
     Transport() = default;
     
@@ -32,6 +34,11 @@ private:
     
     unsigned int velocities[3] {    // in km/h
         6, 32, 45
+    };
+    
+    // Costs per Transport, in Cents per Kilometer
+    unsigned int costs[3] {
+        0, 20, 30
     };
     
 };
