@@ -59,7 +59,7 @@ private:
     static Transport * singleton_instance;	/**< Transport * singleton_instance. Pointer to the current instance of Transport. */
             
     unsigned int velocities[3] {    // in km/h
-        6, 32, 45
+        5, 34, 45
     };	/**< int[] velocities. Array containing the velocities of the different means of transport, in km/ h. */
     
     unsigned int costs[3] {

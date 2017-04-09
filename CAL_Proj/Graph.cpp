@@ -422,13 +422,24 @@ void Graph::dijkstraShortestPathWithMaxCost(Node * src, Node * destination, unsi
     
     nodesReset = false;
     
+    auto greater_than = [=] (const pair<Node*, unsigned> & p1, const pair<Node*, unsigned> & p2) {
+        if (p1.second <= maxCost && p2.second <= maxCost)
+            return p1.first->dist > p2.first->dist;
+        else if (p1.second < maxCost && p2.second > maxCost)
+            return false;
+        else if (p1.second > maxCost && p2.second < maxCost)
+            return true;
+        else
+            return p1.first->dist > p2.first->dist;
+    };
+    
     while( !pq.empty() ) {
         auto p = pq.front();
         v = p.first;
         pop_heap(pq.begin(), pq.end()); pq.pop_back();
         
-//        if (v == destination)
-//            break;
+        if (v == destination)
+            break;
         
         for(Edge * edg : v->getEdges()) {
             Node * w = edg->getDest();
@@ -452,7 +463,7 @@ void Graph::dijkstraShortestPathWithMaxCost(Node * src, Node * destination, unsi
                     pq.push_back(make_pair(w, p.second + edg->getCost()));
                 }
                 
-                make_heap(pq.begin(), pq.end(), node_pair_greater_than());
+                make_heap(pq.begin(), pq.end(), greater_than);
             }
         }
     }
@@ -485,11 +496,16 @@ vector<Edge *> Graph::getPathEdges(node_id src_id, node_id dest_id) {
     Node * src = nodes.at(src_id);
     Node * node = nodes.at(dest_id);
     
-    vector<Edge *> res;
+    stack<Edge *> tmp;
     while ( node->edgePath != nullptr && node != src ) {
         Edge * edg = node->edgePath;
-        res.push_back(edg);
+        tmp.push(edg);
         node = edg->getOrigin();
+    }
+    
+    vector<Edge *> res; res.reserve(tmp.size());
+    while (! tmp.empty()) {
+        res.push_back(tmp.top()); tmp.pop();
     }
     
     return res;

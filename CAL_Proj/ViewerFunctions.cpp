@@ -48,10 +48,11 @@ unsigned getPathCost(const vector<Edge *> & edges) {
 
 vector<Node*> getPathFromEdges(const vector<Edge *> & edges) {
     vector<Node*> res; res.reserve(edges.size() + 1);
+    res.push_back(edges.front()->getOrigin());
     
     auto it = edges.begin();
     for ( ; it != edges.end(); it++)
-        res.push_back((*it)->getOrigin());
+        res.push_back((*it)->getDest());
     
     res.push_back((*it)->getDest());
     
