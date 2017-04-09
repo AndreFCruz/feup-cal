@@ -233,7 +233,14 @@ public:
      * @return The path's cost, in cents.
      */
     unsigned getPathCost(node_id src_id, node_id dest_id) const;
-        
+    
+    /**
+     * Runs Depth-First Search from the node pointed to by v,
+     * and pushes visited nodes into the res vector, in order.
+     *
+     * @param v Node * to start node
+     * @param res Vector to be filled
+     */
     void dfs(Node * v, vector<Node*> & res);
     
 };
