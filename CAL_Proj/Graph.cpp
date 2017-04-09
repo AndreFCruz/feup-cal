@@ -191,10 +191,10 @@ bool Graph::isConnected() {
         
     }
     
-    cout << "Cluster(s) :";
+    cerr << "Cluster(s) :";
     for (auto it = clusters.rbegin(); it != clusters.rend(); ++it)
-        cout << " " << *it;
-    cout << ".\n";
+        cerr << " " << *it;
+    cerr << ".\n";
     
     return clusters.size() <= 1;
 }
