@@ -6,6 +6,8 @@
 //  Copyright © 2017 Andre Cruz. All rights reserved.
 //
 
+#include <iostream>
+#include <iomanip>
 #include "Edge.hpp"
 #include "Node.hpp"
 #include "Road.hpp"
@@ -138,7 +140,7 @@ GraphViewer * widenGraphPathEdges(GraphViewer * gv, const vector<Edge *> & edges
     return gv;
 }
 
-GraphViewer * askForPath(GraphViewer * gv, Graph & g) {
+bool askForPath(GraphViewer * gv, Graph & g) {
     int originParserID, destParserID;
     cout << "Start node: "; cin >> originParserID;
     cout << "Destination node: "; cin >> destParserID;
@@ -147,22 +149,62 @@ GraphViewer * askForPath(GraphViewer * gv, Graph & g) {
     origin = g.getNodeIDFromParserID((int) originParserID);
     dest = g.getNodeIDFromParserID((int) destParserID);
     
-    // TODO Ask for preference/cost
+    /* Get input from user */
+    string ans;
+    cout << "\n** Preferences **\n";
+    cout << "Shortest, Transport, Cost\n";
+    cin >> ans;
     
-    g.dijkstraShortestPath(origin, dest);
+    if (ans == "shortest" or ans == "Shortest" or ans == "no") {
+        g.dijkstraShortestPath(origin, dest);
+    }
+    else if (ans == "transport" or ans == "Transport") {
+        cout << "\n\tType: ";
+        cin >> ans;
+        
+        Transport::Type t = Transport::FOOT;
+        unsigned preference = 10;
+        
+        if (ans == "walk" or ans == "foot")
+            t = Transport::FOOT;
+        else if (ans == "bus")
+            t = Transport::BUS;
+        else if (ans == "subway" or ans == "tram")
+            t = Transport::SUBWAY;
+        else
+            cout << "\n\tUnrecognized means of transportation\n";
+        
+        cout << "\n\tPreference (integer): "; cin >> preference;
+        
+        g.dijkstraShortestPath(origin, dest, t, preference);
+    }
+    else if (ans == "cost" or ans == "Cost") {
+        unsigned cost = 0;
+        
+        cout << "\n\tMaximum cost: "; cin >> cost;
+        g.dijkstraShortestPathWithMaxCost(origin, dest, cost);
+    }
+    else {
+        cout << "\nUnrecognized Option.\n";
+        return false;
+    }
     
     auto path = g.getPath(origin, dest);
     auto edges = g.getPathEdges(origin, dest);
     
     viewGraphPath(gv, path);
+    widenGraphPathEdges(gv, edges);
     
-    return gv;
+    printPathStats(g, origin, dest);
+
+    return true;
 }
 
 void printPathStats(const Graph & g, node_id src, node_id dest) {
-    cout << "Path Length (km):        " << g.getPathLength(src, dest) << endl;
-    cout << "Path Duration (minutes): " << g.getPathDuration(src, dest) * 60 << endl;
-    cout << "Path Cost (cents):       " << g.getPathCost(src, dest) << endl;
+    cout << "\n** Path Stats **\n";
+    cout << "Path Length (km):        " << setprecision(4) << g.getPathLength(src, dest) << endl;
+    cout << "Path Cost (cents):       " << setprecision(4) << g.getPathCost(src, dest) << endl;
+    cout << "Path Duration (minutes): " << setprecision(4) << g.getPathDuration(src, dest) * 60 << endl;
 }
 
 

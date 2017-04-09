@@ -42,34 +42,30 @@ int main() {
     Graph g(nodes_ifs, roads_ifs, edges_ifs, subway_ifs, bus_ifs);
     
     // User Interface
-//    askForPath(gv, g);
+    GraphViewer * gv = viewGraphComplete(g);
+    askForPath(gv, g);
     
-    
-    /** Test **/
-    node_id origin, dest;
-    origin = 430006697LL;
-    dest = 4773399285LL;
-    
-//    g.dijkstraShortestPath(origin, dest, Transport::FOOT, 10);
-    g.dijkstraShortestPathWithMaxCost(origin, dest, 60);
-    
-    auto path = g.getPath(origin, dest);
-    auto edges = g.getPathEdges(origin, dest);
-    
+    // Tests
+//    node_id origin, dest;
+//    origin = 430006697LL;
+//    dest = 4773399285LL;
+//    
+////    g.dijkstraShortestPath(origin, dest, Transport::FOOT, 10);
+//    g.dijkstraShortestPathWithMaxCost(origin, dest, 80);
+////    g.dijkstraShortestPathWithMaxCost(origin, dest, 105);
+//    
+//    auto path = g.getPath(origin, dest);
+//    auto edges = g.getPathEdges(origin, dest);
+//    
 //    GraphViewer * gv = viewGraphComplete(g);
 //    viewGraphPath(gv, path);
 //    widenGraphPathEdges(gv, edges);
-    
-    for (auto ptr : edges)
-        cout << *ptr << endl;
-    
-    printPathStats(g, origin, dest);
-    
-    
-//    g.dijkstraShortestPath(430006697LL, 4773399285LL); unsigned i = 1;
-//    for (auto elem : g.getPath(430006697LL, 4773399285LL))
-//        cout << i++ << ". " << elem->getID() << endl;
-    
+//
+//    // Print edges
+////    for (auto ptr : edges)
+////        cout << *ptr << endl;
+//    
+//    printPathStats(g, origin, dest);
     
     return 0;
 }

@@ -55,9 +55,9 @@ GraphViewer * widenGraphPathEdges(GraphViewer * gv, const vector<Edge *> & edges
  * @param gv GraphViewer to be updated.
  * @param g Graph used on the User's path calculation
  *
- * @return GraphViewer containing the updated data.
+ * @return bool corresponding to whether the user input was successful
  */
-GraphViewer * askForPath(GraphViewer * gv, Graph & g);
+bool askForPath(GraphViewer * gv, Graph & g);
 
 /**
  * Getter for Path Length.
