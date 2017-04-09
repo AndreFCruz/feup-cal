@@ -33,6 +33,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		6587DF981E9A4BE900A55DE4 /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Images; sourceTree = "<group>"; };
 		65B21B3C1E96C88700D64F05 /* Coordinates.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Coordinates.cpp; sourceTree = "<group>"; };
 		65B21B3D1E96C88700D64F05 /* Coordinates.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Coordinates.hpp; sourceTree = "<group>"; };
 		65B21B3E1E96C88700D64F05 /* Edge.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Edge.cpp; sourceTree = "<group>"; };
@@ -74,6 +75,7 @@
 		65C7A65F1E96C6420003C18D = {
 			isa = PBXGroup;
 			children = (
+				6587DF981E9A4BE900A55DE4 /* Images */,
 				65CB63E21E98EDDB00A7C785 /* map1 */,
 				65CB63E31E98EDDB00A7C785 /* map2 */,
 				65C7A66A1E96C6420003C18D /* CAL_Proj */,

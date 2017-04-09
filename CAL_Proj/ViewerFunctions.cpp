@@ -118,12 +118,30 @@ GraphViewer * viewGraphComplete(Graph & g) {
     return gv;
 }
 
-
 GraphViewer * viewGraphPath(GraphViewer * gv, const vector<Node *> & path) {
     
     for (const Node * node : path) {
-        gv->setVertexColor(node->getParserID(), "red");
-        gv->setVertexSize(node->getParserID(), 70);
+        gv->setVertexSize(node->getParserID(), 80);
+
+        if (node->edgePath == nullptr) {
+            gv->setVertexIcon(node->getParserID(), "./images/walking.png");
+            continue;
+        }
+        
+        switch (node->edgePath->getType()) {
+            case Transport::FOOT:
+                gv->setVertexIcon(node->getParserID(), "./images/walking.png");
+                break;
+            case Transport::BUS:
+                gv->setVertexIcon(node->edgePath->getOrigin()->getParserID(), "./images/stcp.png");
+                gv->setVertexIcon(node->getParserID(), "./images/stcp.png");
+                break;
+            case Transport::SUBWAY:
+                gv->setVertexIcon(node->edgePath->getOrigin()->getParserID(), "./images/metro.png");
+                gv->setVertexIcon(node->getParserID(), "./images/metro.png");
+                break;
+        }
+        
     }
     
     gv->rearrange();
@@ -152,8 +170,12 @@ GraphViewer * askForPath(GraphViewer * gv, Graph & g) {
     origin = g.getNodeIDFromParserID((int) originParserID);
     dest = g.getNodeIDFromParserID((int) destParserID);
     
+    // TODO Ask for preference/cost
+    
     g.dijkstraShortestPath(origin, dest);
+    
     auto path = g.getPath(origin, dest);
+    auto edges = g.getPathEdges(origin, dest);
     
     viewGraphPath(gv, path);
     

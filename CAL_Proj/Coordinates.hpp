@@ -14,8 +14,8 @@
 using namespace std;
 
 /**
- * A class used to represent a Point in a 2D Referential.
- * Therefore, every Point is represented as (x, y).
+ * A class used to represent a Point in a 2D Plane.
+ * Every Point is represented as (x, y) in cartesian coordinates.
  */
 class Point {
 private:

@@ -24,15 +24,6 @@ class Road;
  */
 typedef unsigned int edge_id;
 
-// TODO
-// add different types of weight (cost, travel time, length)
-
-// TODO ?
-// remove type, graph calculates weight instead of potentially tripling edges (?)
-// files with edges of bus, edges of tram, etc. (subway can travel off-road)
-
-// Edges têm custo associado? tipo tarifas de determinado transporte ?
-// SubClasses de Edges em vez de tipos?
 
 /**
  * A class used to represent a Edge in a Graph, therefore used to join two Nodes.

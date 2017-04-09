@@ -32,7 +32,7 @@ GraphViewer * viewGraphComplete(Graph & g);
  * Red circles represent the path the User should be taking according to his needs.
  *
  * @param gv GraphViewer to be updated.
- * @param path Optimized path for the User.
+ * @param path Optimal path for the User.
  *
  * @return GraphViewer containing the updated data.
  */
