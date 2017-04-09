@@ -41,7 +41,7 @@ private:
     GeographicCoords coords;				/**< GeographicCoords coords. Node's correspondent Geographic Coordinates in a real life map. */
     Point point;							/**< Point point. Node's correspondent Point in a 2D Plane. */
     
-    vector<Edge *> edges; // initially ordered by weight
+    vector<Edge *> edges; 					/**< vector<Edge*> edges. Vector containing all the Edges that have the Node as origin Node. Edges are initially ordered by weight. */
     
     /**
      * Function used to update the Latitude and Longitude ranges.
