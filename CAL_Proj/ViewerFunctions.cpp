@@ -22,30 +22,6 @@ float getPathLength(const vector<Node *> & path) {
     return len;
 }
 
-float getPathLength(const vector<Edge *> & edges) {
-    float len = 0;
-    for (const Edge * edg : edges)
-        len += edg->getLength();
-    
-    return len;
-}
-
-float getPathDuration(const vector<Edge *> & edges) {
-    float duration = 0;
-    for (const Edge * edg : edges)
-        duration += edg->getWeight();
-    
-    return duration;
-}
-
-unsigned getPathCost(const vector<Edge *> & edges) {
-    unsigned cost = 0;
-    for (const Edge * edg : edges)
-        cost += edg->getCost();
-    
-    return cost;
-}
-
 vector<Node*> getPathFromEdges(const vector<Edge *> & edges) {
     vector<Node*> res; res.reserve(edges.size() + 1);
     res.push_back(edges.front()->getOrigin());
@@ -183,10 +159,10 @@ GraphViewer * askForPath(GraphViewer * gv, Graph & g) {
     return gv;
 }
 
-void printPathStats(const vector<Edge *> & edges) {
-    cout << "Path Length (km):        " << getPathLength(edges) << endl;
-    cout << "Path Duration (minutes): " << getPathDuration(edges) * 60 << endl;
-    cout << "Path Cost (cents):       " << getPathCost(edges) << endl;
+void printPathStats(const Graph & g, node_id src, node_id dest) {
+    cout << "Path Length (km):        " << g.getPathLength(src, dest) << endl;
+    cout << "Path Duration (minutes): " << g.getPathDuration(src, dest) * 60 << endl;
+    cout << "Path Cost (cents):       " << g.getPathCost(src, dest) << endl;
 }
 
 

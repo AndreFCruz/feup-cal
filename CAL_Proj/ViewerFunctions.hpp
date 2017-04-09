@@ -69,35 +69,6 @@ GraphViewer * askForPath(GraphViewer * gv, Graph & g);
 float getPathLength(const vector<Node *> & path);
 
 /**
- * Getter for Path Length.
- *
- * @param edges Vector of edges, representing the User's path, from where length is calculated.
- *
- * @return The path length value.
- */
-float getPathLength(const vector<Edge *> & edges);
-
-/**
- * Getter for Path duration.
- * Duration is in Hours.
- *
- * @param edges Vector of edges, representing the User's path, from where duration is calculated.
- *
- * @return The path duration value, in hours.
- */
-float getPathDuration(const vector<Edge *> & edges);
-
-/**
- * Getter for Path cost.
- * Cost is in Cents.
- *
- * @param edges Vector of edges, representing the User's path, from where cost is calculated.
- *
- * @return The path cost value, in cents.
- */
-unsigned getPathCost(const vector<Edge *> & edges);
-
-/**
  * User's Path Parser.
  * Instead of representing the User's path with a vector of Edges, represents the path with a vector of Nodes.
  *
@@ -111,8 +82,10 @@ vector<Node*> getPathFromEdges(const vector<Edge *> & edges);
  * Function used to display on the screen the Statistics from the User's Path.
  * The statistics are: the path length, the path duration and the path cost.
  *
- * @param edges Vector of edges, representing the User's path.
+ * @param g Graph reference, with dijkstraShortestPath already calculated on the given nodes.
+ * @param src node_id of the source node
+ * @param dest node_id of the destination node
  */
-void printPathStats(const vector<Edge *> & edges);
+void printPathStats(const Graph & g, node_id src, node_id dest);
 
 #endif /* ViewerFunctions_hpp */

@@ -49,15 +49,6 @@ public:
     unordered_map<edge_id, Edge *> getEdges() const;
     unordered_map<road_id, Road *> getRoads() const;
     
-//    unordered_map<Node *, float> dijkstraTree(node_id src_id) const;
-//    unordered_map<Node *, float> dijkstraTree(Node * src) const;
-//    
-//    float dijkstra(node_id src_id, node_id dest_id) const;
-//    float dijkstra(Node * src, Node * end_node) const;
-//    
-//    unordered_map<Node*, Edge*> dijkstraEdges(node_id src_id, node_id dest_id) const;
-//    unordered_map<Node*, Edge*> dijkstraEdges(Node * src, Node * end_node) const;
-    
     void dijkstraShortestPath(node_id src_id, node_id dest_id = 0);
     void dijkstraShortestPath(Node * src, Node * destination = nullptr);
     
@@ -84,10 +75,39 @@ public:
      */
     void dijkstraShortestPathWithMaxCost(Node * src, Node * destination, unsigned maxCost);
     
-    vector<Edge *> getEdgesFromPath(const vector<Node*> & path);
-    vector<Node *> getPath(node_id src_id, node_id dest_id);
+    vector<Node *> getPath(node_id src_id, node_id dest_id) const;
     
-    vector<Edge *> getPathEdges(node_id src_id, node_id dest_id);
+    vector<Edge *> getPathEdges(node_id src_id, node_id dest_id) const;
+    
+    /**
+     * Calculates path length, in kilometers.
+     *
+     * @param src_id node_id of the start/source node.
+     * @param dest_id node_id of the end/destination node.
+     *
+     * @return The path's length, in km.
+     */
+    float getPathLength(node_id src_id, node_id dest_id) const;
+    
+    /**
+     * Calculates path duration, in hours.
+     *
+     * @param src_id node_id of the start/source node.
+     * @param dest_id node_id of the end/destination node.
+     *
+     * @return The path's duration, in hours.
+     */
+    float getPathDuration(node_id src_id, node_id dest_id) const;
+    
+    /**
+     * Calculates path cost, in cents.
+     *
+     * @param src_id node_id of the start/source node.
+     * @param dest_id node_id of the end/destination node.
+     *
+     * @return The path's cost, in cents.
+     */
+    unsigned getPathCost(node_id src_id, node_id dest_id) const;
     
     //dijkstra, A-star
     //avaliar conectividade TODO

@@ -469,7 +469,7 @@ void Graph::dijkstraShortestPathWithMaxCost(Node * src, Node * destination, unsi
     }
 }
 
-vector<Node *> Graph::getPath(node_id src_id, node_id dest_id){
+vector<Node *> Graph::getPath(node_id src_id, node_id dest_id) const {
     
     list<Node*> buffer;
     Node * v = nodes.at(dest_id);
@@ -492,7 +492,7 @@ vector<Node *> Graph::getPath(node_id src_id, node_id dest_id){
     return res;
 }
 
-vector<Edge *> Graph::getPathEdges(node_id src_id, node_id dest_id) {
+vector<Edge *> Graph::getPathEdges(node_id src_id, node_id dest_id) const {
     Node * src = nodes.at(src_id);
     Node * node = nodes.at(dest_id);
     
@@ -509,4 +509,28 @@ vector<Edge *> Graph::getPathEdges(node_id src_id, node_id dest_id) {
     }
     
     return res;
+}
+
+float Graph::getPathLength(node_id src_id, node_id dest_id) const {
+    float len = 0;
+    for (const Edge * edg : getPathEdges(src_id, dest_id))
+        len += edg->getLength();
+    
+    return len;
+}
+
+float Graph::getPathDuration(node_id src_id, node_id dest_id) const {
+    float duration = 0;
+    for (const Edge * edg : getPathEdges(src_id, dest_id))
+        duration += edg->getWeight();
+    
+    return duration;
+}
+
+unsigned Graph::getPathCost(node_id src_id, node_id dest_id) const {
+    unsigned cost = 0;
+    for (const Edge * edg : getPathEdges(src_id, dest_id))
+        cost += edg->getCost();
+    
+    return cost;
 }

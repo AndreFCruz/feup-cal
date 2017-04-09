@@ -63,7 +63,7 @@ int main() {
     for (auto ptr : edges)
         cout << *ptr << endl;
     
-    printPathStats(edges);
+    printPathStats(g, origin, dest);
     
     
 //    g.dijkstraShortestPath(430006697LL, 4773399285LL); unsigned i = 1;
