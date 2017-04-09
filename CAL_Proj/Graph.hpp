@@ -61,8 +61,8 @@ public:
     void dijkstraShortestPath(node_id src_id, node_id dest_id = 0);
     void dijkstraShortestPath(Node * src, Node * destination = nullptr);
     
-    void dijkstraShortestPath(node_id src_id, node_id dest_id, Transport::Type type, unsigned int scale = 7);
-    void dijkstraShortestPath(Node * src, Node * dest, Transport::Type type, unsigned int scale = 7);
+    void dijkstraShortestPath(node_id src_id, node_id dest_id, Transport::Type type, unsigned int scale = 5);
+    void dijkstraShortestPath(Node * src, Node * dest, Transport::Type type, unsigned int scale = 5);
     
     /**
      * Altered implementation of Dijkstra's shortest path algorithm,
