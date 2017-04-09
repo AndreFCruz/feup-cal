@@ -80,14 +80,11 @@ Graph::Graph(istream & nodes_in, istream & roads_in, istream & edges_in, istream
         n.second->initiatePoint(Node::getLatRange(), Node::getLonRange());
     }
 
-    // TODO
-    // Check Graph conectivity; eliminate non-reachable nodes ?
-    
-    
-    /** TEST **/
-//    cout << "END NODE: " << (nodes.at(4737169812LL)->getID() == 4737169812LL ? "pass":"fail") << endl;
-//    cout << "END ROAD: " << (roads.at(480140404LL)->getID() == 480140404LL ? "pass":"fail") << endl;
-    
+    // Check Graph conectivity
+    if (this->isConnected())
+        cerr << "Graph is connected.\n";
+    else
+        cerr << "Graph is NOT connected.\n";
 }
 
 Graph::~Graph() {
@@ -151,6 +148,11 @@ void Graph::resetNodes() {
     nodesReset = true;
 }
 
+// TODO
+bool Graph::isConnected() const {
+    return true;
+}
+
 node_id Graph::getNodeIDFromParserID(int parserID) const {
     return nodeIDs.at(parserID);
 }
@@ -168,7 +170,7 @@ unordered_map<road_id, Road *> Graph::getRoads() const {
 }
 
 void Graph::dijkstraShortestPath(node_id src_id, node_id dest_id) {
-    dijkstraShortestPath(nodes[src_id], dest_id == 0 ? nullptr : nodes[dest_id]);
+    dijkstraShortestPath(nodes.at(src_id), dest_id == 0 ? nullptr : nodes.at(dest_id));
 }
 
 struct node_greater_than {
@@ -274,19 +276,8 @@ struct node_pair_greater_than {
     }
 };
 
-void Graph::dijkstraShortestPathWithMaxCost(node_id src, node_id dest, unsigned maxCost) {
-    dijkstraShortestPathWithMaxCost(nodes.at(src), nodes.at(dest), maxCost);
-}
 
-/**
- * Altered implementation of Dijkstra's shortest path algorithm,
- * takes into account a maximum cost, which must not be breached.
- * 
- * @param src Node* to start/source node
- * @param destination Node* to end/destination node
- * @param maxCost Maximum cost, in cents, of the path
- */
-void Graph::dijkstraShortestPathWithMaxCost(Node * src, Node * destination, unsigned maxCost) {
+void Graph::dijkstraShortestPathWithCost(Node * src, Node * destination, unsigned cost) {
     resetNodes();
     
     Node * v = src;
@@ -298,16 +289,19 @@ void Graph::dijkstraShortestPathWithMaxCost(Node * src, Node * destination, unsi
     
     nodesReset = false;
     
+    // Order predicate in heap
+/*
     auto greater_than = [=] (const pair<Node*, unsigned> & p1, const pair<Node*, unsigned> & p2) {
-        if (p1.second <= maxCost && p2.second <= maxCost)
+        if (p1.second <= cost && p2.second <= cost)
             return p1.first->dist > p2.first->dist;
-        else if (p1.second < maxCost && p2.second > maxCost)
+        else if (p1.second < cost && p2.second > cost)
             return false;
-        else if (p1.second > maxCost && p2.second < maxCost)
+        else if (p1.second > cost && p2.second < cost)
             return true;
         else
             return p1.first->dist > p2.first->dist;
     };
+*/
     
     while( !pq.empty() ) {
         auto p = pq.front();
@@ -321,7 +315,7 @@ void Graph::dijkstraShortestPathWithMaxCost(Node * src, Node * destination, unsi
             Node * w = edg->getDest();
             
             // Edge addition exceeds maximum cost ?
-            if (p.second + edg->getCost() > maxCost)
+            if (p.second + edg->getCost() > cost)
                 continue;
             
             // Shortest path to w found ?
@@ -339,10 +333,22 @@ void Graph::dijkstraShortestPathWithMaxCost(Node * src, Node * destination, unsi
                     pq.push_back(make_pair(w, p.second + edg->getCost()));
                 }
                 
-                make_heap(pq.begin(), pq.end(), greater_than);
+                make_heap(pq.begin(), pq.end(), node_pair_greater_than());
             }
         }
     }
+}
+
+void Graph::dijkstraShortestPathWithMaxCost(node_id src_id, node_id dest_id, unsigned maxCost) {
+    Node * src = nodes.at(src_id);
+    Node * dest = nodes.at(dest_id);
+    
+    unsigned cost = maxCost;
+    
+    do {
+        dijkstraShortestPathWithCost(src, dest, cost--);
+    } while (getPathCost(src_id, dest_id) > maxCost);
+    
 }
 
 vector<Node *> Graph::getPath(node_id src_id, node_id dest_id) const {

@@ -38,6 +38,18 @@ private:
     
     bool nodesReset = true;
     
+    bool isConnected() const;
+    
+    /**
+     * Altered implementation of Dijkstra's shortest path algorithm,
+     * takes into account a seeked cost.
+     *
+     * @param src Node* to start/source node
+     * @param destination Node* to end/destination node
+     * @param seekedCost Path's seekedCost, may be above/under the actual cost.
+     */
+    void dijkstraShortestPathWithCost(Node * src, Node * destination, unsigned seekedCost);
+    
 public:
     Graph(istream & nodes, istream & edges, istream & roads, istream & subway, istream & bus);
     
@@ -55,25 +67,7 @@ public:
     void dijkstraShortestPath(node_id src_id, node_id dest_id, Transport::Type type, unsigned int scale = 5);
     void dijkstraShortestPath(Node * src, Node * dest, Transport::Type type, unsigned int scale = 5);
     
-    /**
-     * Altered implementation of Dijkstra's shortest path algorithm,
-     * takes into account a maximum cost, which must not be breached.
-     *
-     * @param src node_id of the start/source node
-     * @param dest node_id of the end/destination node
-     * @param maxCost Maximum cost, in cents, of the path
-     */
-    void dijkstraShortestPathWithMaxCost(node_id src, node_id dest, unsigned maxCost);
-    
-    /**
-     * Altered implementation of Dijkstra's shortest path algorithm,
-     * takes into account a maximum cost, which must not be breached.
-     *
-     * @param src Node* to start/source node
-     * @param destination Node* to end/destination node
-     * @param maxCost Maximum cost, in cents, of the path
-     */
-    void dijkstraShortestPathWithMaxCost(Node * src, Node * destination, unsigned maxCost);
+    void dijkstraShortestPathWithMaxCost(node_id src_id, node_id dest_id, unsigned maxCost);
     
     vector<Node *> getPath(node_id src_id, node_id dest_id) const;
     
