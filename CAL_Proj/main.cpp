@@ -16,7 +16,8 @@
 
 using namespace std;
 
-const string HOME = "/Users/andre/Documents/CAL_Proj/map2/";
+// Work Directory must be set to $PROJECT_DIR
+const string HOME = "./map2/";
 
 const string EDGES_PATH = HOME + "edges.txt";
 const string NODES_PATH = HOME + "nodes.txt";
@@ -63,7 +64,6 @@ int main() {
 //        cout << *ptr << endl;
     
     printPathStats(edges);
-    cout << "Length (nodes): " << getPathLength(path) << endl;
     
     
 //    g.dijkstraShortestPath(430006697LL, 4773399285LL); unsigned i = 1;
