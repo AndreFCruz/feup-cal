@@ -1,0 +1,339 @@
+\hypertarget{class_graph}{}\section{Graph Class Reference}
+\label{class_graph}\index{Graph@{Graph}}
+
+
+{\ttfamily \#include $<$Graph.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_graph_aadb341e62a5548bf406c05834aa187da}{Graph} (istream \&nodes, istream \&edges, istream \&roads, istream \&subway, istream \&bus)
+\item 
+\hyperlink{class_graph_a7a3f0c7dceffa85819bf122c49fd973c}{Graph} (const \hyperlink{class_graph}{Graph} \&obj)
+\item 
+\hyperlink{class_graph_a902c5b3eacb66d60752525ab23297a95}{$\sim$\+Graph} ()
+\item 
+node\+\_\+id \hyperlink{class_graph_aec10981cceac64d033e2e0de5b34c995}{get\+Node\+I\+D\+From\+Parser\+ID} (int parser\+ID) const
+\item 
+unordered\+\_\+map$<$ node\+\_\+id, \hyperlink{class_node}{Node} $\ast$ $>$ \hyperlink{class_graph_aa64f6696d40b6a8e0d92df399ed11310}{get\+Nodes} () const
+\item 
+unordered\+\_\+map$<$ edge\+\_\+id, \hyperlink{class_edge}{Edge} $\ast$ $>$ \hyperlink{class_graph_a7dd776ad17a9d14b14f044373c79a9bc}{get\+Edges} () const
+\item 
+unordered\+\_\+map$<$ road\+\_\+id, \hyperlink{class_road}{Road} $\ast$ $>$ \hyperlink{class_graph_a101befc9baedb7dc3aaa714c968dc943}{get\+Roads} () const
+\item 
+void \hyperlink{class_graph_a819fb225997f026a192ec5df1b17df84}{dijkstra\+Shortest\+Path} (node\+\_\+id src\+\_\+id, node\+\_\+id dest\+\_\+id=0)
+\item 
+void \hyperlink{class_graph_a0fc41701fa170ab69282ae8a571fdc04}{dijkstra\+Shortest\+Path} (\hyperlink{class_node}{Node} $\ast$src, \hyperlink{class_node}{Node} $\ast$destination=nullptr)
+\item 
+void \hyperlink{class_graph_a751cdeb2ca841f9d44d921cf1a43ddd0}{dijkstra\+Shortest\+Path} (node\+\_\+id src\+\_\+id, node\+\_\+id dest\+\_\+id, \hyperlink{class_transport_a1879cecfed0d4238e5a7af6d085db317}{Transport\+::\+Type} type, unsigned int scale=5)
+\item 
+void \hyperlink{class_graph_afe77f6a03cad266807c741d1a3178541}{dijkstra\+Shortest\+Path} (\hyperlink{class_node}{Node} $\ast$src, \hyperlink{class_node}{Node} $\ast$dest, \hyperlink{class_transport_a1879cecfed0d4238e5a7af6d085db317}{Transport\+::\+Type} type, unsigned int scale=5)
+\item 
+void \hyperlink{class_graph_a284736e6b467032dce3bfd69213c31f0}{dijkstra\+Shortest\+Path\+With\+Max\+Cost} (node\+\_\+id src\+\_\+id, node\+\_\+id dest\+\_\+id, unsigned max\+Cost)
+\item 
+vector$<$ \hyperlink{class_node}{Node} $\ast$ $>$ \hyperlink{class_graph_ae4c66eaf1b29f53bf90ad6266baa6819}{get\+Path} (node\+\_\+id src\+\_\+id, node\+\_\+id dest\+\_\+id) const
+\item 
+vector$<$ \hyperlink{class_edge}{Edge} $\ast$ $>$ \hyperlink{class_graph_a94db80dbb52cac57e2b5d14c53e649e7}{get\+Path\+Edges} (node\+\_\+id src\+\_\+id, node\+\_\+id dest\+\_\+id) const
+\item 
+float \hyperlink{class_graph_adb19e47c0238b012a6a3a28bdaf855f8}{get\+Path\+Length} (node\+\_\+id src\+\_\+id, node\+\_\+id dest\+\_\+id) const
+\item 
+float \hyperlink{class_graph_a2d69a99fb35fee10aadc243c468ad9b2}{get\+Path\+Duration} (node\+\_\+id src\+\_\+id, node\+\_\+id dest\+\_\+id) const
+\item 
+unsigned \hyperlink{class_graph_a9d5ab1a266d948f146e78866ef19673d}{get\+Path\+Cost} (node\+\_\+id src\+\_\+id, node\+\_\+id dest\+\_\+id) const
+\item 
+void \hyperlink{class_graph_ab596c4b805ecdf622c4f3d952f894a50}{dfs} (\hyperlink{class_node}{Node} $\ast$v, vector$<$ \hyperlink{class_node}{Node} $\ast$$>$ \&res)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class used to represent a \hyperlink{class_graph}{Graph}. Every \hyperlink{class_graph}{Graph} has a set Nodes as well as a set of Edges, linking the Nodes. The Graphs are also associated to Rodes. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_graph_aadb341e62a5548bf406c05834aa187da}{}\label{class_graph_aadb341e62a5548bf406c05834aa187da} 
+\index{Graph@{Graph}!Graph@{Graph}}
+\index{Graph@{Graph}!Graph@{Graph}}
+\subsubsection{\texorpdfstring{Graph()}{Graph()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Graph\+::\+Graph (\begin{DoxyParamCaption}\item[{istream \&}]{nodes,  }\item[{istream \&}]{edges,  }\item[{istream \&}]{roads,  }\item[{istream \&}]{subway,  }\item[{istream \&}]{bus }\end{DoxyParamCaption})}
+
+\hyperlink{class_graph}{Graph}\textquotesingle{}s constructor. Creates a \hyperlink{class_graph}{Graph} with the data passed by the arguments input streams.
+
+
+\begin{DoxyParams}{Parameters}
+{\em nodes} & The input stream to read from in order to populate the Nodes\textquotesingle{} Hash map. \\
+\hline
+{\em edges} & The input stream to read from in order to populate the Edges\textquotesingle{} Hash map. \\
+\hline
+{\em roads} & The input stream to read from in order to populate the Roads\textquotesingle{} Hash map. \\
+\hline
+{\em subway} & The input stream containing the Edges whose mean of transport is the Subway. \\
+\hline
+{\em bus} & The input stream containing the Edges whose mean of transport is the Bus. \\
+\hline
+\end{DoxyParams}
+\hyperlink{class_graph}{Graph} Pre\+Processing \hypertarget{class_graph_a7a3f0c7dceffa85819bf122c49fd973c}{}\label{class_graph_a7a3f0c7dceffa85819bf122c49fd973c} 
+\index{Graph@{Graph}!Graph@{Graph}}
+\index{Graph@{Graph}!Graph@{Graph}}
+\subsubsection{\texorpdfstring{Graph()}{Graph()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Graph\+::\+Graph (\begin{DoxyParamCaption}\item[{const \hyperlink{class_graph}{Graph} \&}]{obj }\end{DoxyParamCaption})}
+
+\hyperlink{class_graph}{Graph}\textquotesingle{}s Copy constructor. Creates a new \hyperlink{class_graph}{Graph} with the same attributes as the given \hyperlink{class_graph}{Graph}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & The \hyperlink{class_graph}{Graph} that will be copied. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_graph_a902c5b3eacb66d60752525ab23297a95}{}\label{class_graph_a902c5b3eacb66d60752525ab23297a95} 
+\index{Graph@{Graph}!````~Graph@{$\sim$\+Graph}}
+\index{````~Graph@{$\sim$\+Graph}!Graph@{Graph}}
+\subsubsection{\texorpdfstring{$\sim$\+Graph()}{~Graph()}}
+{\footnotesize\ttfamily Graph\+::$\sim$\+Graph (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\hyperlink{class_graph}{Graph}\textquotesingle{}s Destructor. Deallocates all the memory used by a \hyperlink{class_graph}{Graph}. 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_graph_ab596c4b805ecdf622c4f3d952f894a50}{}\label{class_graph_ab596c4b805ecdf622c4f3d952f894a50} 
+\index{Graph@{Graph}!dfs@{dfs}}
+\index{dfs@{dfs}!Graph@{Graph}}
+\subsubsection{\texorpdfstring{dfs()}{dfs()}}
+{\footnotesize\ttfamily void Graph\+::dfs (\begin{DoxyParamCaption}\item[{\hyperlink{class_node}{Node} $\ast$}]{v,  }\item[{vector$<$ \hyperlink{class_node}{Node} $\ast$$>$ \&}]{res }\end{DoxyParamCaption})}
+
+Runs Depth-\/\+First Search from the node pointed to by v, and pushes visited nodes into the res vector, in order.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & \hyperlink{class_node}{Node} $\ast$ to start node \\
+\hline
+{\em res} & Vector to be filled \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_graph_a819fb225997f026a192ec5df1b17df84}{}\label{class_graph_a819fb225997f026a192ec5df1b17df84} 
+\index{Graph@{Graph}!dijkstra\+Shortest\+Path@{dijkstra\+Shortest\+Path}}
+\index{dijkstra\+Shortest\+Path@{dijkstra\+Shortest\+Path}!Graph@{Graph}}
+\subsubsection{\texorpdfstring{dijkstra\+Shortest\+Path()}{dijkstraShortestPath()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily void Graph\+::dijkstra\+Shortest\+Path (\begin{DoxyParamCaption}\item[{node\+\_\+id}]{src\+\_\+id,  }\item[{node\+\_\+id}]{dest\+\_\+id = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+Implementation of Dijkstra\textquotesingle{}s shortest path algorithm. The shortest path will be the fastest one.
+
+
+\begin{DoxyParams}{Parameters}
+{\em src\+\_\+id} & The id of the origin \hyperlink{class_node}{Node}. \\
+\hline
+{\em dest\+\_\+id} & The id of the destiny \hyperlink{class_node}{Node}. If no value is given, it defaults to 0. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_graph_a0fc41701fa170ab69282ae8a571fdc04}{}\label{class_graph_a0fc41701fa170ab69282ae8a571fdc04} 
+\index{Graph@{Graph}!dijkstra\+Shortest\+Path@{dijkstra\+Shortest\+Path}}
+\index{dijkstra\+Shortest\+Path@{dijkstra\+Shortest\+Path}!Graph@{Graph}}
+\subsubsection{\texorpdfstring{dijkstra\+Shortest\+Path()}{dijkstraShortestPath()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily void Graph\+::dijkstra\+Shortest\+Path (\begin{DoxyParamCaption}\item[{\hyperlink{class_node}{Node} $\ast$}]{src,  }\item[{\hyperlink{class_node}{Node} $\ast$}]{destination = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+Implementation of Dijkstra\textquotesingle{}s shortest path algorithm. The shortest path will be the fastest one.
+
+
+\begin{DoxyParams}{Parameters}
+{\em src} & The origin \hyperlink{class_node}{Node} \\
+\hline
+{\em destination} & The destiny \hyperlink{class_node}{Node}. If no value is given, it defaults to nullptr. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_graph_a751cdeb2ca841f9d44d921cf1a43ddd0}{}\label{class_graph_a751cdeb2ca841f9d44d921cf1a43ddd0} 
+\index{Graph@{Graph}!dijkstra\+Shortest\+Path@{dijkstra\+Shortest\+Path}}
+\index{dijkstra\+Shortest\+Path@{dijkstra\+Shortest\+Path}!Graph@{Graph}}
+\subsubsection{\texorpdfstring{dijkstra\+Shortest\+Path()}{dijkstraShortestPath()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily void Graph\+::dijkstra\+Shortest\+Path (\begin{DoxyParamCaption}\item[{node\+\_\+id}]{src\+\_\+id,  }\item[{node\+\_\+id}]{dest\+\_\+id,  }\item[{\hyperlink{class_transport_a1879cecfed0d4238e5a7af6d085db317}{Transport\+::\+Type}}]{type,  }\item[{unsigned int}]{scale = {\ttfamily 5} }\end{DoxyParamCaption})}
+
+Implementation of Dijkstra\textquotesingle{}s shortest path algorithm. The shortest path will be fastest one. This Dijkstra implementation takes into consideration the mean of \hyperlink{class_transport}{Transport} used.
+
+
+\begin{DoxyParams}{Parameters}
+{\em src\+\_\+id} & The id of the origin \hyperlink{class_node}{Node}. \\
+\hline
+{\em dest\+\_\+id} & The id of the destiny \hyperlink{class_node}{Node}. \\
+\hline
+{\em type} & Mean of \hyperlink{class_transport}{Transport} used. \\
+\hline
+{\em scale} & Mean of transport preference scale (bigger scale means higher preference). If no value is given it defaults to 5. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_graph_afe77f6a03cad266807c741d1a3178541}{}\label{class_graph_afe77f6a03cad266807c741d1a3178541} 
+\index{Graph@{Graph}!dijkstra\+Shortest\+Path@{dijkstra\+Shortest\+Path}}
+\index{dijkstra\+Shortest\+Path@{dijkstra\+Shortest\+Path}!Graph@{Graph}}
+\subsubsection{\texorpdfstring{dijkstra\+Shortest\+Path()}{dijkstraShortestPath()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily void Graph\+::dijkstra\+Shortest\+Path (\begin{DoxyParamCaption}\item[{\hyperlink{class_node}{Node} $\ast$}]{src,  }\item[{\hyperlink{class_node}{Node} $\ast$}]{dest,  }\item[{\hyperlink{class_transport_a1879cecfed0d4238e5a7af6d085db317}{Transport\+::\+Type}}]{type,  }\item[{unsigned int}]{scale = {\ttfamily 5} }\end{DoxyParamCaption})}
+
+Implementation of Dijkstra\textquotesingle{}s shortest path algorithm. The shortest path will be the fastest one that takes less time to go through. This Dijkstra implementation takes into consideration the mean of \hyperlink{class_transport}{Transport} used.
+
+
+\begin{DoxyParams}{Parameters}
+{\em src} & The origin \hyperlink{class_node}{Node}. \\
+\hline
+{\em dest} & The destiny \hyperlink{class_node}{Node}. \\
+\hline
+{\em type} & Mean of \hyperlink{class_transport}{Transport} used. \\
+\hline
+{\em scale} & Mean of transport preference scale (bigger scale means higher preference). If no value is given it defaults to 5. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_graph_a284736e6b467032dce3bfd69213c31f0}{}\label{class_graph_a284736e6b467032dce3bfd69213c31f0} 
+\index{Graph@{Graph}!dijkstra\+Shortest\+Path\+With\+Max\+Cost@{dijkstra\+Shortest\+Path\+With\+Max\+Cost}}
+\index{dijkstra\+Shortest\+Path\+With\+Max\+Cost@{dijkstra\+Shortest\+Path\+With\+Max\+Cost}!Graph@{Graph}}
+\subsubsection{\texorpdfstring{dijkstra\+Shortest\+Path\+With\+Max\+Cost()}{dijkstraShortestPathWithMaxCost()}}
+{\footnotesize\ttfamily void Graph\+::dijkstra\+Shortest\+Path\+With\+Max\+Cost (\begin{DoxyParamCaption}\item[{node\+\_\+id}]{src\+\_\+id,  }\item[{node\+\_\+id}]{dest\+\_\+id,  }\item[{unsigned}]{max\+Cost }\end{DoxyParamCaption})}
+
+Altered implementation of Dijkstra\textquotesingle{}s shortest path algorithm, takes into account a maximum cost. The shortest path will be the fastest one, but without never costing more than the maximum Cost.
+
+
+\begin{DoxyParams}{Parameters}
+{\em src\+\_\+id} & The id of the source \hyperlink{class_node}{Node}. \\
+\hline
+{\em dest\+\_\+id} & The id o destiny \hyperlink{class_node}{Node}. \\
+\hline
+{\em max\+Cost} & Path\textquotesingle{}s maximum cost. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_graph_a7dd776ad17a9d14b14f044373c79a9bc}{}\label{class_graph_a7dd776ad17a9d14b14f044373c79a9bc} 
+\index{Graph@{Graph}!get\+Edges@{get\+Edges}}
+\index{get\+Edges@{get\+Edges}!Graph@{Graph}}
+\subsubsection{\texorpdfstring{get\+Edges()}{getEdges()}}
+{\footnotesize\ttfamily unordered\+\_\+map$<$ edge\+\_\+id, \hyperlink{class_edge}{Edge} $\ast$ $>$ Graph\+::get\+Edges (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Getter for the \hyperlink{class_graph}{Graph}\textquotesingle{}s Edges.
+
+\begin{DoxyReturn}{Returns}
+Hash map containing all the \hyperlink{class_graph}{Graph}\textquotesingle{}s Edges. 
+\end{DoxyReturn}
+\hypertarget{class_graph_aec10981cceac64d033e2e0de5b34c995}{}\label{class_graph_aec10981cceac64d033e2e0de5b34c995} 
+\index{Graph@{Graph}!get\+Node\+I\+D\+From\+Parser\+ID@{get\+Node\+I\+D\+From\+Parser\+ID}}
+\index{get\+Node\+I\+D\+From\+Parser\+ID@{get\+Node\+I\+D\+From\+Parser\+ID}!Graph@{Graph}}
+\subsubsection{\texorpdfstring{get\+Node\+I\+D\+From\+Parser\+I\+D()}{getNodeIDFromParserID()}}
+{\footnotesize\ttfamily node\+\_\+id Graph\+::get\+Node\+I\+D\+From\+Parser\+ID (\begin{DoxyParamCaption}\item[{int}]{parser\+ID }\end{DoxyParamCaption}) const}
+
+Parser function that parses a parser\+ID into its correspondent node\+ID.
+
+
+\begin{DoxyParams}{Parameters}
+{\em parser\+ID} & parser\+ID that will be parsed.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Correspondent node\+ID to the given parser\+ID. 
+\end{DoxyReturn}
+\hypertarget{class_graph_aa64f6696d40b6a8e0d92df399ed11310}{}\label{class_graph_aa64f6696d40b6a8e0d92df399ed11310} 
+\index{Graph@{Graph}!get\+Nodes@{get\+Nodes}}
+\index{get\+Nodes@{get\+Nodes}!Graph@{Graph}}
+\subsubsection{\texorpdfstring{get\+Nodes()}{getNodes()}}
+{\footnotesize\ttfamily unordered\+\_\+map$<$ node\+\_\+id, \hyperlink{class_node}{Node} $\ast$ $>$ Graph\+::get\+Nodes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Getter for the \hyperlink{class_graph}{Graph}\textquotesingle{}s Nodes.
+
+\begin{DoxyReturn}{Returns}
+Hash map containing all the \hyperlink{class_graph}{Graph}\textquotesingle{}s Nodes. 
+\end{DoxyReturn}
+\hypertarget{class_graph_ae4c66eaf1b29f53bf90ad6266baa6819}{}\label{class_graph_ae4c66eaf1b29f53bf90ad6266baa6819} 
+\index{Graph@{Graph}!get\+Path@{get\+Path}}
+\index{get\+Path@{get\+Path}!Graph@{Graph}}
+\subsubsection{\texorpdfstring{get\+Path()}{getPath()}}
+{\footnotesize\ttfamily vector$<$ \hyperlink{class_node}{Node} $\ast$ $>$ Graph\+::get\+Path (\begin{DoxyParamCaption}\item[{node\+\_\+id}]{src\+\_\+id,  }\item[{node\+\_\+id}]{dest\+\_\+id }\end{DoxyParamCaption}) const}
+
+Calculates the path between to given nodes, represented by their I\+Ds.
+
+
+\begin{DoxyParams}{Parameters}
+{\em src\+\_\+id} & The id of the origin \hyperlink{class_node}{Node}. \\
+\hline
+{\em dest\+\_\+id} & The id of the destiny \hyperlink{class_node}{Node}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The calculated path (vector of Nodes). 
+\end{DoxyReturn}
+\hypertarget{class_graph_a9d5ab1a266d948f146e78866ef19673d}{}\label{class_graph_a9d5ab1a266d948f146e78866ef19673d} 
+\index{Graph@{Graph}!get\+Path\+Cost@{get\+Path\+Cost}}
+\index{get\+Path\+Cost@{get\+Path\+Cost}!Graph@{Graph}}
+\subsubsection{\texorpdfstring{get\+Path\+Cost()}{getPathCost()}}
+{\footnotesize\ttfamily unsigned Graph\+::get\+Path\+Cost (\begin{DoxyParamCaption}\item[{node\+\_\+id}]{src\+\_\+id,  }\item[{node\+\_\+id}]{dest\+\_\+id }\end{DoxyParamCaption}) const}
+
+Calculates path cost, in cents.
+
+
+\begin{DoxyParams}{Parameters}
+{\em src\+\_\+id} & node\+\_\+id of the start/source node. \\
+\hline
+{\em dest\+\_\+id} & node\+\_\+id of the end/destination node.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The path\textquotesingle{}s cost, in cents. 
+\end{DoxyReturn}
+\hypertarget{class_graph_a2d69a99fb35fee10aadc243c468ad9b2}{}\label{class_graph_a2d69a99fb35fee10aadc243c468ad9b2} 
+\index{Graph@{Graph}!get\+Path\+Duration@{get\+Path\+Duration}}
+\index{get\+Path\+Duration@{get\+Path\+Duration}!Graph@{Graph}}
+\subsubsection{\texorpdfstring{get\+Path\+Duration()}{getPathDuration()}}
+{\footnotesize\ttfamily float Graph\+::get\+Path\+Duration (\begin{DoxyParamCaption}\item[{node\+\_\+id}]{src\+\_\+id,  }\item[{node\+\_\+id}]{dest\+\_\+id }\end{DoxyParamCaption}) const}
+
+Calculates path duration, in hours.
+
+
+\begin{DoxyParams}{Parameters}
+{\em src\+\_\+id} & node\+\_\+id of the start/source node. \\
+\hline
+{\em dest\+\_\+id} & node\+\_\+id of the end/destination node.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The path\textquotesingle{}s duration, in hours. 
+\end{DoxyReturn}
+\hypertarget{class_graph_a94db80dbb52cac57e2b5d14c53e649e7}{}\label{class_graph_a94db80dbb52cac57e2b5d14c53e649e7} 
+\index{Graph@{Graph}!get\+Path\+Edges@{get\+Path\+Edges}}
+\index{get\+Path\+Edges@{get\+Path\+Edges}!Graph@{Graph}}
+\subsubsection{\texorpdfstring{get\+Path\+Edges()}{getPathEdges()}}
+{\footnotesize\ttfamily vector$<$ \hyperlink{class_edge}{Edge} $\ast$ $>$ Graph\+::get\+Path\+Edges (\begin{DoxyParamCaption}\item[{node\+\_\+id}]{src\+\_\+id,  }\item[{node\+\_\+id}]{dest\+\_\+id }\end{DoxyParamCaption}) const}
+
+Calculates the path between to given nodes, represented by their I\+Ds and returns the Edges that make the path.
+
+
+\begin{DoxyParams}{Parameters}
+{\em src\+\_\+id} & The id of the origin \hyperlink{class_node}{Node}. \\
+\hline
+{\em dest\+\_\+id} & The id of the destiny \hyperlink{class_node}{Node}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The Edges of the calculated path. 
+\end{DoxyReturn}
+\hypertarget{class_graph_adb19e47c0238b012a6a3a28bdaf855f8}{}\label{class_graph_adb19e47c0238b012a6a3a28bdaf855f8} 
+\index{Graph@{Graph}!get\+Path\+Length@{get\+Path\+Length}}
+\index{get\+Path\+Length@{get\+Path\+Length}!Graph@{Graph}}
+\subsubsection{\texorpdfstring{get\+Path\+Length()}{getPathLength()}}
+{\footnotesize\ttfamily float Graph\+::get\+Path\+Length (\begin{DoxyParamCaption}\item[{node\+\_\+id}]{src\+\_\+id,  }\item[{node\+\_\+id}]{dest\+\_\+id }\end{DoxyParamCaption}) const}
+
+Calculates path length, in kilometers.
+
+
+\begin{DoxyParams}{Parameters}
+{\em src\+\_\+id} & node\+\_\+id of the start/source node. \\
+\hline
+{\em dest\+\_\+id} & node\+\_\+id of the end/destination node.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The path\textquotesingle{}s length, in km. 
+\end{DoxyReturn}
+\hypertarget{class_graph_a101befc9baedb7dc3aaa714c968dc943}{}\label{class_graph_a101befc9baedb7dc3aaa714c968dc943} 
+\index{Graph@{Graph}!get\+Roads@{get\+Roads}}
+\index{get\+Roads@{get\+Roads}!Graph@{Graph}}
+\subsubsection{\texorpdfstring{get\+Roads()}{getRoads()}}
+{\footnotesize\ttfamily unordered\+\_\+map$<$ road\+\_\+id, \hyperlink{class_road}{Road} $\ast$ $>$ Graph\+::get\+Roads (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Getter for the \hyperlink{class_graph}{Graph}\textquotesingle{}s Roads.
+
+\begin{DoxyReturn}{Returns}
+Hash map containing all the \hyperlink{class_graph}{Graph}\textquotesingle{}s Roads. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Graph.\+hpp\item 
+Graph.\+cpp\end{DoxyCompactItemize}

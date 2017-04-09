@@ -1,0 +1,175 @@
+\hypertarget{class_edge}{}\section{Edge Class Reference}
+\label{class_edge}\index{Edge@{Edge}}
+
+
+{\ttfamily \#include $<$Edge.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_edge_ae9995324a7970fb53ff489a518cac211}{Edge} (\hyperlink{class_node}{Node} $\ast$origin, \hyperlink{class_node}{Node} $\ast$dest, \hyperlink{class_road}{Road} $\ast$road, \hyperlink{class_transport_a1879cecfed0d4238e5a7af6d085db317}{Transport\+::\+Type} type=Transport\+::\+F\+O\+OT)
+\item 
+unsigned \hyperlink{class_edge_ac047f6b04f3cb9b590058a2a96e303e7}{get\+Cost} () const
+\item 
+edge\+\_\+id \hyperlink{class_edge_afb88989f2a1b21bdd1d5aaa4054486c3}{get\+ID} () const
+\item 
+\hyperlink{class_node}{Node} $\ast$ \hyperlink{class_edge_af2cd0f7cba34228f76c4b20a84a2de9d}{get\+Dest} () const
+\item 
+\hyperlink{class_node}{Node} $\ast$ \hyperlink{class_edge_a04719c702ae24dcfbce3874a573ca360}{get\+Origin} () const
+\item 
+\hyperlink{class_road}{Road} $\ast$ \hyperlink{class_edge_ae967ccaa1db4dba903ccfb3c55be9bc5}{get\+Road} () const
+\item 
+float \hyperlink{class_edge_ae96241bc7956c47dba61f7a0cfec01c3}{get\+Length} () const
+\item 
+float \hyperlink{class_edge_a873322923fa6340e17edb39b923f7d61}{get\+Weight} () const
+\item 
+\hyperlink{class_transport_a1879cecfed0d4238e5a7af6d085db317}{Transport\+::\+Type} \hyperlink{class_edge_ad36b220701f80c199f9b2ed7bb79a22f}{get\+Type} () const
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+ostream \& \hyperlink{class_edge_a4ba287cbdc78be9ec49dd1b67291039b}{operator$<$$<$} (ostream \&out, const \hyperlink{class_edge}{Edge} \&e)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A class used to represent a \hyperlink{class_edge}{Edge} in a \hyperlink{class_graph}{Graph}, therefore used to join two Nodes. Every \hyperlink{class_edge}{Edge} has a unique ID, used to represent itself; a \hyperlink{class_node}{Node} as Origin and a \hyperlink{class_node}{Node} as Destiny. Every \hyperlink{class_edge}{Edge} is also associated to a \hyperlink{class_road}{Road}, that contains more information about it. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_edge_ae9995324a7970fb53ff489a518cac211}{}\label{class_edge_ae9995324a7970fb53ff489a518cac211} 
+\index{Edge@{Edge}!Edge@{Edge}}
+\index{Edge@{Edge}!Edge@{Edge}}
+\subsubsection{\texorpdfstring{Edge()}{Edge()}}
+{\footnotesize\ttfamily Edge\+::\+Edge (\begin{DoxyParamCaption}\item[{\hyperlink{class_node}{Node} $\ast$}]{origin,  }\item[{\hyperlink{class_node}{Node} $\ast$}]{dest,  }\item[{\hyperlink{class_road}{Road} $\ast$}]{road,  }\item[{\hyperlink{class_transport_a1879cecfed0d4238e5a7af6d085db317}{Transport\+::\+Type}}]{type = {\ttfamily Transport\+:\+:FOOT} }\end{DoxyParamCaption})}
+
+\hyperlink{class_edge}{Edge}\textquotesingle{}s constructor. Creates a \hyperlink{class_edge}{Edge} with a given origin \hyperlink{class_node}{Node}, destiny \hyperlink{class_node}{Node} and associated Rode. A transport mean may be provided, otherwise defaults to F\+O\+OT (walking).
+
+
+\begin{DoxyParams}{Parameters}
+{\em origin} & \hyperlink{class_edge}{Edge}\textquotesingle{}s origin \hyperlink{class_node}{Node}. \\
+\hline
+{\em dest} & \hyperlink{class_edge}{Edge}\textquotesingle{}s destiny \hyperlink{class_node}{Node}. \\
+\hline
+{\em road} & Rode associated to the \hyperlink{class_edge}{Edge} that is being created. \\
+\hline
+{\em type} & Type of transport used to traverse the \hyperlink{class_edge}{Edge} that is being created. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_edge_ac047f6b04f3cb9b590058a2a96e303e7}{}\label{class_edge_ac047f6b04f3cb9b590058a2a96e303e7} 
+\index{Edge@{Edge}!get\+Cost@{get\+Cost}}
+\index{get\+Cost@{get\+Cost}!Edge@{Edge}}
+\subsubsection{\texorpdfstring{get\+Cost()}{getCost()}}
+{\footnotesize\ttfamily unsigned Edge\+::get\+Cost (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Getter for \hyperlink{class_edge}{Edge}\textquotesingle{}s cost. Corresponds to the monetary cost it takes to traverse this \hyperlink{class_edge}{Edge}.
+
+\begin{DoxyReturn}{Returns}
+The cost of traversing this \hyperlink{class_edge}{Edge}. 
+\end{DoxyReturn}
+\hypertarget{class_edge_af2cd0f7cba34228f76c4b20a84a2de9d}{}\label{class_edge_af2cd0f7cba34228f76c4b20a84a2de9d} 
+\index{Edge@{Edge}!get\+Dest@{get\+Dest}}
+\index{get\+Dest@{get\+Dest}!Edge@{Edge}}
+\subsubsection{\texorpdfstring{get\+Dest()}{getDest()}}
+{\footnotesize\ttfamily \hyperlink{class_node}{Node} $\ast$ Edge\+::get\+Dest (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Getter for \hyperlink{class_edge}{Edge}\textquotesingle{}s destiny \hyperlink{class_node}{Node}.
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_edge}{Edge}\textquotesingle{}s destiny \hyperlink{class_node}{Node}. 
+\end{DoxyReturn}
+\hypertarget{class_edge_afb88989f2a1b21bdd1d5aaa4054486c3}{}\label{class_edge_afb88989f2a1b21bdd1d5aaa4054486c3} 
+\index{Edge@{Edge}!get\+ID@{get\+ID}}
+\index{get\+ID@{get\+ID}!Edge@{Edge}}
+\subsubsection{\texorpdfstring{get\+I\+D()}{getID()}}
+{\footnotesize\ttfamily edge\+\_\+id Edge\+::get\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Getter for \hyperlink{class_edge}{Edge}\textquotesingle{}s ID. The ID is used to represent an \hyperlink{class_edge}{Edge}, since there are no two Edges with the same ID.
+
+\begin{DoxyReturn}{Returns}
+The \hyperlink{class_edge}{Edge}\textquotesingle{}s ID. 
+\end{DoxyReturn}
+\hypertarget{class_edge_ae96241bc7956c47dba61f7a0cfec01c3}{}\label{class_edge_ae96241bc7956c47dba61f7a0cfec01c3} 
+\index{Edge@{Edge}!get\+Length@{get\+Length}}
+\index{get\+Length@{get\+Length}!Edge@{Edge}}
+\subsubsection{\texorpdfstring{get\+Length()}{getLength()}}
+{\footnotesize\ttfamily float Edge\+::get\+Length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Getter for \hyperlink{class_edge}{Edge}\textquotesingle{}s length. Corresponds to the physical distance between the two Nodes linked by this edge.
+
+\begin{DoxyReturn}{Returns}
+Distance of the two nodes linked by this \hyperlink{class_edge}{Edge}. 
+\end{DoxyReturn}
+\hypertarget{class_edge_a04719c702ae24dcfbce3874a573ca360}{}\label{class_edge_a04719c702ae24dcfbce3874a573ca360} 
+\index{Edge@{Edge}!get\+Origin@{get\+Origin}}
+\index{get\+Origin@{get\+Origin}!Edge@{Edge}}
+\subsubsection{\texorpdfstring{get\+Origin()}{getOrigin()}}
+{\footnotesize\ttfamily \hyperlink{class_node}{Node} $\ast$ Edge\+::get\+Origin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Getter for \hyperlink{class_edge}{Edge}\textquotesingle{}s origin \hyperlink{class_node}{Node}.
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_edge}{Edge}\textquotesingle{}s origin \hyperlink{class_node}{Node}. 
+\end{DoxyReturn}
+\hypertarget{class_edge_ae967ccaa1db4dba903ccfb3c55be9bc5}{}\label{class_edge_ae967ccaa1db4dba903ccfb3c55be9bc5} 
+\index{Edge@{Edge}!get\+Road@{get\+Road}}
+\index{get\+Road@{get\+Road}!Edge@{Edge}}
+\subsubsection{\texorpdfstring{get\+Road()}{getRoad()}}
+{\footnotesize\ttfamily \hyperlink{class_road}{Road} $\ast$ Edge\+::get\+Road (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Getter for \hyperlink{class_edge}{Edge}\textquotesingle{}s \hyperlink{class_road}{Road}. \hyperlink{class_road}{Road}\textquotesingle{}s contain additional information regarding the Edges.
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_road}{Road} associated to this \hyperlink{class_edge}{Edge}. 
+\end{DoxyReturn}
+\hypertarget{class_edge_ad36b220701f80c199f9b2ed7bb79a22f}{}\label{class_edge_ad36b220701f80c199f9b2ed7bb79a22f} 
+\index{Edge@{Edge}!get\+Type@{get\+Type}}
+\index{get\+Type@{get\+Type}!Edge@{Edge}}
+\subsubsection{\texorpdfstring{get\+Type()}{getType()}}
+{\footnotesize\ttfamily \hyperlink{class_transport_a1879cecfed0d4238e5a7af6d085db317}{Transport\+::\+Type} Edge\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Getter for \hyperlink{class_edge}{Edge}\textquotesingle{}s type of transport. The type of transport used can be one out of three options\+: bus, subway or walking.
+
+\begin{DoxyReturn}{Returns}
+The type of transport used to traverse this \hyperlink{class_edge}{Edge}. 
+\end{DoxyReturn}
+\hypertarget{class_edge_a873322923fa6340e17edb39b923f7d61}{}\label{class_edge_a873322923fa6340e17edb39b923f7d61} 
+\index{Edge@{Edge}!get\+Weight@{get\+Weight}}
+\index{get\+Weight@{get\+Weight}!Edge@{Edge}}
+\subsubsection{\texorpdfstring{get\+Weight()}{getWeight()}}
+{\footnotesize\ttfamily float Edge\+::get\+Weight (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Getter for \hyperlink{class_edge}{Edge}\textquotesingle{}s weight. Corresponds to the average time (in seconds -\/ SI unit) needed to traverse this \hyperlink{class_edge}{Edge}.
+
+\begin{DoxyReturn}{Returns}
+Average time needed to traverse this \hyperlink{class_edge}{Edge}. 
+\end{DoxyReturn}
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{class_edge_a4ba287cbdc78be9ec49dd1b67291039b}{}\label{class_edge_a4ba287cbdc78be9ec49dd1b67291039b} 
+\index{Edge@{Edge}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Edge@{Edge}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{ostream \&}]{out,  }\item[{const \hyperlink{class_edge}{Edge} \&}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+Overload of operator $<$$<$ for Class \hyperlink{class_edge}{Edge}. Writes the \hyperlink{class_edge}{Edge} passed as second argument to the outstream passed as first argument.
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & Output stream to write to. \\
+\hline
+{\em e} & \hyperlink{class_edge}{Edge} the will be written.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The output stream, therefore allowing chaining. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Edge.\+hpp\item 
+Edge.\+cpp\end{DoxyCompactItemize}

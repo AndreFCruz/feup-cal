@@ -1,0 +1,118 @@
+\hypertarget{class_geographic_coords}{}\section{Geographic\+Coords Class Reference}
+\label{class_geographic_coords}\index{Geographic\+Coords@{Geographic\+Coords}}
+
+
+{\ttfamily \#include $<$Coordinates.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_geographic_coords_a6e58da78d507551dc7a6c39e6ffb33b3}{Geographic\+Coords} ()=default
+\item 
+\hyperlink{class_geographic_coords_a5db8168e8754a1eb2d13e3d2c8318cb4}{Geographic\+Coords} (float lat, float lon)
+\item 
+float \hyperlink{class_geographic_coords_a4e59f2e3ea261e73c33014368770ad21}{get\+Lon} () const
+\item 
+float \hyperlink{class_geographic_coords_ab2fa1d7cde50be2a00c297caa302297a}{get\+Lat} () const
+\item 
+\hyperlink{class_point}{Point} \hyperlink{class_geographic_coords_aa333be28efcee6d8da24adabe5cd5594}{get\+Point} (pair$<$ float, float $>$ lat\+Range, pair$<$ float, float $>$ lon\+Range) const
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static float \hyperlink{class_geographic_coords_a25f3ba7791c305b8620bb0ef8adac156}{get\+Distance} (const \hyperlink{class_geographic_coords}{Geographic\+Coords} \&p1, const \hyperlink{class_geographic_coords}{Geographic\+Coords} \&p2)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class used to represent Geographical Coordinates. Therefore, every Coordinate is represented with longitude and latitude. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_geographic_coords_a6e58da78d507551dc7a6c39e6ffb33b3}{}\label{class_geographic_coords_a6e58da78d507551dc7a6c39e6ffb33b3} 
+\index{Geographic\+Coords@{Geographic\+Coords}!Geographic\+Coords@{Geographic\+Coords}}
+\index{Geographic\+Coords@{Geographic\+Coords}!Geographic\+Coords@{Geographic\+Coords}}
+\subsubsection{\texorpdfstring{Geographic\+Coords()}{GeographicCoords()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Geographic\+Coords\+::\+Geographic\+Coords (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+Explicit Default constructor \hypertarget{class_geographic_coords_a5db8168e8754a1eb2d13e3d2c8318cb4}{}\label{class_geographic_coords_a5db8168e8754a1eb2d13e3d2c8318cb4} 
+\index{Geographic\+Coords@{Geographic\+Coords}!Geographic\+Coords@{Geographic\+Coords}}
+\index{Geographic\+Coords@{Geographic\+Coords}!Geographic\+Coords@{Geographic\+Coords}}
+\subsubsection{\texorpdfstring{Geographic\+Coords()}{GeographicCoords()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Geographic\+Coords\+::\+Geographic\+Coords (\begin{DoxyParamCaption}\item[{float}]{lat,  }\item[{float}]{lon }\end{DoxyParamCaption})}
+
+Geographic Coordinates constructor. Creates a Geographic Coordinate with the given Latitude and Longitude.
+
+
+\begin{DoxyParams}{Parameters}
+{\em lat} & Latitude value, in radians. \\
+\hline
+{\em lon} & Longitude value, in radians. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_geographic_coords_a25f3ba7791c305b8620bb0ef8adac156}{}\label{class_geographic_coords_a25f3ba7791c305b8620bb0ef8adac156} 
+\index{Geographic\+Coords@{Geographic\+Coords}!get\+Distance@{get\+Distance}}
+\index{get\+Distance@{get\+Distance}!Geographic\+Coords@{Geographic\+Coords}}
+\subsubsection{\texorpdfstring{get\+Distance()}{getDistance()}}
+{\footnotesize\ttfamily float Geographic\+Coords\+::get\+Distance (\begin{DoxyParamCaption}\item[{const \hyperlink{class_geographic_coords}{Geographic\+Coords} \&}]{p1,  }\item[{const \hyperlink{class_geographic_coords}{Geographic\+Coords} \&}]{p2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Mathematical formula for the projected (2D) distance between two points in space, defined by their Geographic Coordinates. \href{https://en.wikipedia.org/wiki/Geographical_distance#Spherical_Earth_projected_to_a_plane}{\tt https\+://en.\+wikipedia.\+org/wiki/\+Geographical\+\_\+distance\#\+Spherical\+\_\+\+Earth\+\_\+projected\+\_\+to\+\_\+a\+\_\+plane}
+
+
+\begin{DoxyParams}{Parameters}
+{\em p1} & Geographic Coordinate to be used in the calculus. \\
+\hline
+{\em p2} & Geographic Coordinate to be used in the calculus.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the distance between the two Geographic Coordinates.
+\end{DoxyReturn}
+Mathematical formula for the projected (2D) distance between two points in space, defined by their Geographic Coordinates. \href{https://en.wikipedia.org/wiki/Geographical_distance#Spherical_Earth_projected_to_a_plane}{\tt https\+://en.\+wikipedia.\+org/wiki/\+Geographical\+\_\+distance\#\+Spherical\+\_\+\+Earth\+\_\+projected\+\_\+to\+\_\+a\+\_\+plane} \hypertarget{class_geographic_coords_ab2fa1d7cde50be2a00c297caa302297a}{}\label{class_geographic_coords_ab2fa1d7cde50be2a00c297caa302297a} 
+\index{Geographic\+Coords@{Geographic\+Coords}!get\+Lat@{get\+Lat}}
+\index{get\+Lat@{get\+Lat}!Geographic\+Coords@{Geographic\+Coords}}
+\subsubsection{\texorpdfstring{get\+Lat()}{getLat()}}
+{\footnotesize\ttfamily float Geographic\+Coords\+::get\+Lat (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Getter for latitude value of the Geographic Coordinate.
+
+\begin{DoxyReturn}{Returns}
+latitude value. 
+\end{DoxyReturn}
+\hypertarget{class_geographic_coords_a4e59f2e3ea261e73c33014368770ad21}{}\label{class_geographic_coords_a4e59f2e3ea261e73c33014368770ad21} 
+\index{Geographic\+Coords@{Geographic\+Coords}!get\+Lon@{get\+Lon}}
+\index{get\+Lon@{get\+Lon}!Geographic\+Coords@{Geographic\+Coords}}
+\subsubsection{\texorpdfstring{get\+Lon()}{getLon()}}
+{\footnotesize\ttfamily float Geographic\+Coords\+::get\+Lon (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Getter for longitude value of the Geographic Coordinate.
+
+\begin{DoxyReturn}{Returns}
+longitude value. 
+\end{DoxyReturn}
+\hypertarget{class_geographic_coords_aa333be28efcee6d8da24adabe5cd5594}{}\label{class_geographic_coords_aa333be28efcee6d8da24adabe5cd5594} 
+\index{Geographic\+Coords@{Geographic\+Coords}!get\+Point@{get\+Point}}
+\index{get\+Point@{get\+Point}!Geographic\+Coords@{Geographic\+Coords}}
+\subsubsection{\texorpdfstring{get\+Point()}{getPoint()}}
+{\footnotesize\ttfamily \hyperlink{class_point}{Point} Geographic\+Coords\+::get\+Point (\begin{DoxyParamCaption}\item[{pair$<$ float, float $>$}]{lat\+Range,  }\item[{pair$<$ float, float $>$}]{lon\+Range }\end{DoxyParamCaption}) const}
+
+Parser from a Geographic Coordinate to a \hyperlink{class_point}{Point}. This parser takes in consideration the Latitude and Longitude range, so that it can map the 2D Referential.
+
+
+\begin{DoxyParams}{Parameters}
+{\em lat\+Range} & Pair of floats containing the Latitude range, where the first element is the minimum and the second the maximum. \\
+\hline
+{\em lon\+Range} & Pair of floats containing the Longitude range, where the first element is the minimum and the second the maximum.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the \hyperlink{class_point}{Point} gotten from parsing the Geographic Coordinate. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Coordinates.\+hpp\item 
+Coordinates.\+cpp\end{DoxyCompactItemize}

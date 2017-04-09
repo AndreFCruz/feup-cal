@@ -1,0 +1,314 @@
+\hypertarget{class_node}{}\section{Node Class Reference}
+\label{class_node}\index{Node@{Node}}
+
+
+{\ttfamily \#include $<$Node.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_node_a3662f8e557681586b8a44df334dbdfaa}{Node} (istream \&input)
+\item 
+\hypertarget{class_node_aceb6d58ed1ee8fe95c532453a1f09ad2}{}\label{class_node_aceb6d58ed1ee8fe95c532453a1f09ad2} 
+{\bfseries Node} (node\+\_\+id id, \hyperlink{class_geographic_coords}{Geographic\+Coords} coords)
+\item 
+node\+\_\+id \hyperlink{class_node_a5e319f5c050c46590bed81fc4dc54325}{get\+ID} () const
+\item 
+int \hyperlink{class_node_ab79cb8588caac0a2d0dd99d7e7dd2f28}{get\+Parser\+ID} () const
+\item 
+\hyperlink{class_edge}{Edge} $\ast$ \hyperlink{class_node_a108b79d820efdc2768a148e9308b3c31}{get\+Edge} () const
+\item 
+\hyperlink{class_edge}{Edge} $\ast$ \hyperlink{class_node_aaf31a7f0f8e4dea82e48b1b09b89c217}{get\+Edge} (\hyperlink{class_transport_a1879cecfed0d4238e5a7af6d085db317}{Transport\+::\+Type} type) const
+\item 
+bool \hyperlink{class_node_a97dd8f95e09a0516f8939627f94bd58e}{is\+Visited} () const
+\item 
+void \hyperlink{class_node_a9d8e32dbc9c7a9e488b08f4fd1ce178f}{set\+Visited} (bool state=true)
+\item 
+void \hyperlink{class_node_a599f948564fa9f0cb358fe030161eb1e}{initiate\+Point} (pair$<$ float, float $>$ lat\+Range, pair$<$ float, float $>$ lon\+Range)
+\item 
+\hyperlink{class_geographic_coords}{Geographic\+Coords} \hyperlink{class_node_a77aeb1b8ddb7776e097f5ad8a56bd0d0}{get\+Coords} () const
+\item 
+\hyperlink{class_point}{Point} \hyperlink{class_node_a73562032360227efd9fe93d07ab2475f}{get\+Point} () const
+\item 
+void \hyperlink{class_node_a9c981148bc1602d4388c6ea6428450c4}{add\+Edge} (\hyperlink{class_edge}{Edge} $\ast$ptr)
+\item 
+bool \hyperlink{class_node_a4c78d9813537ccfc829401f979176428}{remove\+Edge} (\hyperlink{class_edge}{Edge} $\ast$ptr)
+\item 
+void \hyperlink{class_node_a70d6617e33b3fc219f9d3c1bd48d7cca}{remove\+Edges\+To} (node\+\_\+id id)
+\item 
+size\+\_\+t \hyperlink{class_node_abc4a69053f8f664c9b6a6a6bbe5d8c68}{get\+Num\+Edges} () const
+\item 
+const vector$<$ \hyperlink{class_edge}{Edge} $\ast$ $>$ \& \hyperlink{class_node_a10a4e5c428f496080172680cb20ea9e0}{get\+Edges} () const
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static pair$<$ float, float $>$ \hyperlink{class_node_a258af43995af26e3ce9401bdd4948b30}{get\+Lat\+Range} ()
+\item 
+static pair$<$ float, float $>$ \hyperlink{class_node_a8533c4ac90cb7bc99895546b161e7d5a}{get\+Lon\+Range} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{class_node_aa1bdec4e775fc578632e6a2dced9e251}{visited} = false
+\item 
+bool \hyperlink{class_node_ac54c0bde41664161566c30ccf4f8a53e}{processing} = false
+\item 
+float \hyperlink{class_node_ae7efda4ec8512d44445f058a479589d3}{dist} = numeric\+\_\+limits$<$float$>$\+::infinity()
+\item 
+\hyperlink{class_node}{Node} $\ast$ \hyperlink{class_node_a569c555f532e04a5ef976a54cd3c82a0}{path} = nullptr
+\item 
+\hyperlink{class_edge}{Edge} $\ast$ \hyperlink{class_node_a547c4e0904d03f97ca32a66408b11584}{edge\+Path} = nullptr
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A class used to represent a \hyperlink{class_node}{Node} in a \hyperlink{class_graph}{Graph}. Every \hyperlink{class_node}{Node} has a unique ID, used to represent itself. Every \hyperlink{class_edge}{Edge} is also associated to a \hyperlink{class_road}{Road}, that contains more information about it. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_node_a3662f8e557681586b8a44df334dbdfaa}{}\label{class_node_a3662f8e557681586b8a44df334dbdfaa} 
+\index{Node@{Node}!Node@{Node}}
+\index{Node@{Node}!Node@{Node}}
+\subsubsection{\texorpdfstring{Node()}{Node()}}
+{\footnotesize\ttfamily Node\+::\+Node (\begin{DoxyParamCaption}\item[{istream \&}]{input }\end{DoxyParamCaption})}
+
+\hyperlink{class_node}{Node}\textquotesingle{}s constructor from file. Creates a \hyperlink{class_node}{Node} with the data passed by the argument input stream.
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & The input stream to read from in order to build a \hyperlink{class_node}{Node} object. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_node_a9c981148bc1602d4388c6ea6428450c4}{}\label{class_node_a9c981148bc1602d4388c6ea6428450c4} 
+\index{Node@{Node}!add\+Edge@{add\+Edge}}
+\index{add\+Edge@{add\+Edge}!Node@{Node}}
+\subsubsection{\texorpdfstring{add\+Edge()}{addEdge()}}
+{\footnotesize\ttfamily void Node\+::add\+Edge (\begin{DoxyParamCaption}\item[{\hyperlink{class_edge}{Edge} $\ast$}]{ptr }\end{DoxyParamCaption})}
+
+Function that associates the given \hyperlink{class_edge}{Edge} to the \hyperlink{class_node}{Node}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ptr} & \hyperlink{class_edge}{Edge} to be associated. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_node_a77aeb1b8ddb7776e097f5ad8a56bd0d0}{}\label{class_node_a77aeb1b8ddb7776e097f5ad8a56bd0d0} 
+\index{Node@{Node}!get\+Coords@{get\+Coords}}
+\index{get\+Coords@{get\+Coords}!Node@{Node}}
+\subsubsection{\texorpdfstring{get\+Coords()}{getCoords()}}
+{\footnotesize\ttfamily \hyperlink{class_geographic_coords}{Geographic\+Coords} Node\+::get\+Coords (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Getter for \hyperlink{class_node}{Node}\textquotesingle{}s Geographic Coordinates.
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_node}{Node}\textquotesingle{}s Geographic Coordinates. 
+\end{DoxyReturn}
+\hypertarget{class_node_a108b79d820efdc2768a148e9308b3c31}{}\label{class_node_a108b79d820efdc2768a148e9308b3c31} 
+\index{Node@{Node}!get\+Edge@{get\+Edge}}
+\index{get\+Edge@{get\+Edge}!Node@{Node}}
+\subsubsection{\texorpdfstring{get\+Edge()}{getEdge()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{class_edge}{Edge} $\ast$ Node\+::get\+Edge (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Getter for the \hyperlink{class_edge}{Edge} with the smallest weight, out of all the Edges associated to the \hyperlink{class_node}{Node}.
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_edge}{Edge} associated to the \hyperlink{class_node}{Node}, with the smallest weight. 
+\end{DoxyReturn}
+\hypertarget{class_node_aaf31a7f0f8e4dea82e48b1b09b89c217}{}\label{class_node_aaf31a7f0f8e4dea82e48b1b09b89c217} 
+\index{Node@{Node}!get\+Edge@{get\+Edge}}
+\index{get\+Edge@{get\+Edge}!Node@{Node}}
+\subsubsection{\texorpdfstring{get\+Edge()}{getEdge()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{class_edge}{Edge} $\ast$ Node\+::get\+Edge (\begin{DoxyParamCaption}\item[{\hyperlink{class_transport_a1879cecfed0d4238e5a7af6d085db317}{Transport\+::\+Type}}]{type }\end{DoxyParamCaption}) const}
+
+Getter for the \hyperlink{class_edge}{Edge} with the mean of \hyperlink{class_transport}{Transport} given, out of all the Edges associated to the \hyperlink{class_node}{Node}.
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_edge}{Edge} associated to the \hyperlink{class_node}{Node}, whose mean of \hyperlink{class_transport}{Transport} is equal to the one given. 
+\end{DoxyReturn}
+\hypertarget{class_node_a10a4e5c428f496080172680cb20ea9e0}{}\label{class_node_a10a4e5c428f496080172680cb20ea9e0} 
+\index{Node@{Node}!get\+Edges@{get\+Edges}}
+\index{get\+Edges@{get\+Edges}!Node@{Node}}
+\subsubsection{\texorpdfstring{get\+Edges()}{getEdges()}}
+{\footnotesize\ttfamily const vector$<$ \hyperlink{class_edge}{Edge} $\ast$ $>$ \& Node\+::get\+Edges (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Getter for all the Edges associated to the \hyperlink{class_node}{Node}.
+
+\begin{DoxyReturn}{Returns}
+vector of all the Edges associated to the \hyperlink{class_node}{Node}. 
+\end{DoxyReturn}
+\hypertarget{class_node_a5e319f5c050c46590bed81fc4dc54325}{}\label{class_node_a5e319f5c050c46590bed81fc4dc54325} 
+\index{Node@{Node}!get\+ID@{get\+ID}}
+\index{get\+ID@{get\+ID}!Node@{Node}}
+\subsubsection{\texorpdfstring{get\+I\+D()}{getID()}}
+{\footnotesize\ttfamily node\+\_\+id Node\+::get\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Getter for \hyperlink{class_node}{Node}\textquotesingle{}s ID. The ID is used to represent a \hyperlink{class_node}{Node}, since there are no two Nodes with the same ID.
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_node}{Node}\textquotesingle{}s ID. 
+\end{DoxyReturn}
+\hypertarget{class_node_a258af43995af26e3ce9401bdd4948b30}{}\label{class_node_a258af43995af26e3ce9401bdd4948b30} 
+\index{Node@{Node}!get\+Lat\+Range@{get\+Lat\+Range}}
+\index{get\+Lat\+Range@{get\+Lat\+Range}!Node@{Node}}
+\subsubsection{\texorpdfstring{get\+Lat\+Range()}{getLatRange()}}
+{\footnotesize\ttfamily pair$<$ float, float $>$ Node\+::get\+Lat\+Range (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Function the returns the Latitude Range.
+
+\begin{DoxyReturn}{Returns}
+Latitude range, where the first element is the minimum and the second the maximum. 
+\end{DoxyReturn}
+\hypertarget{class_node_a8533c4ac90cb7bc99895546b161e7d5a}{}\label{class_node_a8533c4ac90cb7bc99895546b161e7d5a} 
+\index{Node@{Node}!get\+Lon\+Range@{get\+Lon\+Range}}
+\index{get\+Lon\+Range@{get\+Lon\+Range}!Node@{Node}}
+\subsubsection{\texorpdfstring{get\+Lon\+Range()}{getLonRange()}}
+{\footnotesize\ttfamily pair$<$ float, float $>$ Node\+::get\+Lon\+Range (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Function the returns the Longitude Range.
+
+\begin{DoxyReturn}{Returns}
+Longitude range, where the first element is the minimum and the second the maximum. 
+\end{DoxyReturn}
+\hypertarget{class_node_abc4a69053f8f664c9b6a6a6bbe5d8c68}{}\label{class_node_abc4a69053f8f664c9b6a6a6bbe5d8c68} 
+\index{Node@{Node}!get\+Num\+Edges@{get\+Num\+Edges}}
+\index{get\+Num\+Edges@{get\+Num\+Edges}!Node@{Node}}
+\subsubsection{\texorpdfstring{get\+Num\+Edges()}{getNumEdges()}}
+{\footnotesize\ttfamily size\+\_\+t Node\+::get\+Num\+Edges (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Getter for the number of Edges associated to the \hyperlink{class_node}{Node}.
+
+\begin{DoxyReturn}{Returns}
+Number of Edges associated to the \hyperlink{class_node}{Node}. 
+\end{DoxyReturn}
+\hypertarget{class_node_ab79cb8588caac0a2d0dd99d7e7dd2f28}{}\label{class_node_ab79cb8588caac0a2d0dd99d7e7dd2f28} 
+\index{Node@{Node}!get\+Parser\+ID@{get\+Parser\+ID}}
+\index{get\+Parser\+ID@{get\+Parser\+ID}!Node@{Node}}
+\subsubsection{\texorpdfstring{get\+Parser\+I\+D()}{getParserID()}}
+{\footnotesize\ttfamily int Node\+::get\+Parser\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Getter for \hyperlink{class_node}{Node}\textquotesingle{}s Parser ID. The parser ID is also used to represent a \hyperlink{class_node}{Node}, since there are no two Nodes with the same parser ID. This ID is sequential.
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_node}{Node}\textquotesingle{}s parser ID. 
+\end{DoxyReturn}
+\hypertarget{class_node_a73562032360227efd9fe93d07ab2475f}{}\label{class_node_a73562032360227efd9fe93d07ab2475f} 
+\index{Node@{Node}!get\+Point@{get\+Point}}
+\index{get\+Point@{get\+Point}!Node@{Node}}
+\subsubsection{\texorpdfstring{get\+Point()}{getPoint()}}
+{\footnotesize\ttfamily \hyperlink{class_point}{Point} Node\+::get\+Point (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Getter for \hyperlink{class_node}{Node}\textquotesingle{}s correspondent \hyperlink{class_point}{Point} in a 2D Plane.
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_node}{Node}\textquotesingle{}s correspondent \hyperlink{class_point}{Point}. 
+\end{DoxyReturn}
+\hypertarget{class_node_a599f948564fa9f0cb358fe030161eb1e}{}\label{class_node_a599f948564fa9f0cb358fe030161eb1e} 
+\index{Node@{Node}!initiate\+Point@{initiate\+Point}}
+\index{initiate\+Point@{initiate\+Point}!Node@{Node}}
+\subsubsection{\texorpdfstring{initiate\+Point()}{initiatePoint()}}
+{\footnotesize\ttfamily void Node\+::initiate\+Point (\begin{DoxyParamCaption}\item[{pair$<$ float, float $>$}]{lat\+Range,  }\item[{pair$<$ float, float $>$}]{lon\+Range }\end{DoxyParamCaption})}
+
+Builds the \hyperlink{class_node}{Node}\textquotesingle{}s correspondent \hyperlink{class_point}{Point} in a 2D Plane.
+
+
+\begin{DoxyParams}{Parameters}
+{\em lat\+Range} & Latitude range, where the first element is the minimum and the second the maximum. \\
+\hline
+{\em lon\+Range} & Longitude range, where the first element is the minimum and the second the maximum. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_node_a97dd8f95e09a0516f8939627f94bd58e}{}\label{class_node_a97dd8f95e09a0516f8939627f94bd58e} 
+\index{Node@{Node}!is\+Visited@{is\+Visited}}
+\index{is\+Visited@{is\+Visited}!Node@{Node}}
+\subsubsection{\texorpdfstring{is\+Visited()}{isVisited()}}
+{\footnotesize\ttfamily bool Node\+::is\+Visited (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Getter for flag that if set \hyperlink{class_node}{Node}\textquotesingle{}s has already been visited in path, otherwise has not.
+
+\begin{DoxyReturn}{Returns}
+Value of the Flag. 
+\end{DoxyReturn}
+\hypertarget{class_node_a4c78d9813537ccfc829401f979176428}{}\label{class_node_a4c78d9813537ccfc829401f979176428} 
+\index{Node@{Node}!remove\+Edge@{remove\+Edge}}
+\index{remove\+Edge@{remove\+Edge}!Node@{Node}}
+\subsubsection{\texorpdfstring{remove\+Edge()}{removeEdge()}}
+{\footnotesize\ttfamily bool Node\+::remove\+Edge (\begin{DoxyParamCaption}\item[{\hyperlink{class_edge}{Edge} $\ast$}]{ptr }\end{DoxyParamCaption})}
+
+Function that removes the \hyperlink{class_edge}{Edge} given from the \hyperlink{class_node}{Node}\textquotesingle{}s associated Edges.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ptr} & \hyperlink{class_edge}{Edge} to be removed.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the \hyperlink{class_edge}{Edge} was removed, false otherwise. 
+\end{DoxyReturn}
+\hypertarget{class_node_a70d6617e33b3fc219f9d3c1bd48d7cca}{}\label{class_node_a70d6617e33b3fc219f9d3c1bd48d7cca} 
+\index{Node@{Node}!remove\+Edges\+To@{remove\+Edges\+To}}
+\index{remove\+Edges\+To@{remove\+Edges\+To}!Node@{Node}}
+\subsubsection{\texorpdfstring{remove\+Edges\+To()}{removeEdgesTo()}}
+{\footnotesize\ttfamily void Node\+::remove\+Edges\+To (\begin{DoxyParamCaption}\item[{node\+\_\+id}]{id }\end{DoxyParamCaption})}
+
+Function that removes the Edges whose destiny \hyperlink{class_node}{Node} is the given \hyperlink{class_node}{Node}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & ID of the \hyperlink{class_node}{Node} used to updated the Edges. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_node_a9d8e32dbc9c7a9e488b08f4fd1ce178f}{}\label{class_node_a9d8e32dbc9c7a9e488b08f4fd1ce178f} 
+\index{Node@{Node}!set\+Visited@{set\+Visited}}
+\index{set\+Visited@{set\+Visited}!Node@{Node}}
+\subsubsection{\texorpdfstring{set\+Visited()}{setVisited()}}
+{\footnotesize\ttfamily void Node\+::set\+Visited (\begin{DoxyParamCaption}\item[{bool}]{state = {\ttfamily true} }\end{DoxyParamCaption})}
+
+Function changes the correspondent flag value. If set \hyperlink{class_node}{Node}\textquotesingle{}s has already been visited in path, otherwise has not. If no value is given, it defaults to true.
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & State to change the flag to. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_node_ae7efda4ec8512d44445f058a479589d3}{}\label{class_node_ae7efda4ec8512d44445f058a479589d3} 
+\index{Node@{Node}!dist@{dist}}
+\index{dist@{dist}!Node@{Node}}
+\subsubsection{\texorpdfstring{dist}{dist}}
+{\footnotesize\ttfamily float Node\+::dist = numeric\+\_\+limits$<$float$>$\+::infinity()}
+
+float dist. Distance used for calculus in the Dijkstra algorithm. Represents the minimum distance from the \hyperlink{class_node}{Node} to the origin \hyperlink{class_node}{Node}. \hypertarget{class_node_a547c4e0904d03f97ca32a66408b11584}{}\label{class_node_a547c4e0904d03f97ca32a66408b11584} 
+\index{Node@{Node}!edge\+Path@{edge\+Path}}
+\index{edge\+Path@{edge\+Path}!Node@{Node}}
+\subsubsection{\texorpdfstring{edge\+Path}{edgePath}}
+{\footnotesize\ttfamily \hyperlink{class_edge}{Edge}$\ast$ Node\+::edge\+Path = nullptr}
+
+Edge$\ast$ path. Pointer to the \hyperlink{class_edge}{Edge}, linking the \hyperlink{class_node}{Node} to the previous one in the path. \hypertarget{class_node_a569c555f532e04a5ef976a54cd3c82a0}{}\label{class_node_a569c555f532e04a5ef976a54cd3c82a0} 
+\index{Node@{Node}!path@{path}}
+\index{path@{path}!Node@{Node}}
+\subsubsection{\texorpdfstring{path}{path}}
+{\footnotesize\ttfamily \hyperlink{class_node}{Node}$\ast$ Node\+::path = nullptr}
+
+Node$\ast$ path. Pointer to the previous \hyperlink{class_node}{Node} in the path. \hypertarget{class_node_ac54c0bde41664161566c30ccf4f8a53e}{}\label{class_node_ac54c0bde41664161566c30ccf4f8a53e} 
+\index{Node@{Node}!processing@{processing}}
+\index{processing@{processing}!Node@{Node}}
+\subsubsection{\texorpdfstring{processing}{processing}}
+{\footnotesize\ttfamily bool Node\+::processing = false}
+
+bool processing. Flag\+: If true, \hyperlink{class_node}{Node} is being processed in the Dijkstra algorithm, otherwise is not. \hypertarget{class_node_aa1bdec4e775fc578632e6a2dced9e251}{}\label{class_node_aa1bdec4e775fc578632e6a2dced9e251} 
+\index{Node@{Node}!visited@{visited}}
+\index{visited@{visited}!Node@{Node}}
+\subsubsection{\texorpdfstring{visited}{visited}}
+{\footnotesize\ttfamily bool Node\+::visited = false}
+
+bool visited. Flag\+: If true, \hyperlink{class_node}{Node} was already visited in the path, otherwise was not. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Node.\+hpp\item 
+Node.\+cpp\end{DoxyCompactItemize}

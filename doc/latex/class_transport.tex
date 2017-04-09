@@ -1,0 +1,80 @@
+\hypertarget{class_transport}{}\section{Transport Class Reference}
+\label{class_transport}\index{Transport@{Transport}}
+
+
+{\ttfamily \#include $<$Transport.\+hpp$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{class_transport_a1879cecfed0d4238e5a7af6d085db317}{Type} \{ {\bfseries F\+O\+OT}, 
+{\bfseries B\+US}, 
+{\bfseries S\+U\+B\+W\+AY}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \hyperlink{class_transport_ae9b8f3d27331e429160827194e32bde1}{get\+Vel} (\hyperlink{class_transport_a1879cecfed0d4238e5a7af6d085db317}{Type} t) const
+\item 
+unsigned int \hyperlink{class_transport_a943eecabe9f2435fcbf2bd3a41a4ea3a}{get\+Cost} (\hyperlink{class_transport_a1879cecfed0d4238e5a7af6d085db317}{Type} t) const
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_transport}{Transport} $\ast$ \hyperlink{class_transport_a2265878b8225332acf586bece5f1b324}{get\+Instance} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class used to represent means of \hyperlink{class_transport}{Transport}. The difference between means of \hyperlink{class_transport}{Transport} is the velocity with which they can traverse a certain route. 
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{class_transport_a1879cecfed0d4238e5a7af6d085db317}{}\label{class_transport_a1879cecfed0d4238e5a7af6d085db317} 
+\index{Transport@{Transport}!Type@{Type}}
+\index{Type@{Type}!Transport@{Transport}}
+\subsubsection{\texorpdfstring{Type}{Type}}
+{\footnotesize\ttfamily enum \hyperlink{class_transport_a1879cecfed0d4238e5a7af6d085db317}{Transport\+::\+Type}}
+
+Enumeration containing the different means of transport. 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_transport_a943eecabe9f2435fcbf2bd3a41a4ea3a}{}\label{class_transport_a943eecabe9f2435fcbf2bd3a41a4ea3a} 
+\index{Transport@{Transport}!get\+Cost@{get\+Cost}}
+\index{get\+Cost@{get\+Cost}!Transport@{Transport}}
+\subsubsection{\texorpdfstring{get\+Cost()}{getCost()}}
+{\footnotesize\ttfamily unsigned int Transport\+::get\+Cost (\begin{DoxyParamCaption}\item[{\hyperlink{class_transport_a1879cecfed0d4238e5a7af6d085db317}{Type}}]{t }\end{DoxyParamCaption}) const}
+
+Getter for the cost of the current mean of \hyperlink{class_transport}{Transport}, in cents per Kilometer.
+
+\begin{DoxyReturn}{Returns}
+Cost of the current mean of \hyperlink{class_transport}{Transport}. 
+\end{DoxyReturn}
+\hypertarget{class_transport_a2265878b8225332acf586bece5f1b324}{}\label{class_transport_a2265878b8225332acf586bece5f1b324} 
+\index{Transport@{Transport}!get\+Instance@{get\+Instance}}
+\index{get\+Instance@{get\+Instance}!Transport@{Transport}}
+\subsubsection{\texorpdfstring{get\+Instance()}{getInstance()}}
+{\footnotesize\ttfamily \hyperlink{class_transport}{Transport} $\ast$ Transport\+::get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Getter for the current mean of \hyperlink{class_transport}{Transport}. If no mean of transport exists, a new one is created.
+
+\begin{DoxyReturn}{Returns}
+The current mean of \hyperlink{class_transport}{Transport}. 
+\end{DoxyReturn}
+\hypertarget{class_transport_ae9b8f3d27331e429160827194e32bde1}{}\label{class_transport_ae9b8f3d27331e429160827194e32bde1} 
+\index{Transport@{Transport}!get\+Vel@{get\+Vel}}
+\index{get\+Vel@{get\+Vel}!Transport@{Transport}}
+\subsubsection{\texorpdfstring{get\+Vel()}{getVel()}}
+{\footnotesize\ttfamily unsigned int Transport\+::get\+Vel (\begin{DoxyParamCaption}\item[{\hyperlink{class_transport_a1879cecfed0d4238e5a7af6d085db317}{Transport\+::\+Type}}]{t }\end{DoxyParamCaption}) const}
+
+Getter for the velocity of the current mean of \hyperlink{class_transport}{Transport}.
+
+\begin{DoxyReturn}{Returns}
+Velocity of the current mean of \hyperlink{class_transport}{Transport}. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Transport.\+hpp\item 
+Transport.\+cpp\end{DoxyCompactItemize}

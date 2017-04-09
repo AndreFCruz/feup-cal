@@ -1,0 +1,98 @@
+\hypertarget{class_point}{}\section{Point Class Reference}
+\label{class_point}\index{Point@{Point}}
+
+
+{\ttfamily \#include $<$Coordinates.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_point_a257415ad611a16bb73628efcdb87d0fd}{Point} ()=default
+\item 
+\hyperlink{class_point_a30bc8409287de4f43e160664be834636}{Point} (float x, float y)
+\item 
+float \hyperlink{class_point_a29c44ec7c7279e02629645a06cdaf7d5}{getX} () const
+\item 
+float \hyperlink{class_point_a2371ffadbe245d12a8f556d0a976521b}{getY} () const
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static float \hyperlink{class_point_a1dbe2026f242cd96843ea14a67e8a2c3}{get\+Distance} (const \hyperlink{class_point}{Point} \&p1, const \hyperlink{class_point}{Point} \&p2)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A class used to represent a \hyperlink{class_point}{Point} in a 2D Plane. Every \hyperlink{class_point}{Point} is represented as (x, y) in cartesian coordinates. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_point_a257415ad611a16bb73628efcdb87d0fd}{}\label{class_point_a257415ad611a16bb73628efcdb87d0fd} 
+\index{Point@{Point}!Point@{Point}}
+\index{Point@{Point}!Point@{Point}}
+\subsubsection{\texorpdfstring{Point()}{Point()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Point\+::\+Point (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+Explicit Default constructor. \hypertarget{class_point_a30bc8409287de4f43e160664be834636}{}\label{class_point_a30bc8409287de4f43e160664be834636} 
+\index{Point@{Point}!Point@{Point}}
+\index{Point@{Point}!Point@{Point}}
+\subsubsection{\texorpdfstring{Point()}{Point()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Point\+::\+Point (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y }\end{DoxyParamCaption})}
+
+\hyperlink{class_point}{Point}\textquotesingle{}s constructor. Creates a \hyperlink{class_point}{Point} with the given coordinates.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & \hyperlink{class_point}{Point}\textquotesingle{}s coordinate value on the horizontal axis. \\
+\hline
+{\em y} & \hyperlink{class_point}{Point}\textquotesingle{}s coordinate value on the vertical axis. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_point_a1dbe2026f242cd96843ea14a67e8a2c3}{}\label{class_point_a1dbe2026f242cd96843ea14a67e8a2c3} 
+\index{Point@{Point}!get\+Distance@{get\+Distance}}
+\index{get\+Distance@{get\+Distance}!Point@{Point}}
+\subsubsection{\texorpdfstring{get\+Distance()}{getDistance()}}
+{\footnotesize\ttfamily float Point\+::get\+Distance (\begin{DoxyParamCaption}\item[{const \hyperlink{class_point}{Point} \&}]{p1,  }\item[{const \hyperlink{class_point}{Point} \&}]{p2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Function used to calculate the distance between two given Points. Makes use of the Pythagorean Theorem Formula
+
+
+\begin{DoxyParams}{Parameters}
+{\em p1} & \hyperlink{class_point}{Point} to be used in the calculus. \\
+\hline
+{\em p2} & \hyperlink{class_point}{Point} to be used in the calculus.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the distance between the two Points. 
+\end{DoxyReturn}
+\hypertarget{class_point_a29c44ec7c7279e02629645a06cdaf7d5}{}\label{class_point_a29c44ec7c7279e02629645a06cdaf7d5} 
+\index{Point@{Point}!getX@{getX}}
+\index{getX@{getX}!Point@{Point}}
+\subsubsection{\texorpdfstring{get\+X()}{getX()}}
+{\footnotesize\ttfamily float Point\+::getX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Getter for coordinate value on the horizontal axis.
+
+\begin{DoxyReturn}{Returns}
+coordinate value on the horizontal axis. 
+\end{DoxyReturn}
+\hypertarget{class_point_a2371ffadbe245d12a8f556d0a976521b}{}\label{class_point_a2371ffadbe245d12a8f556d0a976521b} 
+\index{Point@{Point}!getY@{getY}}
+\index{getY@{getY}!Point@{Point}}
+\subsubsection{\texorpdfstring{get\+Y()}{getY()}}
+{\footnotesize\ttfamily float Point\+::getY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Getter for coordinate value on the vertical axis.
+
+\begin{DoxyReturn}{Returns}
+coordinate value on the vertical axis. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Coordinates.\+hpp\item 
+Coordinates.\+cpp\end{DoxyCompactItemize}

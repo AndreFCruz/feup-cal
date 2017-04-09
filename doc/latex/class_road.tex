@@ -1,0 +1,128 @@
+\hypertarget{class_road}{}\section{Road Class Reference}
+\label{class_road}\index{Road@{Road}}
+
+
+{\ttfamily \#include $<$Road.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_road_a4bd6abfd59885bb839dff8642b32db92}{Road} (road\+\_\+id id, string name, bool two\+Way)
+\item 
+\hyperlink{class_road_a96d7a3bee9ce4ea3ed6ed8eb24298085}{Road} (istream \&input)
+\item 
+road\+\_\+id \hyperlink{class_road_a4e0440c1d5bf11800f0df3c50dcb4b92}{get\+ID} () const
+\item 
+string \hyperlink{class_road_ae7c959eda8a11bc859ab5de5e278b735}{get\+Name} () const
+\item 
+bool \hyperlink{class_road_a9c412810b3a630a759f199c60f7f1cc6}{is\+Two\+Way} () const
+\item 
+bool \hyperlink{class_road_a7a691f98e8bd53299ed2539de1e4d13c}{add\+Edge} (\hyperlink{class_edge}{Edge} $\ast$ptr)
+\item 
+const set$<$ \hyperlink{class_edge}{Edge} $\ast$ $>$ \hyperlink{class_road_a03fb1c0a74b860e4be6c951154add098}{get\+Edges} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class used to represent a \hyperlink{class_road}{Road}. Every \hyperlink{class_road}{Road} has a unique ID, a name, and a flag regarding the direction of the \hyperlink{class_road}{Road}. Roads can also be associated to different Edges. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_road_a4bd6abfd59885bb839dff8642b32db92}{}\label{class_road_a4bd6abfd59885bb839dff8642b32db92} 
+\index{Road@{Road}!Road@{Road}}
+\index{Road@{Road}!Road@{Road}}
+\subsubsection{\texorpdfstring{Road()}{Road()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Road\+::\+Road (\begin{DoxyParamCaption}\item[{road\+\_\+id}]{id,  }\item[{string}]{name,  }\item[{bool}]{two\+Way }\end{DoxyParamCaption})}
+
+\hyperlink{class_road}{Road}\textquotesingle{}s constructor. Creates a \hyperlink{class_road}{Road} with the given ID, name and flag If the flag is set traffic goes both ways, otherwise traffic only goes one way.
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & \hyperlink{class_road}{Road}\textquotesingle{}s unique ID. \\
+\hline
+{\em name} & \hyperlink{class_road}{Road}\textquotesingle{}s Name. \\
+\hline
+{\em two\+Way} & Flag regarding \hyperlink{class_road}{Road}\textquotesingle{}s traffic direction. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_road_a96d7a3bee9ce4ea3ed6ed8eb24298085}{}\label{class_road_a96d7a3bee9ce4ea3ed6ed8eb24298085} 
+\index{Road@{Road}!Road@{Road}}
+\index{Road@{Road}!Road@{Road}}
+\subsubsection{\texorpdfstring{Road()}{Road()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Road\+::\+Road (\begin{DoxyParamCaption}\item[{istream \&}]{input }\end{DoxyParamCaption})}
+
+\hyperlink{class_road}{Road}\textquotesingle{}s constructor from file. Creates a \hyperlink{class_road}{Road} with the data passed by the argument input stream.
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & The input stream to read from in order to build a \hyperlink{class_road}{Road} object. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_road_a7a691f98e8bd53299ed2539de1e4d13c}{}\label{class_road_a7a691f98e8bd53299ed2539de1e4d13c} 
+\index{Road@{Road}!add\+Edge@{add\+Edge}}
+\index{add\+Edge@{add\+Edge}!Road@{Road}}
+\subsubsection{\texorpdfstring{add\+Edge()}{addEdge()}}
+{\footnotesize\ttfamily bool Road\+::add\+Edge (\begin{DoxyParamCaption}\item[{\hyperlink{class_edge}{Edge} $\ast$}]{ptr }\end{DoxyParamCaption})}
+
+Function used to associate an \hyperlink{class_edge}{Edge} to the \hyperlink{class_road}{Road}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ptr} & to be associated\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the \hyperlink{class_edge}{Edge} was added to the container of all associated Edges, false otherwise. 
+\end{DoxyReturn}
+\hypertarget{class_road_a03fb1c0a74b860e4be6c951154add098}{}\label{class_road_a03fb1c0a74b860e4be6c951154add098} 
+\index{Road@{Road}!get\+Edges@{get\+Edges}}
+\index{get\+Edges@{get\+Edges}!Road@{Road}}
+\subsubsection{\texorpdfstring{get\+Edges()}{getEdges()}}
+{\footnotesize\ttfamily const set$<$ \hyperlink{class_edge}{Edge} $\ast$ $>$ Road\+::get\+Edges (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Getter for all Edges associated to the \hyperlink{class_road}{Road}.
+
+\begin{DoxyReturn}{Returns}
+Set that contains all Edges associated to the \hyperlink{class_road}{Road}. 
+\end{DoxyReturn}
+\hypertarget{class_road_a4e0440c1d5bf11800f0df3c50dcb4b92}{}\label{class_road_a4e0440c1d5bf11800f0df3c50dcb4b92} 
+\index{Road@{Road}!get\+ID@{get\+ID}}
+\index{get\+ID@{get\+ID}!Road@{Road}}
+\subsubsection{\texorpdfstring{get\+I\+D()}{getID()}}
+{\footnotesize\ttfamily road\+\_\+id Road\+::get\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Getter for \hyperlink{class_road}{Road}\textquotesingle{}s ID. The ID is used to represent a \hyperlink{class_road}{Road}, since there are no two Roads with the same ID.
+
+\begin{DoxyReturn}{Returns}
+The \hyperlink{class_road}{Road}\textquotesingle{}s ID. 
+\end{DoxyReturn}
+\hypertarget{class_road_ae7c959eda8a11bc859ab5de5e278b735}{}\label{class_road_ae7c959eda8a11bc859ab5de5e278b735} 
+\index{Road@{Road}!get\+Name@{get\+Name}}
+\index{get\+Name@{get\+Name}!Road@{Road}}
+\subsubsection{\texorpdfstring{get\+Name()}{getName()}}
+{\footnotesize\ttfamily string Road\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Getter for \hyperlink{class_road}{Road}\textquotesingle{}s Name.
+
+\begin{DoxyReturn}{Returns}
+The \hyperlink{class_road}{Road}\textquotesingle{}s name. 
+\end{DoxyReturn}
+\hypertarget{class_road_a9c412810b3a630a759f199c60f7f1cc6}{}\label{class_road_a9c412810b3a630a759f199c60f7f1cc6} 
+\index{Road@{Road}!is\+Two\+Way@{is\+Two\+Way}}
+\index{is\+Two\+Way@{is\+Two\+Way}!Road@{Road}}
+\subsubsection{\texorpdfstring{is\+Two\+Way()}{isTwoWay()}}
+{\footnotesize\ttfamily bool Road\+::is\+Two\+Way (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Getter for \hyperlink{class_road}{Road}\textquotesingle{}s flag regarding its direction. If the flag is set traffic goes both ways, otherwise traffic only goes one way.
+
+\begin{DoxyReturn}{Returns}
+flag regarding \hyperlink{class_road}{Road}\textquotesingle{}s direction. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Road.\+hpp\item 
+Road.\+cpp\end{DoxyCompactItemize}
