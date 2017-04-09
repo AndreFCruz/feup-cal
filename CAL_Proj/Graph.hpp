@@ -50,8 +50,8 @@ private:
     /**
      * Function that updates the Graph's Edges with the given mean of transport.
      *
-     * @param input. Input stream containing the Edge's whose mean of transport is the one given.
-     * @param type. Mean of transport that is going to be assigned to the Edges.
+     * @param input Input stream containing the Edge's whose mean of transport is the one given.
+     * @param type Mean of transport that is going to be assigned to the Edges.
      */
     void loadTransportEdges(istream & input, Transport::Type type);
     
@@ -155,10 +155,10 @@ public:
      * The shortest path will be fastest one.
      * This Dijkstra implementation takes into consideration the mean of Transport used.
      *
-     * @param src The id of the origin Node.
-     * @param dest The id of the destiny Node.
+     * @param src_id The id of the origin Node.
+     * @param dest_id The id of the destiny Node.
      * @param type Mean of Transport used.
-     * @param scale Mean of transport scale .If no value is given it defaults to 5. The scale affects the weight of the Edge that was traversed with the given mean of transport.
+     * @param scale Mean of transport preference scale (bigger scale means higher preference). If no value is given it defaults to 5.
      */
     void dijkstraShortestPath(node_id src_id, node_id dest_id, Transport::Type type, unsigned int scale = 5);
 
@@ -170,7 +170,7 @@ public:
      * @param src The origin Node.
      * @param dest The destiny Node.
      * @param type Mean of Transport used.
-     * @param scale Mean of transport scale .If no value is given it defaults to 5. The scale affects the weight of the Edge that was traversed with the given mean of transport.
+     * @param scale Mean of transport preference scale (bigger scale means higher preference). If no value is given it defaults to 5.
      */
     void dijkstraShortestPath(Node * src, Node * dest, Transport::Type type, unsigned int scale = 5);
     
@@ -233,9 +233,7 @@ public:
      * @return The path's cost, in cents.
      */
     unsigned getPathCost(node_id src_id, node_id dest_id) const;
-    
-    vector<Node*> dfs();
-    
+        
     void dfs(Node * v, vector<Node*> & res);
     
 };

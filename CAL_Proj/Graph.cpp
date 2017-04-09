@@ -179,12 +179,9 @@ bool Graph::isConnected() {
     auto it = copy.nodes.begin();
     set<size_t> clusters;
     
-    while (accumulate(clusters.begin(), clusters.end(), 0) < copy.nodes.size()) {
+    while (accumulate(clusters.begin(), clusters.end(), 0) < copy.nodes.size() && it != copy.nodes.end()) {
         Node * start = (it++)->second;
-        
-        if (it == copy.nodes.end())
-            break;
-        
+
         if (start->visited)
             continue;
         
@@ -465,25 +462,6 @@ unsigned Graph::getPathCost(node_id src_id, node_id dest_id) const {
         cost += edg->getCost();
     
     return cost;
-}
-
-vector<Node*> Graph::dfs() {
-    auto it = nodes.begin();
-    auto ite = nodes.end();
-    
-    // Mark nodes as not visited
-    for (; it != ite; it++)
-        (*it).second->visited=false;
-    
-    vector<Node*> res;
-    it=nodes.begin();
-    for (; it != ite; it++)
-        if ( (*it).second->visited==false )
-            dfs((*it).second, res);
-    
-    nodesReset = false;
-    
-    return res;
 }
 
 void Graph::dfs(Node * v, vector<Node*> & res) {
