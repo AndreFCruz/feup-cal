@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['dist',['dist',['../class_node.html#ae7efda4ec8512d44445f058a479589d3',1,'Node']]]
+  ['bus_5fpath',['BUS_PATH',['../main_8cpp.html#a9995bfe9392d237cb344fe3ee3e3f8e3',1,'main.cpp']]]
 ];

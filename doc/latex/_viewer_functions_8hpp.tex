@@ -1,0 +1,160 @@
+\hypertarget{_viewer_functions_8hpp}{}\section{Viewer\+Functions.\+hpp File Reference}
+\label{_viewer_functions_8hpp}\index{Viewer\+Functions.\+hpp@{Viewer\+Functions.\+hpp}}
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include \char`\"{}Graph.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}graphviewer.\+h\char`\"{}}\newline
+Include dependency graph for Viewer\+Functions.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_viewer_functions_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{_viewer_functions_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_graph_viewer}{Graph\+Viewer} $\ast$ \hyperlink{_viewer_functions_8hpp_a802feed4fccccc9f6b873f19a1ba44e8}{view\+Graph\+Complete} (\hyperlink{class_graph}{Graph} \&g)
+\item 
+\hyperlink{class_graph_viewer}{Graph\+Viewer} $\ast$ \hyperlink{_viewer_functions_8hpp_a4cc9397bb0d2e87d6399e449a0730a65}{view\+Graph\+Path} (\hyperlink{class_graph_viewer}{Graph\+Viewer} $\ast$gv, const vector$<$ \hyperlink{class_node}{Node} $\ast$$>$ \&path)
+\item 
+\hyperlink{class_graph_viewer}{Graph\+Viewer} $\ast$ \hyperlink{_viewer_functions_8hpp_acf1c855d3f7ec6357562b3b57484dd6a}{widen\+Graph\+Path\+Edges} (\hyperlink{class_graph_viewer}{Graph\+Viewer} $\ast$gv, const vector$<$ \hyperlink{class_edge}{Edge} $\ast$$>$ \&edges)
+\item 
+bool \hyperlink{_viewer_functions_8hpp_a24a5fbb304da20526dedf57bd0154a36}{ask\+For\+Path} (\hyperlink{class_graph_viewer}{Graph\+Viewer} $\ast$gv, \hyperlink{class_graph}{Graph} \&g)
+\item 
+float \hyperlink{_viewer_functions_8hpp_a1e4e5694853182d43053d8b5263fd986}{get\+Path\+Length} (const vector$<$ \hyperlink{class_node}{Node} $\ast$$>$ \&path)
+\item 
+vector$<$ \hyperlink{class_node}{Node} $\ast$ $>$ \hyperlink{_viewer_functions_8hpp_ad16701753650a6222653d3930b18d3b8}{get\+Path\+From\+Edges} (const vector$<$ \hyperlink{class_edge}{Edge} $\ast$$>$ \&edges)
+\item 
+void \hyperlink{_viewer_functions_8hpp_a0a6071504fd38aaeddbf2be515777235}{print\+Path\+Stats} (const \hyperlink{class_graph}{Graph} \&g, \hyperlink{_node_8hpp_a9d6265804805c2375068fd7484840dc6}{node\+\_\+id} src, \hyperlink{_node_8hpp_a9d6265804805c2375068fd7484840dc6}{node\+\_\+id} dest)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{_viewer_functions_8hpp_a24a5fbb304da20526dedf57bd0154a36}{}\label{_viewer_functions_8hpp_a24a5fbb304da20526dedf57bd0154a36} 
+\index{Viewer\+Functions.\+hpp@{Viewer\+Functions.\+hpp}!ask\+For\+Path@{ask\+For\+Path}}
+\index{ask\+For\+Path@{ask\+For\+Path}!Viewer\+Functions.\+hpp@{Viewer\+Functions.\+hpp}}
+\subsubsection{\texorpdfstring{ask\+For\+Path()}{askForPath()}}
+{\footnotesize\ttfamily bool ask\+For\+Path (\begin{DoxyParamCaption}\item[{\hyperlink{class_graph_viewer}{Graph\+Viewer} $\ast$}]{gv,  }\item[{\hyperlink{class_graph}{Graph} \&}]{g }\end{DoxyParamCaption})}
+
+Function used to calculated the User\textquotesingle{}s Path given a certain Graph.\+´ This function calls function view\+Graph\+Path, so that the visual representation of the \hyperlink{class_graph}{Graph} is also updated with the User\textquotesingle{}s path.
+
+
+\begin{DoxyParams}{Parameters}
+{\em gv} & \hyperlink{class_graph_viewer}{Graph\+Viewer} to be updated. \\
+\hline
+{\em g} & \hyperlink{class_graph}{Graph} used on the User\textquotesingle{}s path calculation\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool corresponding to whether the user input was successful 
+\end{DoxyReturn}
+\hypertarget{_viewer_functions_8hpp_ad16701753650a6222653d3930b18d3b8}{}\label{_viewer_functions_8hpp_ad16701753650a6222653d3930b18d3b8} 
+\index{Viewer\+Functions.\+hpp@{Viewer\+Functions.\+hpp}!get\+Path\+From\+Edges@{get\+Path\+From\+Edges}}
+\index{get\+Path\+From\+Edges@{get\+Path\+From\+Edges}!Viewer\+Functions.\+hpp@{Viewer\+Functions.\+hpp}}
+\subsubsection{\texorpdfstring{get\+Path\+From\+Edges()}{getPathFromEdges()}}
+{\footnotesize\ttfamily vector$<$\hyperlink{class_node}{Node}$\ast$$>$ get\+Path\+From\+Edges (\begin{DoxyParamCaption}\item[{const vector$<$ \hyperlink{class_edge}{Edge} $\ast$$>$ \&}]{edges }\end{DoxyParamCaption})}
+
+User\textquotesingle{}s Path Parser. Instead of representing the User\textquotesingle{}s path with a vector of Edges, represents the path with a vector of Nodes.
+
+
+\begin{DoxyParams}{Parameters}
+{\em edges} & Vector of edges, representing the User\textquotesingle{}s path, that will be parsed.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The User\textquotesingle{}s path, now represented in a vector of Nodes. 
+\end{DoxyReturn}
+\hypertarget{_viewer_functions_8hpp_a1e4e5694853182d43053d8b5263fd986}{}\label{_viewer_functions_8hpp_a1e4e5694853182d43053d8b5263fd986} 
+\index{Viewer\+Functions.\+hpp@{Viewer\+Functions.\+hpp}!get\+Path\+Length@{get\+Path\+Length}}
+\index{get\+Path\+Length@{get\+Path\+Length}!Viewer\+Functions.\+hpp@{Viewer\+Functions.\+hpp}}
+\subsubsection{\texorpdfstring{get\+Path\+Length()}{getPathLength()}}
+{\footnotesize\ttfamily float get\+Path\+Length (\begin{DoxyParamCaption}\item[{const vector$<$ \hyperlink{class_node}{Node} $\ast$$>$ \&}]{path }\end{DoxyParamCaption})}
+
+Getter for Path Length.
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Vector of Nodes, representing the User\textquotesingle{}s path, from where length is calculated.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The path length value. 
+\end{DoxyReturn}
+\hypertarget{_viewer_functions_8hpp_a0a6071504fd38aaeddbf2be515777235}{}\label{_viewer_functions_8hpp_a0a6071504fd38aaeddbf2be515777235} 
+\index{Viewer\+Functions.\+hpp@{Viewer\+Functions.\+hpp}!print\+Path\+Stats@{print\+Path\+Stats}}
+\index{print\+Path\+Stats@{print\+Path\+Stats}!Viewer\+Functions.\+hpp@{Viewer\+Functions.\+hpp}}
+\subsubsection{\texorpdfstring{print\+Path\+Stats()}{printPathStats()}}
+{\footnotesize\ttfamily void print\+Path\+Stats (\begin{DoxyParamCaption}\item[{const \hyperlink{class_graph}{Graph} \&}]{g,  }\item[{\hyperlink{_node_8hpp_a9d6265804805c2375068fd7484840dc6}{node\+\_\+id}}]{src,  }\item[{\hyperlink{_node_8hpp_a9d6265804805c2375068fd7484840dc6}{node\+\_\+id}}]{dest }\end{DoxyParamCaption})}
+
+Function used to display on the screen the Statistics from the User\textquotesingle{}s Path. The statistics are\+: the path length, the path duration and the path cost.
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & \hyperlink{class_graph}{Graph} reference, with dijkstra\+Shortest\+Path already calculated on the given nodes. \\
+\hline
+{\em src} & node\+\_\+id of the source node \\
+\hline
+{\em dest} & node\+\_\+id of the destination node \\
+\hline
+\end{DoxyParams}
+\hypertarget{_viewer_functions_8hpp_a802feed4fccccc9f6b873f19a1ba44e8}{}\label{_viewer_functions_8hpp_a802feed4fccccc9f6b873f19a1ba44e8} 
+\index{Viewer\+Functions.\+hpp@{Viewer\+Functions.\+hpp}!view\+Graph\+Complete@{view\+Graph\+Complete}}
+\index{view\+Graph\+Complete@{view\+Graph\+Complete}!Viewer\+Functions.\+hpp@{Viewer\+Functions.\+hpp}}
+\subsubsection{\texorpdfstring{view\+Graph\+Complete()}{viewGraphComplete()}}
+{\footnotesize\ttfamily \hyperlink{class_graph_viewer}{Graph\+Viewer}$\ast$ view\+Graph\+Complete (\begin{DoxyParamCaption}\item[{\hyperlink{class_graph}{Graph} \&}]{g }\end{DoxyParamCaption})}
+
+Function used to display an entire \hyperlink{class_graph}{Graph} on the screen. In this case, the visual representation of the map will be similar to a geographic map. All the Edges in Red are Subway routes. All the Edges in blue are Bus routes. All the Edges in black are Walking routes. All the yellow circles represent Nodes.
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & \hyperlink{class_graph}{Graph} to be interpreted.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_graph_viewer}{Graph\+Viewer} containing data regarding the given \hyperlink{class_graph}{Graph}. 
+\end{DoxyReturn}
+\hypertarget{_viewer_functions_8hpp_a4cc9397bb0d2e87d6399e449a0730a65}{}\label{_viewer_functions_8hpp_a4cc9397bb0d2e87d6399e449a0730a65} 
+\index{Viewer\+Functions.\+hpp@{Viewer\+Functions.\+hpp}!view\+Graph\+Path@{view\+Graph\+Path}}
+\index{view\+Graph\+Path@{view\+Graph\+Path}!Viewer\+Functions.\+hpp@{Viewer\+Functions.\+hpp}}
+\subsubsection{\texorpdfstring{view\+Graph\+Path()}{viewGraphPath()}}
+{\footnotesize\ttfamily \hyperlink{class_graph_viewer}{Graph\+Viewer}$\ast$ view\+Graph\+Path (\begin{DoxyParamCaption}\item[{\hyperlink{class_graph_viewer}{Graph\+Viewer} $\ast$}]{gv,  }\item[{const vector$<$ \hyperlink{class_node}{Node} $\ast$$>$ \&}]{path }\end{DoxyParamCaption})}
+
+Function used to update the \hyperlink{class_graph_viewer}{Graph\+Viewer} with the path optimized path for the User. Red circles represent the path the User should be taking according to his needs.
+
+
+\begin{DoxyParams}{Parameters}
+{\em gv} & \hyperlink{class_graph_viewer}{Graph\+Viewer} to be updated. \\
+\hline
+{\em path} & Optimal path for the User.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_graph_viewer}{Graph\+Viewer} containing the updated data. 
+\end{DoxyReturn}
+\hypertarget{_viewer_functions_8hpp_acf1c855d3f7ec6357562b3b57484dd6a}{}\label{_viewer_functions_8hpp_acf1c855d3f7ec6357562b3b57484dd6a} 
+\index{Viewer\+Functions.\+hpp@{Viewer\+Functions.\+hpp}!widen\+Graph\+Path\+Edges@{widen\+Graph\+Path\+Edges}}
+\index{widen\+Graph\+Path\+Edges@{widen\+Graph\+Path\+Edges}!Viewer\+Functions.\+hpp@{Viewer\+Functions.\+hpp}}
+\subsubsection{\texorpdfstring{widen\+Graph\+Path\+Edges()}{widenGraphPathEdges()}}
+{\footnotesize\ttfamily \hyperlink{class_graph_viewer}{Graph\+Viewer}$\ast$ widen\+Graph\+Path\+Edges (\begin{DoxyParamCaption}\item[{\hyperlink{class_graph_viewer}{Graph\+Viewer} $\ast$}]{gv,  }\item[{const vector$<$ \hyperlink{class_edge}{Edge} $\ast$$>$ \&}]{edges }\end{DoxyParamCaption})}
+
+Function used to update the \hyperlink{class_graph_viewer}{Graph\+Viewer}, by thickening the Edges used in the User\textquotesingle{}s path.
+
+
+\begin{DoxyParams}{Parameters}
+{\em gv} & \hyperlink{class_graph_viewer}{Graph\+Viewer} to be updated. \\
+\hline
+{\em edges} & Edges was visual representation will be updated.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_graph_viewer}{Graph\+Viewer} containing the updated data. 
+\end{DoxyReturn}

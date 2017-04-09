@@ -68,6 +68,13 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="graphviewer_8h_source.html">graphviewer.h</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for GraphViewer:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_graph_viewer__coll__graph.png" border="0" usemap="#_graph_viewer_coll__map" alt="Collaboration graph"/></div>
+<map name="_graph_viewer_coll__map" id="_graph_viewer_coll__map">
+</map>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -130,8 +137,7 @@ Public Member Functions</h2></td></tr>
 Static Public Attributes</h2></td></tr>
 <tr class="memitem:a89d0abe75f41feededc49497cc514342"><td class="memItemLeft" align="right" valign="top">static short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_graph_viewer.html#a89d0abe75f41feededc49497cc514342">port</a> = 7772</td></tr>
 <tr class="separator:a89d0abe75f41feededc49497cc514342"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeab74c57a4b672384f484884c000c692"><td class="memItemLeft" align="right" valign="top"><a id="aeab74c57a4b672384f484884c000c692"></a>
-static pid_t&#160;</td><td class="memItemRight" valign="bottom"><b>procId</b> = NULL</td></tr>
+<tr class="memitem:aeab74c57a4b672384f484884c000c692"><td class="memItemLeft" align="right" valign="top">static pid_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_graph_viewer.html#aeab74c57a4b672384f484884c000c692">procId</a> = NULL</td></tr>
 <tr class="separator:aeab74c57a4b672384f484884c000c692"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -275,7 +281,7 @@ static pid_t&#160;</td><td class="memItemRight" valign="bottom"><b>procId</b> = 
     <tr><td class="paramname">id</td><td>Identificador único da aresta. </td></tr>
     <tr><td class="paramname">v1</td><td>Identificador único do nó de origem da aresta. </td></tr>
     <tr><td class="paramname">v2</td><td>Identificador único do nó de destino da aresta. </td></tr>
-    <tr><td class="paramname">edgeType</td><td>EdgeType.DIRECTED caso a aresta seja unidirecional ou EdgeType.UNDIRECTED caso a aresta seja bidirecional. </td></tr>
+    <tr><td class="paramname">edgeType</td><td><a class="el" href="class_edge_type.html#a903017a534f2818c2d17145e4ae0321c">EdgeType.DIRECTED</a> caso a aresta seja unidirecional ou <a class="el" href="class_edge_type.html#a6533cc56d05c288a550b9980b66c9317">EdgeType.UNDIRECTED</a> caso a aresta seja bidirecional. </td></tr>
   </table>
   </dd>
 </dl>
@@ -422,7 +428,7 @@ static pid_t&#160;</td><td class="memItemRight" valign="bottom"><b>procId</b> = 
 <p>Função que define a cor global das arestas. Exemplo, para um apontador gv onde foi instanciada a classe <a class="el" href="class_graph_viewer.html">GraphViewer</a>: gv-&gt;defineEdgeColor(GRAY); modifica a cor por defeito das arestas para cinzento</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">color</td><td>Nova cor das arestas, utilizar as constantes definidas no <a class="el" href="graphviewer_8h_source.html">graphviewer.h</a> para conveniência. </td></tr>
+    <tr><td class="paramname">color</td><td>Nova cor das arestas, utilizar as constantes definidas no <a class="el" href="graphviewer_8h.html">graphviewer.h</a> para conveniência. </td></tr>
   </table>
   </dd>
 </dl>
@@ -497,7 +503,7 @@ static pid_t&#160;</td><td class="memItemRight" valign="bottom"><b>procId</b> = 
 <p>Função que define a cor global dos nós. Exemplo, para um apontador gv onde foi instanciada a classe <a class="el" href="class_graph_viewer.html">GraphViewer</a>: gv-&gt;defineVertexColor(RED); modifica a cor por defeito dos nós para vermelho</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">color</td><td>Nova cor dos nós, utilizar as constantes definidas no <a class="el" href="graphviewer_8h_source.html">graphviewer.h</a> para conveniência. </td></tr>
+    <tr><td class="paramname">color</td><td>Nova cor dos nós, utilizar as constantes definidas no <a class="el" href="graphviewer_8h.html">graphviewer.h</a> para conveniência. </td></tr>
   </table>
   </dd>
 </dl>
@@ -547,7 +553,7 @@ static pid_t&#160;</td><td class="memItemRight" valign="bottom"><b>procId</b> = 
 <p>Função que define o tamanho global dos nós. Exemplo, para um apontador gv onde foi instanciada a classe <a class="el" href="class_graph_viewer.html">GraphViewer</a>: gv-&gt;defineVertexSize(20); modifica o tamanho por defeito dos nós para 20</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">size</td><td>Nova cor dos nós, utilizar as constantes definidas no <a class="el" href="graphviewer_8h_source.html">graphviewer.h</a> para conveniência. </td></tr>
+    <tr><td class="paramname">size</td><td>Nova cor dos nós, utilizar as constantes definidas no <a class="el" href="graphviewer_8h.html">graphviewer.h</a> para conveniência. </td></tr>
   </table>
   </dd>
 </dl>
@@ -676,7 +682,7 @@ static pid_t&#160;</td><td class="memItemRight" valign="bottom"><b>procId</b> = 
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">id</td><td>Identificador único da aresta com a cor a alterar. </td></tr>
-    <tr><td class="paramname">color</td><td>Nova cor da aresta, utilizar as constantes definidas no <a class="el" href="graphviewer_8h_source.html">graphviewer.h</a> para conveniência. </td></tr>
+    <tr><td class="paramname">color</td><td>Nova cor da aresta, utilizar as constantes definidas no <a class="el" href="graphviewer_8h.html">graphviewer.h</a> para conveniência. </td></tr>
   </table>
   </dd>
 </dl>
@@ -712,7 +718,7 @@ static pid_t&#160;</td><td class="memItemRight" valign="bottom"><b>procId</b> = 
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">id</td><td>Identificador único da aresta com a cor a alterar. </td></tr>
-    <tr><td class="paramname">dashed</td><td>Nova cor da aresta, utilizar as constantes definidas no <a class="el" href="graphviewer_8h_source.html">graphviewer.h</a> para conveniência. </td></tr>
+    <tr><td class="paramname">dashed</td><td>Nova cor da aresta, utilizar as constantes definidas no <a class="el" href="graphviewer_8h.html">graphviewer.h</a> para conveniência. </td></tr>
   </table>
   </dd>
 </dl>
@@ -892,7 +898,7 @@ static pid_t&#160;</td><td class="memItemRight" valign="bottom"><b>procId</b> = 
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">id</td><td>Identificador único do nó com a cor a alterar. </td></tr>
-    <tr><td class="paramname">color</td><td>Nova cor do nó, utilizar as constantes definidas no <a class="el" href="graphviewer_8h_source.html">graphviewer.h</a> para conveniência. </td></tr>
+    <tr><td class="paramname">color</td><td>Nova cor do nó, utilizar as constantes definidas no <a class="el" href="graphviewer_8h.html">graphviewer.h</a> para conveniência. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1031,9 +1037,31 @@ static pid_t&#160;</td><td class="memItemRight" valign="bottom"><b>procId</b> = 
 
 </div>
 </div>
+<a id="aeab74c57a4b672384f484884c000c692"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeab74c57a4b672384f484884c000c692">&sect;&nbsp;</a></span>procId</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">pid_t GraphViewer::procId = NULL</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="graphviewer_8h_source.html">graphviewer.h</a></li>
-<li>graphviewer.cpp</li>
+<li><a class="el" href="graphviewer_8cpp.html">graphviewer.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

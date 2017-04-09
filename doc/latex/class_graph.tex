@@ -4,6 +4,16 @@
 
 {\ttfamily \#include $<$Graph.\+hpp$>$}
 
+
+
+Collaboration diagram for Graph\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{class_graph__coll__graph}
+\end{center}
+\end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -13,33 +23,33 @@
 \item 
 \hyperlink{class_graph_a902c5b3eacb66d60752525ab23297a95}{$\sim$\+Graph} ()
 \item 
-node\+\_\+id \hyperlink{class_graph_aec10981cceac64d033e2e0de5b34c995}{get\+Node\+I\+D\+From\+Parser\+ID} (int parser\+ID) const
+\hyperlink{_node_8hpp_a9d6265804805c2375068fd7484840dc6}{node\+\_\+id} \hyperlink{class_graph_aec10981cceac64d033e2e0de5b34c995}{get\+Node\+I\+D\+From\+Parser\+ID} (int parser\+ID) const
 \item 
-unordered\+\_\+map$<$ node\+\_\+id, \hyperlink{class_node}{Node} $\ast$ $>$ \hyperlink{class_graph_aa64f6696d40b6a8e0d92df399ed11310}{get\+Nodes} () const
+unordered\+\_\+map$<$ \hyperlink{_node_8hpp_a9d6265804805c2375068fd7484840dc6}{node\+\_\+id}, \hyperlink{class_node}{Node} $\ast$ $>$ \hyperlink{class_graph_aa64f6696d40b6a8e0d92df399ed11310}{get\+Nodes} () const
 \item 
-unordered\+\_\+map$<$ edge\+\_\+id, \hyperlink{class_edge}{Edge} $\ast$ $>$ \hyperlink{class_graph_a7dd776ad17a9d14b14f044373c79a9bc}{get\+Edges} () const
+unordered\+\_\+map$<$ \hyperlink{_edge_8hpp_ad7d18d7b90a45b6625704e92d10aa3a0}{edge\+\_\+id}, \hyperlink{class_edge}{Edge} $\ast$ $>$ \hyperlink{class_graph_a7dd776ad17a9d14b14f044373c79a9bc}{get\+Edges} () const
 \item 
-unordered\+\_\+map$<$ road\+\_\+id, \hyperlink{class_road}{Road} $\ast$ $>$ \hyperlink{class_graph_a101befc9baedb7dc3aaa714c968dc943}{get\+Roads} () const
+unordered\+\_\+map$<$ \hyperlink{_road_8hpp_a8e0db0d135782948da5d293720dbfb46}{road\+\_\+id}, \hyperlink{class_road}{Road} $\ast$ $>$ \hyperlink{class_graph_a101befc9baedb7dc3aaa714c968dc943}{get\+Roads} () const
 \item 
-void \hyperlink{class_graph_a819fb225997f026a192ec5df1b17df84}{dijkstra\+Shortest\+Path} (node\+\_\+id src\+\_\+id, node\+\_\+id dest\+\_\+id=0)
+void \hyperlink{class_graph_a819fb225997f026a192ec5df1b17df84}{dijkstra\+Shortest\+Path} (\hyperlink{_node_8hpp_a9d6265804805c2375068fd7484840dc6}{node\+\_\+id} src\+\_\+id, \hyperlink{_node_8hpp_a9d6265804805c2375068fd7484840dc6}{node\+\_\+id} dest\+\_\+id=0)
 \item 
 void \hyperlink{class_graph_a0fc41701fa170ab69282ae8a571fdc04}{dijkstra\+Shortest\+Path} (\hyperlink{class_node}{Node} $\ast$src, \hyperlink{class_node}{Node} $\ast$destination=nullptr)
 \item 
-void \hyperlink{class_graph_a751cdeb2ca841f9d44d921cf1a43ddd0}{dijkstra\+Shortest\+Path} (node\+\_\+id src\+\_\+id, node\+\_\+id dest\+\_\+id, \hyperlink{class_transport_a1879cecfed0d4238e5a7af6d085db317}{Transport\+::\+Type} type, unsigned int scale=5)
+void \hyperlink{class_graph_a751cdeb2ca841f9d44d921cf1a43ddd0}{dijkstra\+Shortest\+Path} (\hyperlink{_node_8hpp_a9d6265804805c2375068fd7484840dc6}{node\+\_\+id} src\+\_\+id, \hyperlink{_node_8hpp_a9d6265804805c2375068fd7484840dc6}{node\+\_\+id} dest\+\_\+id, \hyperlink{class_transport_a1879cecfed0d4238e5a7af6d085db317}{Transport\+::\+Type} type, unsigned int scale=5)
 \item 
 void \hyperlink{class_graph_afe77f6a03cad266807c741d1a3178541}{dijkstra\+Shortest\+Path} (\hyperlink{class_node}{Node} $\ast$src, \hyperlink{class_node}{Node} $\ast$dest, \hyperlink{class_transport_a1879cecfed0d4238e5a7af6d085db317}{Transport\+::\+Type} type, unsigned int scale=5)
 \item 
-void \hyperlink{class_graph_a284736e6b467032dce3bfd69213c31f0}{dijkstra\+Shortest\+Path\+With\+Max\+Cost} (node\+\_\+id src\+\_\+id, node\+\_\+id dest\+\_\+id, unsigned max\+Cost)
+void \hyperlink{class_graph_a284736e6b467032dce3bfd69213c31f0}{dijkstra\+Shortest\+Path\+With\+Max\+Cost} (\hyperlink{_node_8hpp_a9d6265804805c2375068fd7484840dc6}{node\+\_\+id} src\+\_\+id, \hyperlink{_node_8hpp_a9d6265804805c2375068fd7484840dc6}{node\+\_\+id} dest\+\_\+id, unsigned max\+Cost)
 \item 
-vector$<$ \hyperlink{class_node}{Node} $\ast$ $>$ \hyperlink{class_graph_ae4c66eaf1b29f53bf90ad6266baa6819}{get\+Path} (node\+\_\+id src\+\_\+id, node\+\_\+id dest\+\_\+id) const
+vector$<$ \hyperlink{class_node}{Node} $\ast$ $>$ \hyperlink{class_graph_ae4c66eaf1b29f53bf90ad6266baa6819}{get\+Path} (\hyperlink{_node_8hpp_a9d6265804805c2375068fd7484840dc6}{node\+\_\+id} src\+\_\+id, \hyperlink{_node_8hpp_a9d6265804805c2375068fd7484840dc6}{node\+\_\+id} dest\+\_\+id) const
 \item 
-vector$<$ \hyperlink{class_edge}{Edge} $\ast$ $>$ \hyperlink{class_graph_a94db80dbb52cac57e2b5d14c53e649e7}{get\+Path\+Edges} (node\+\_\+id src\+\_\+id, node\+\_\+id dest\+\_\+id) const
+vector$<$ \hyperlink{class_edge}{Edge} $\ast$ $>$ \hyperlink{class_graph_a94db80dbb52cac57e2b5d14c53e649e7}{get\+Path\+Edges} (\hyperlink{_node_8hpp_a9d6265804805c2375068fd7484840dc6}{node\+\_\+id} src\+\_\+id, \hyperlink{_node_8hpp_a9d6265804805c2375068fd7484840dc6}{node\+\_\+id} dest\+\_\+id) const
 \item 
-float \hyperlink{class_graph_adb19e47c0238b012a6a3a28bdaf855f8}{get\+Path\+Length} (node\+\_\+id src\+\_\+id, node\+\_\+id dest\+\_\+id) const
+float \hyperlink{class_graph_adb19e47c0238b012a6a3a28bdaf855f8}{get\+Path\+Length} (\hyperlink{_node_8hpp_a9d6265804805c2375068fd7484840dc6}{node\+\_\+id} src\+\_\+id, \hyperlink{_node_8hpp_a9d6265804805c2375068fd7484840dc6}{node\+\_\+id} dest\+\_\+id) const
 \item 
-float \hyperlink{class_graph_a2d69a99fb35fee10aadc243c468ad9b2}{get\+Path\+Duration} (node\+\_\+id src\+\_\+id, node\+\_\+id dest\+\_\+id) const
+float \hyperlink{class_graph_a2d69a99fb35fee10aadc243c468ad9b2}{get\+Path\+Duration} (\hyperlink{_node_8hpp_a9d6265804805c2375068fd7484840dc6}{node\+\_\+id} src\+\_\+id, \hyperlink{_node_8hpp_a9d6265804805c2375068fd7484840dc6}{node\+\_\+id} dest\+\_\+id) const
 \item 
-unsigned \hyperlink{class_graph_a9d5ab1a266d948f146e78866ef19673d}{get\+Path\+Cost} (node\+\_\+id src\+\_\+id, node\+\_\+id dest\+\_\+id) const
+unsigned \hyperlink{class_graph_a9d5ab1a266d948f146e78866ef19673d}{get\+Path\+Cost} (\hyperlink{_node_8hpp_a9d6265804805c2375068fd7484840dc6}{node\+\_\+id} src\+\_\+id, \hyperlink{_node_8hpp_a9d6265804805c2375068fd7484840dc6}{node\+\_\+id} dest\+\_\+id) const
 \item 
 void \hyperlink{class_graph_ab596c4b805ecdf622c4f3d952f894a50}{dfs} (\hyperlink{class_node}{Node} $\ast$v, vector$<$ \hyperlink{class_node}{Node} $\ast$$>$ \&res)
 \end{DoxyCompactItemize}
@@ -111,7 +121,7 @@ Runs Depth-\/\+First Search from the node pointed to by v, and pushes visited no
 \index{Graph@{Graph}!dijkstra\+Shortest\+Path@{dijkstra\+Shortest\+Path}}
 \index{dijkstra\+Shortest\+Path@{dijkstra\+Shortest\+Path}!Graph@{Graph}}
 \subsubsection{\texorpdfstring{dijkstra\+Shortest\+Path()}{dijkstraShortestPath()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
-{\footnotesize\ttfamily void Graph\+::dijkstra\+Shortest\+Path (\begin{DoxyParamCaption}\item[{node\+\_\+id}]{src\+\_\+id,  }\item[{node\+\_\+id}]{dest\+\_\+id = {\ttfamily 0} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Graph\+::dijkstra\+Shortest\+Path (\begin{DoxyParamCaption}\item[{\hyperlink{_node_8hpp_a9d6265804805c2375068fd7484840dc6}{node\+\_\+id}}]{src\+\_\+id,  }\item[{\hyperlink{_node_8hpp_a9d6265804805c2375068fd7484840dc6}{node\+\_\+id}}]{dest\+\_\+id = {\ttfamily 0} }\end{DoxyParamCaption})}
 
 Implementation of Dijkstra\textquotesingle{}s shortest path algorithm. The shortest path will be the fastest one.
 
@@ -141,7 +151,7 @@ Implementation of Dijkstra\textquotesingle{}s shortest path algorithm. The short
 \index{Graph@{Graph}!dijkstra\+Shortest\+Path@{dijkstra\+Shortest\+Path}}
 \index{dijkstra\+Shortest\+Path@{dijkstra\+Shortest\+Path}!Graph@{Graph}}
 \subsubsection{\texorpdfstring{dijkstra\+Shortest\+Path()}{dijkstraShortestPath()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
-{\footnotesize\ttfamily void Graph\+::dijkstra\+Shortest\+Path (\begin{DoxyParamCaption}\item[{node\+\_\+id}]{src\+\_\+id,  }\item[{node\+\_\+id}]{dest\+\_\+id,  }\item[{\hyperlink{class_transport_a1879cecfed0d4238e5a7af6d085db317}{Transport\+::\+Type}}]{type,  }\item[{unsigned int}]{scale = {\ttfamily 5} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Graph\+::dijkstra\+Shortest\+Path (\begin{DoxyParamCaption}\item[{\hyperlink{_node_8hpp_a9d6265804805c2375068fd7484840dc6}{node\+\_\+id}}]{src\+\_\+id,  }\item[{\hyperlink{_node_8hpp_a9d6265804805c2375068fd7484840dc6}{node\+\_\+id}}]{dest\+\_\+id,  }\item[{\hyperlink{class_transport_a1879cecfed0d4238e5a7af6d085db317}{Transport\+::\+Type}}]{type,  }\item[{unsigned int}]{scale = {\ttfamily 5} }\end{DoxyParamCaption})}
 
 Implementation of Dijkstra\textquotesingle{}s shortest path algorithm. The shortest path will be fastest one. This Dijkstra implementation takes into consideration the mean of \hyperlink{class_transport}{Transport} used.
 
@@ -179,7 +189,7 @@ Implementation of Dijkstra\textquotesingle{}s shortest path algorithm. The short
 \index{Graph@{Graph}!dijkstra\+Shortest\+Path\+With\+Max\+Cost@{dijkstra\+Shortest\+Path\+With\+Max\+Cost}}
 \index{dijkstra\+Shortest\+Path\+With\+Max\+Cost@{dijkstra\+Shortest\+Path\+With\+Max\+Cost}!Graph@{Graph}}
 \subsubsection{\texorpdfstring{dijkstra\+Shortest\+Path\+With\+Max\+Cost()}{dijkstraShortestPathWithMaxCost()}}
-{\footnotesize\ttfamily void Graph\+::dijkstra\+Shortest\+Path\+With\+Max\+Cost (\begin{DoxyParamCaption}\item[{node\+\_\+id}]{src\+\_\+id,  }\item[{node\+\_\+id}]{dest\+\_\+id,  }\item[{unsigned}]{max\+Cost }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Graph\+::dijkstra\+Shortest\+Path\+With\+Max\+Cost (\begin{DoxyParamCaption}\item[{\hyperlink{_node_8hpp_a9d6265804805c2375068fd7484840dc6}{node\+\_\+id}}]{src\+\_\+id,  }\item[{\hyperlink{_node_8hpp_a9d6265804805c2375068fd7484840dc6}{node\+\_\+id}}]{dest\+\_\+id,  }\item[{unsigned}]{max\+Cost }\end{DoxyParamCaption})}
 
 Altered implementation of Dijkstra\textquotesingle{}s shortest path algorithm, takes into account a maximum cost. The shortest path will be the fastest one, but without never costing more than the maximum Cost.
 
@@ -196,7 +206,7 @@ Altered implementation of Dijkstra\textquotesingle{}s shortest path algorithm, t
 \index{Graph@{Graph}!get\+Edges@{get\+Edges}}
 \index{get\+Edges@{get\+Edges}!Graph@{Graph}}
 \subsubsection{\texorpdfstring{get\+Edges()}{getEdges()}}
-{\footnotesize\ttfamily unordered\+\_\+map$<$ edge\+\_\+id, \hyperlink{class_edge}{Edge} $\ast$ $>$ Graph\+::get\+Edges (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily unordered\+\_\+map$<$ \hyperlink{_edge_8hpp_ad7d18d7b90a45b6625704e92d10aa3a0}{edge\+\_\+id}, \hyperlink{class_edge}{Edge} $\ast$ $>$ Graph\+::get\+Edges (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 Getter for the \hyperlink{class_graph}{Graph}\textquotesingle{}s Edges.
 
@@ -207,7 +217,7 @@ Hash map containing all the \hyperlink{class_graph}{Graph}\textquotesingle{}s Ed
 \index{Graph@{Graph}!get\+Node\+I\+D\+From\+Parser\+ID@{get\+Node\+I\+D\+From\+Parser\+ID}}
 \index{get\+Node\+I\+D\+From\+Parser\+ID@{get\+Node\+I\+D\+From\+Parser\+ID}!Graph@{Graph}}
 \subsubsection{\texorpdfstring{get\+Node\+I\+D\+From\+Parser\+I\+D()}{getNodeIDFromParserID()}}
-{\footnotesize\ttfamily node\+\_\+id Graph\+::get\+Node\+I\+D\+From\+Parser\+ID (\begin{DoxyParamCaption}\item[{int}]{parser\+ID }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily \hyperlink{_node_8hpp_a9d6265804805c2375068fd7484840dc6}{node\+\_\+id} Graph\+::get\+Node\+I\+D\+From\+Parser\+ID (\begin{DoxyParamCaption}\item[{int}]{parser\+ID }\end{DoxyParamCaption}) const}
 
 Parser function that parses a parser\+ID into its correspondent node\+ID.
 
@@ -223,7 +233,7 @@ Correspondent node\+ID to the given parser\+ID.
 \index{Graph@{Graph}!get\+Nodes@{get\+Nodes}}
 \index{get\+Nodes@{get\+Nodes}!Graph@{Graph}}
 \subsubsection{\texorpdfstring{get\+Nodes()}{getNodes()}}
-{\footnotesize\ttfamily unordered\+\_\+map$<$ node\+\_\+id, \hyperlink{class_node}{Node} $\ast$ $>$ Graph\+::get\+Nodes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily unordered\+\_\+map$<$ \hyperlink{_node_8hpp_a9d6265804805c2375068fd7484840dc6}{node\+\_\+id}, \hyperlink{class_node}{Node} $\ast$ $>$ Graph\+::get\+Nodes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 Getter for the \hyperlink{class_graph}{Graph}\textquotesingle{}s Nodes.
 
@@ -234,7 +244,7 @@ Hash map containing all the \hyperlink{class_graph}{Graph}\textquotesingle{}s No
 \index{Graph@{Graph}!get\+Path@{get\+Path}}
 \index{get\+Path@{get\+Path}!Graph@{Graph}}
 \subsubsection{\texorpdfstring{get\+Path()}{getPath()}}
-{\footnotesize\ttfamily vector$<$ \hyperlink{class_node}{Node} $\ast$ $>$ Graph\+::get\+Path (\begin{DoxyParamCaption}\item[{node\+\_\+id}]{src\+\_\+id,  }\item[{node\+\_\+id}]{dest\+\_\+id }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily vector$<$ \hyperlink{class_node}{Node} $\ast$ $>$ Graph\+::get\+Path (\begin{DoxyParamCaption}\item[{\hyperlink{_node_8hpp_a9d6265804805c2375068fd7484840dc6}{node\+\_\+id}}]{src\+\_\+id,  }\item[{\hyperlink{_node_8hpp_a9d6265804805c2375068fd7484840dc6}{node\+\_\+id}}]{dest\+\_\+id }\end{DoxyParamCaption}) const}
 
 Calculates the path between to given nodes, represented by their I\+Ds.
 
@@ -252,7 +262,7 @@ The calculated path (vector of Nodes).
 \index{Graph@{Graph}!get\+Path\+Cost@{get\+Path\+Cost}}
 \index{get\+Path\+Cost@{get\+Path\+Cost}!Graph@{Graph}}
 \subsubsection{\texorpdfstring{get\+Path\+Cost()}{getPathCost()}}
-{\footnotesize\ttfamily unsigned Graph\+::get\+Path\+Cost (\begin{DoxyParamCaption}\item[{node\+\_\+id}]{src\+\_\+id,  }\item[{node\+\_\+id}]{dest\+\_\+id }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily unsigned Graph\+::get\+Path\+Cost (\begin{DoxyParamCaption}\item[{\hyperlink{_node_8hpp_a9d6265804805c2375068fd7484840dc6}{node\+\_\+id}}]{src\+\_\+id,  }\item[{\hyperlink{_node_8hpp_a9d6265804805c2375068fd7484840dc6}{node\+\_\+id}}]{dest\+\_\+id }\end{DoxyParamCaption}) const}
 
 Calculates path cost, in cents.
 
@@ -270,7 +280,7 @@ The path\textquotesingle{}s cost, in cents.
 \index{Graph@{Graph}!get\+Path\+Duration@{get\+Path\+Duration}}
 \index{get\+Path\+Duration@{get\+Path\+Duration}!Graph@{Graph}}
 \subsubsection{\texorpdfstring{get\+Path\+Duration()}{getPathDuration()}}
-{\footnotesize\ttfamily float Graph\+::get\+Path\+Duration (\begin{DoxyParamCaption}\item[{node\+\_\+id}]{src\+\_\+id,  }\item[{node\+\_\+id}]{dest\+\_\+id }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily float Graph\+::get\+Path\+Duration (\begin{DoxyParamCaption}\item[{\hyperlink{_node_8hpp_a9d6265804805c2375068fd7484840dc6}{node\+\_\+id}}]{src\+\_\+id,  }\item[{\hyperlink{_node_8hpp_a9d6265804805c2375068fd7484840dc6}{node\+\_\+id}}]{dest\+\_\+id }\end{DoxyParamCaption}) const}
 
 Calculates path duration, in hours.
 
@@ -288,7 +298,7 @@ The path\textquotesingle{}s duration, in hours.
 \index{Graph@{Graph}!get\+Path\+Edges@{get\+Path\+Edges}}
 \index{get\+Path\+Edges@{get\+Path\+Edges}!Graph@{Graph}}
 \subsubsection{\texorpdfstring{get\+Path\+Edges()}{getPathEdges()}}
-{\footnotesize\ttfamily vector$<$ \hyperlink{class_edge}{Edge} $\ast$ $>$ Graph\+::get\+Path\+Edges (\begin{DoxyParamCaption}\item[{node\+\_\+id}]{src\+\_\+id,  }\item[{node\+\_\+id}]{dest\+\_\+id }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily vector$<$ \hyperlink{class_edge}{Edge} $\ast$ $>$ Graph\+::get\+Path\+Edges (\begin{DoxyParamCaption}\item[{\hyperlink{_node_8hpp_a9d6265804805c2375068fd7484840dc6}{node\+\_\+id}}]{src\+\_\+id,  }\item[{\hyperlink{_node_8hpp_a9d6265804805c2375068fd7484840dc6}{node\+\_\+id}}]{dest\+\_\+id }\end{DoxyParamCaption}) const}
 
 Calculates the path between to given nodes, represented by their I\+Ds and returns the Edges that make the path.
 
@@ -306,7 +316,7 @@ The Edges of the calculated path.
 \index{Graph@{Graph}!get\+Path\+Length@{get\+Path\+Length}}
 \index{get\+Path\+Length@{get\+Path\+Length}!Graph@{Graph}}
 \subsubsection{\texorpdfstring{get\+Path\+Length()}{getPathLength()}}
-{\footnotesize\ttfamily float Graph\+::get\+Path\+Length (\begin{DoxyParamCaption}\item[{node\+\_\+id}]{src\+\_\+id,  }\item[{node\+\_\+id}]{dest\+\_\+id }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily float Graph\+::get\+Path\+Length (\begin{DoxyParamCaption}\item[{\hyperlink{_node_8hpp_a9d6265804805c2375068fd7484840dc6}{node\+\_\+id}}]{src\+\_\+id,  }\item[{\hyperlink{_node_8hpp_a9d6265804805c2375068fd7484840dc6}{node\+\_\+id}}]{dest\+\_\+id }\end{DoxyParamCaption}) const}
 
 Calculates path length, in kilometers.
 
@@ -324,7 +334,7 @@ The path\textquotesingle{}s length, in km.
 \index{Graph@{Graph}!get\+Roads@{get\+Roads}}
 \index{get\+Roads@{get\+Roads}!Graph@{Graph}}
 \subsubsection{\texorpdfstring{get\+Roads()}{getRoads()}}
-{\footnotesize\ttfamily unordered\+\_\+map$<$ road\+\_\+id, \hyperlink{class_road}{Road} $\ast$ $>$ Graph\+::get\+Roads (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily unordered\+\_\+map$<$ \hyperlink{_road_8hpp_a8e0db0d135782948da5d293720dbfb46}{road\+\_\+id}, \hyperlink{class_road}{Road} $\ast$ $>$ Graph\+::get\+Roads (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 Getter for the \hyperlink{class_graph}{Graph}\textquotesingle{}s Roads.
 
@@ -335,5 +345,5 @@ Hash map containing all the \hyperlink{class_graph}{Graph}\textquotesingle{}s Ro
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-Graph.\+hpp\item 
-Graph.\+cpp\end{DoxyCompactItemize}
+\hyperlink{_graph_8hpp}{Graph.\+hpp}\item 
+\hyperlink{_graph_8cpp}{Graph.\+cpp}\end{DoxyCompactItemize}

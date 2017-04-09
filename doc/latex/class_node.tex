@@ -4,15 +4,24 @@
 
 {\ttfamily \#include $<$Node.\+hpp$>$}
 
+
+
+Collaboration diagram for Node\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{class_node__coll__graph}
+\end{center}
+\end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{class_node_a3662f8e557681586b8a44df334dbdfaa}{Node} (istream \&input)
 \item 
-\hypertarget{class_node_aceb6d58ed1ee8fe95c532453a1f09ad2}{}\label{class_node_aceb6d58ed1ee8fe95c532453a1f09ad2} 
-{\bfseries Node} (node\+\_\+id id, \hyperlink{class_geographic_coords}{Geographic\+Coords} coords)
+\hyperlink{class_node_aceb6d58ed1ee8fe95c532453a1f09ad2}{Node} (\hyperlink{_node_8hpp_a9d6265804805c2375068fd7484840dc6}{node\+\_\+id} id, \hyperlink{class_geographic_coords}{Geographic\+Coords} coords)
 \item 
-node\+\_\+id \hyperlink{class_node_a5e319f5c050c46590bed81fc4dc54325}{get\+ID} () const
+\hyperlink{_node_8hpp_a9d6265804805c2375068fd7484840dc6}{node\+\_\+id} \hyperlink{class_node_a5e319f5c050c46590bed81fc4dc54325}{get\+ID} () const
 \item 
 int \hyperlink{class_node_ab79cb8588caac0a2d0dd99d7e7dd2f28}{get\+Parser\+ID} () const
 \item 
@@ -34,7 +43,7 @@ void \hyperlink{class_node_a9c981148bc1602d4388c6ea6428450c4}{add\+Edge} (\hyper
 \item 
 bool \hyperlink{class_node_a4c78d9813537ccfc829401f979176428}{remove\+Edge} (\hyperlink{class_edge}{Edge} $\ast$ptr)
 \item 
-void \hyperlink{class_node_a70d6617e33b3fc219f9d3c1bd48d7cca}{remove\+Edges\+To} (node\+\_\+id id)
+void \hyperlink{class_node_a70d6617e33b3fc219f9d3c1bd48d7cca}{remove\+Edges\+To} (\hyperlink{_node_8hpp_a9d6265804805c2375068fd7484840dc6}{node\+\_\+id} id)
 \item 
 size\+\_\+t \hyperlink{class_node_abc4a69053f8f664c9b6a6a6bbe5d8c68}{get\+Num\+Edges} () const
 \item 
@@ -69,7 +78,7 @@ A class used to represent a \hyperlink{class_node}{Node} in a \hyperlink{class_g
 \hypertarget{class_node_a3662f8e557681586b8a44df334dbdfaa}{}\label{class_node_a3662f8e557681586b8a44df334dbdfaa} 
 \index{Node@{Node}!Node@{Node}}
 \index{Node@{Node}!Node@{Node}}
-\subsubsection{\texorpdfstring{Node()}{Node()}}
+\subsubsection{\texorpdfstring{Node()}{Node()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily Node\+::\+Node (\begin{DoxyParamCaption}\item[{istream \&}]{input }\end{DoxyParamCaption})}
 
 \hyperlink{class_node}{Node}\textquotesingle{}s constructor from file. Creates a \hyperlink{class_node}{Node} with the data passed by the argument input stream.
@@ -79,6 +88,12 @@ A class used to represent a \hyperlink{class_node}{Node} in a \hyperlink{class_g
 {\em input} & The input stream to read from in order to build a \hyperlink{class_node}{Node} object. \\
 \hline
 \end{DoxyParams}
+\hypertarget{class_node_aceb6d58ed1ee8fe95c532453a1f09ad2}{}\label{class_node_aceb6d58ed1ee8fe95c532453a1f09ad2} 
+\index{Node@{Node}!Node@{Node}}
+\index{Node@{Node}!Node@{Node}}
+\subsubsection{\texorpdfstring{Node()}{Node()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Node\+::\+Node (\begin{DoxyParamCaption}\item[{\hyperlink{_node_8hpp_a9d6265804805c2375068fd7484840dc6}{node\+\_\+id}}]{id,  }\item[{\hyperlink{class_geographic_coords}{Geographic\+Coords}}]{coords }\end{DoxyParamCaption})}
+
 
 
 \subsection{Member Function Documentation}
@@ -143,7 +158,7 @@ vector of all the Edges associated to the \hyperlink{class_node}{Node}.
 \index{Node@{Node}!get\+ID@{get\+ID}}
 \index{get\+ID@{get\+ID}!Node@{Node}}
 \subsubsection{\texorpdfstring{get\+I\+D()}{getID()}}
-{\footnotesize\ttfamily node\+\_\+id Node\+::get\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily \hyperlink{_node_8hpp_a9d6265804805c2375068fd7484840dc6}{node\+\_\+id} Node\+::get\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 Getter for \hyperlink{class_node}{Node}\textquotesingle{}s ID. The ID is used to represent a \hyperlink{class_node}{Node}, since there are no two Nodes with the same ID.
 
@@ -251,7 +266,7 @@ True if the \hyperlink{class_edge}{Edge} was removed, false otherwise.
 \index{Node@{Node}!remove\+Edges\+To@{remove\+Edges\+To}}
 \index{remove\+Edges\+To@{remove\+Edges\+To}!Node@{Node}}
 \subsubsection{\texorpdfstring{remove\+Edges\+To()}{removeEdgesTo()}}
-{\footnotesize\ttfamily void Node\+::remove\+Edges\+To (\begin{DoxyParamCaption}\item[{node\+\_\+id}]{id }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Node\+::remove\+Edges\+To (\begin{DoxyParamCaption}\item[{\hyperlink{_node_8hpp_a9d6265804805c2375068fd7484840dc6}{node\+\_\+id}}]{id }\end{DoxyParamCaption})}
 
 Function that removes the Edges whose destiny \hyperlink{class_node}{Node} is the given \hyperlink{class_node}{Node}.
 
@@ -310,5 +325,5 @@ bool visited. Flag\+: If true, \hyperlink{class_node}{Node} was already visited 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-Node.\+hpp\item 
-Node.\+cpp\end{DoxyCompactItemize}
+\hyperlink{_node_8hpp}{Node.\+hpp}\item 
+\hyperlink{_node_8cpp}{Node.\+cpp}\end{DoxyCompactItemize}

@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['path',['path',['../class_node.html#a569c555f532e04a5ef976a54cd3c82a0',1,'Node']]],
-  ['port',['port',['../class_graph_viewer.html#a89d0abe75f41feededc49497cc514342',1,'GraphViewer']]],
-  ['processing',['processing',['../class_node.html#ac54c0bde41664161566c30ccf4f8a53e',1,'Node']]]
+  ['edgepath',['edgePath',['../class_node.html#a547c4e0904d03f97ca32a66408b11584',1,'Node']]],
+  ['edges_5fpath',['EDGES_PATH',['../main_8cpp.html#abf0fe22a8405adae10eaa932870ce85f',1,'main.cpp']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['operator_3c_3c',['operator&lt;&lt;',['../class_edge.html#a4ba287cbdc78be9ec49dd1b67291039b',1,'Edge']]]
+  ['home',['HOME',['../main_8cpp.html#a5a865f074fb9441f4feb6349783cbba2',1,'main.cpp']]]
 ];

@@ -46,26 +46,26 @@ int main() {
 //    askForPath(gv, g);
     
     // Tests
-//    node_id origin, dest;
-//    origin = 430006697LL;
-//    dest = 4773399285LL;
-//    
-////    g.dijkstraShortestPath(origin, dest, Transport::FOOT, 10);
+    node_id origin, dest;
+    origin = 430006697LL;
+    dest = 4773399285LL;
+    
+    g.dijkstraShortestPath(origin, dest, Transport::FOOT, 12);
 //    g.dijkstraShortestPathWithMaxCost(origin, dest, 80);
-////    g.dijkstraShortestPathWithMaxCost(origin, dest, 105);
-//    
-//    auto path = g.getPath(origin, dest);
-//    auto edges = g.getPathEdges(origin, dest);
-//    
-//    GraphViewer * gv = viewGraphComplete(g);
-//    viewGraphPath(gv, path);
-//    widenGraphPathEdges(gv, edges);
-//
-//    // Print edges
-////    for (auto ptr : edges)
-////        cout << *ptr << endl;
-//    
-//    printPathStats(g, origin, dest);
+//    g.dijkstraShortestPathWithMaxCost(origin, dest, 105);
+    
+    auto path = g.getPath(origin, dest);
+    auto edges = g.getPathEdges(origin, dest);
+    
+    GraphViewer * gv = viewGraphComplete(g);
+    viewGraphPath(gv, path);
+    widenGraphPathEdges(gv, edges);
+
+    // Print edges
+//    for (auto ptr : edges)
+//        cout << *ptr << endl;
+    
+    printPathStats(g, origin, dest);
     
     return 0;
 }
