@@ -33,7 +33,7 @@ private:
     GeographicCoords coords;
     Point point;
     
-    vector<Edge *> edges; // initially ordered by weight (?)
+    vector<Edge *> edges; // initially ordered by weight
     
     void setStaticRange() const;
     
