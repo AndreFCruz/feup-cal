@@ -6,6 +6,8 @@
 //  Copyright © 2017 Andre Cruz. All rights reserved.
 //
 
+#include <set>
+#include <numeric>
 #include <stack>
 #include <iostream>
 #include <queue>
@@ -163,26 +165,41 @@ void Graph::resetNodes() {
     nodesReset = true;
 }
 
-// TODO
 bool Graph::isConnected() {
-    cout << "Num nodes: " << nodes.size() << endl;
-    
+
     Graph copy(*this);
     
     // Simulate Undirected
     for (auto p : copy.edges) {
         Edge * edg = p.second;
-        
         copy.addEdge(new Edge(edg->getDest(), edg->getOrigin(), nullptr, edg->getType()));
     }
     
-    // DFS
+    // Find Clusters Through DFS
+    auto it = copy.nodes.begin();
+    set<size_t> clusters;
     
-    // TODO
+    while (accumulate(clusters.begin(), clusters.end(), 0) < copy.nodes.size()) {
+        Node * start = (it++)->second;
+        
+        if (it == copy.nodes.end())
+            break;
+        
+        if (start->visited)
+            continue;
+        
+        vector<Node *> res;
+        copy.dfs(start, res);
+        clusters.insert(res.size());
+        
+    }
     
-    // Check result
+    cout << "Cluster(s) :";
+    for (auto it = clusters.rbegin(); it != clusters.rend(); ++it)
+        cout << " " << *it;
+    cout << ".\n";
     
-    return true;
+    return clusters.size() <= 1;
 }
 
 node_id Graph::getNodeIDFromParserID(int parserID) const {
@@ -469,7 +486,7 @@ vector<Node*> Graph::dfs() {
     return res;
 }
 
-void Graph::dfs(Node * v, vector<Node*> & res) const {
+void Graph::dfs(Node * v, vector<Node*> & res) {
     v->visited = true;
     res.push_back(v);
     
@@ -480,4 +497,6 @@ void Graph::dfs(Node * v, vector<Node*> & res) const {
         if ( (*it)->getDest()->visited == false ){
             dfs((*it)->getDest(), res);
         }
+    
+    nodesReset = false;
 }

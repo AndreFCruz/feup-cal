@@ -107,7 +107,7 @@ public:
     
     vector<Node*> dfs();
     
-    void dfs(Node * v, vector<Node*> & res) const;
+    void dfs(Node * v, vector<Node*> & res);
     
 };
 
