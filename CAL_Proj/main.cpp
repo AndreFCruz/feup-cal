@@ -42,8 +42,8 @@ int main() {
     Graph g(nodes_ifs, roads_ifs, edges_ifs, subway_ifs, bus_ifs);
     
     // User Interface
-    GraphViewer * gv = viewGraphComplete(g);
-    askForPath(gv, g);
+//    GraphViewer * gv = viewGraphComplete(g);
+//    askForPath(gv, g);
     
     // Tests
 //    node_id origin, dest;

@@ -149,7 +149,9 @@ void Graph::resetNodes() {
 }
 
 // TODO
-bool Graph::isConnected() const {
+bool Graph::isConnected() {
+    cout << "Num nodes: " << nodes.size() << endl;
+    
     return true;
 }
 
@@ -339,6 +341,7 @@ void Graph::dijkstraShortestPathWithCost(Node * src, Node * destination, unsigne
     }
 }
 
+// TODO try with preference for FOOT with increasing scale
 void Graph::dijkstraShortestPathWithMaxCost(node_id src_id, node_id dest_id, unsigned maxCost) {
     Node * src = nodes.at(src_id);
     Node * dest = nodes.at(dest_id);
@@ -415,4 +418,36 @@ unsigned Graph::getPathCost(node_id src_id, node_id dest_id) const {
         cost += edg->getCost();
     
     return cost;
+}
+
+vector<Node*> Graph::dfs() {
+    auto it = nodes.begin();
+    auto ite = nodes.end();
+    
+    // Mark nodes as not visited
+    for (; it != ite; it++)
+        (*it).second->visited=false;
+    
+    vector<Node*> res;
+    it=nodes.begin();
+    for (; it != ite; it++)
+        if ( (*it).second->visited==false )
+            dfs((*it).second, res);
+    
+    nodesReset = false;
+    
+    return res;
+}
+
+void Graph::dfs(Node * v, vector<Node*> & res) const {
+    v->visited = true;
+    res.push_back(v);
+    
+    auto it = v->getEdges().begin();
+    auto ite = v->getEdges().end();
+    
+    for (; it != ite; it++)
+        if ( (*it)->getDest()->visited == false ){
+            dfs((*it)->getDest(), res);
+        }
 }

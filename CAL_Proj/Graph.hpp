@@ -38,7 +38,7 @@ private:
     
     bool nodesReset = true;
     
-    bool isConnected() const;
+    bool isConnected();
     
     /**
      * Altered implementation of Dijkstra's shortest path algorithm,
@@ -103,8 +103,10 @@ public:
      */
     unsigned getPathCost(node_id src_id, node_id dest_id) const;
     
-    //dijkstra, A-star
-    //avaliar conectividade TODO
+    vector<Node*> dfs();
+    
+    void dfs(Node * v, vector<Node*> & res) const;
+    
 };
 
 
