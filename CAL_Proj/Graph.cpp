@@ -87,6 +87,21 @@ Graph::Graph(istream & nodes_in, istream & roads_in, istream & edges_in, istream
         cerr << "Graph is NOT connected.\n";
 }
 
+Graph::Graph(const Graph & obj) {
+    for (auto p : obj.nodes) {
+        Node * n = p.second;
+        nodes.insert(make_pair(p.first, new Node(n->getID(), n->getCoords())));
+    }
+    
+    for (auto p : obj.edges) {
+        Edge * edg = p.second;
+        Node * origin = nodes.at(edg->getOrigin()->getID());
+        Node * dest = nodes.at(edg->getDest()->getID());
+
+        addEdge(new Edge(origin, dest, nullptr, edg->getType()));
+    }
+}
+
 Graph::~Graph() {
     
     // Delete nodes
@@ -151,6 +166,21 @@ void Graph::resetNodes() {
 // TODO
 bool Graph::isConnected() {
     cout << "Num nodes: " << nodes.size() << endl;
+    
+    Graph copy(*this);
+    
+    // Simulate Undirected
+    for (auto p : copy.edges) {
+        Edge * edg = p.second;
+        
+        copy.addEdge(new Edge(edg->getDest(), edg->getOrigin(), nullptr, edg->getType()));
+    }
+    
+    // DFS
+    
+    // TODO
+    
+    // Check result
     
     return true;
 }

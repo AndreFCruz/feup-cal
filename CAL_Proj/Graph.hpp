@@ -53,6 +53,8 @@ private:
 public:
     Graph(istream & nodes, istream & edges, istream & roads, istream & subway, istream & bus);
     
+    Graph(const Graph & obj);  // copy constructor
+    
     ~Graph();
     
     node_id getNodeIDFromParserID(int parserID) const;

@@ -38,6 +38,8 @@ Node::Node(istream & input) : parserID(count++) {
     setStaticRange();
 }
 
+Node::Node(node_id id, GeographicCoords coords) : id(id), coords(coords) {}
+
 void Node::setStaticRange() const {
     float lat = coords.getLat();
     float lon = coords.getLon();

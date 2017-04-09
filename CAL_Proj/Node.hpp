@@ -79,6 +79,8 @@ public:
      */
     Node(istream & input);
     
+    Node(node_id id, GeographicCoords coords);
+    
     /**
      * Getter for Node's ID.
      * The ID is used to represent a Node, since there are no two Nodes with the same ID.
