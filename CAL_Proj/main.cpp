@@ -50,8 +50,9 @@ int main() {
     origin = 430006697LL;
     dest = 4773399285LL;
     
-    g.dijkstraShortestPath(origin, dest, Transport::FOOT, 12);
-//    g.dijkstraShortestPathWithMaxCost(origin, dest, 80);
+//    g.dijkstraShortestPath(origin, dest, Transport::FOOT, 12);
+    g.dijkstraShortestPath(origin, dest, Transport::BUS);
+//    g.dijkstraShortestPathWithMaxCost(origin, dest, 80); // comparar com preferencia de autocarro
 //    g.dijkstraShortestPathWithMaxCost(origin, dest, 105);
     
     auto path = g.getPath(origin, dest);

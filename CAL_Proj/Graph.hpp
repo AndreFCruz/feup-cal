@@ -158,9 +158,9 @@ public:
      * @param src_id The id of the origin Node.
      * @param dest_id The id of the destiny Node.
      * @param type Mean of Transport used.
-     * @param scale Mean of transport preference scale (bigger scale means higher preference). If no value is given it defaults to 5.
+     * @param scale Mean of transport preference scale (bigger scale means higher preference). If no value is given it defaults to 6.
      */
-    void dijkstraShortestPath(node_id src_id, node_id dest_id, Transport::Type type, unsigned int scale = 5);
+    void dijkstraShortestPath(node_id src_id, node_id dest_id, Transport::Type type, unsigned int scale = 6);
 
     /**
      * Implementation of Dijkstra's shortest path algorithm.
@@ -170,9 +170,9 @@ public:
      * @param src The origin Node.
      * @param dest The destiny Node.
      * @param type Mean of Transport used.
-     * @param scale Mean of transport preference scale (bigger scale means higher preference). If no value is given it defaults to 5.
+     * @param scale Mean of transport preference scale (bigger scale means higher preference). If no value is given it defaults to 6.
      */
-    void dijkstraShortestPath(Node * src, Node * dest, Transport::Type type, unsigned int scale = 5);
+    void dijkstraShortestPath(Node * src, Node * dest, Transport::Type type, unsigned int scale = 6);
     
     /**
      * Altered implementation of Dijkstra's shortest path algorithm, takes into account a maximum cost.

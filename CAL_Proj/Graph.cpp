@@ -388,7 +388,6 @@ void Graph::dijkstraShortestPathWithCost(Node * src, Node * destination, unsigne
     }
 }
 
-// TODO try with preference for FOOT with increasing scale
 void Graph::dijkstraShortestPathWithMaxCost(node_id src_id, node_id dest_id, unsigned maxCost) {
     Node * src = nodes.at(src_id);
     Node * dest = nodes.at(dest_id);
