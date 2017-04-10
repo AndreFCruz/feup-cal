@@ -177,9 +177,10 @@ bool Graph::isConnected() {
     
     // Find Clusters Through DFS
     auto it = copy.nodes.begin();
-    set<size_t> clusters;
+    vector<size_t> clusters;
     
-    while (accumulate(clusters.begin(), clusters.end(), 0) < copy.nodes.size() && it != copy.nodes.end()) {
+    unsigned accumulated = 0;
+    while ( accumulated < copy.nodes.size() && it != copy.nodes.end()) {
         Node * start = (it++)->second;
 
         if (start->visited)
@@ -187,12 +188,14 @@ bool Graph::isConnected() {
         
         vector<Node *> res;
         copy.dfs(start, res);
-        clusters.insert(res.size());
+        clusters.push_back(res.size());
+        accumulated += res.size();
         
     }
     
+    cerr << "Nodes (s) : " << accumulated << " == " << copy.nodes.size() << endl;
     cerr << "Cluster(s) :";
-    for (auto it = clusters.rbegin(); it != clusters.rend(); ++it)
+    for (auto it = clusters.begin(); it != clusters.end(); ++it)
         cerr << " " << *it;
     cerr << ".\n";
     
