@@ -447,7 +447,7 @@ float Graph::getPathLength(node_id src_id, node_id dest_id) const {
     for (const Edge * edg : getPathEdges(src_id, dest_id))
         len += edg->getLength();
     
-    return len;
+    return len == 0 ? numeric_limits<float>::infinity() : len;
 }
 
 float Graph::getPathDuration(node_id src_id, node_id dest_id) const {

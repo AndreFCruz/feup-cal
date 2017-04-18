@@ -21,7 +21,7 @@ float getPathLength(const vector<Node *> & path) {
     for (size_t i = 1; i < path.size(); i++)
         len += GeographicCoords::getDistance(path[i-1]->getCoords(), path[i]->getCoords());
     
-    return len;
+    return len == 0 ? numeric_limits<float>::infinity() : len;
 }
 
 vector<Node*> getPathFromEdges(const vector<Edge *> & edges) {
@@ -39,10 +39,10 @@ vector<Node*> getPathFromEdges(const vector<Edge *> & edges) {
 
 GraphViewer * viewGraphComplete(Graph & g) {
     
-    GraphViewer * gv = new GraphViewer(600, 600, false);
+    GraphViewer * gv = new GraphViewer(600000, 600000, false);
     
     gv->setBackground("background.jpg");
-    gv->createWindow(1200, 1200);
+    gv->createWindow(1400, 1200);
 
     gv->defineVertexColor("yellow");
     gv->defineEdgeColor("black");
@@ -201,6 +201,12 @@ bool askForPath(GraphViewer * gv, Graph & g) {
 }
 
 void printPathStats(const Graph & g, node_id src, node_id dest) {
+    if (g.getPath(src, dest).size() <= 1) {
+        cout << "No Path found between the provided nodes." << endl;
+        cout << "IDs were " << src << " and " << dest << ".\n\n";
+        return;
+    }
+    
     cout << "\n** Path Stats **\n";
     cout << "Path Length (km):        " << setprecision(4) << g.getPathLength(src, dest) << endl;
     cout << "Path Cost (cents):       " << setprecision(4) << g.getPathCost(src, dest) << endl;

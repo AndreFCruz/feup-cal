@@ -41,9 +41,10 @@ int main() {
 
     Graph g(nodes_ifs, roads_ifs, edges_ifs, subway_ifs, bus_ifs);
     
+    GraphViewer * gv = viewGraphComplete(g);
+    
     // User Interface
-//    GraphViewer * gv = viewGraphComplete(g);
-//    askForPath(gv, g);
+    askForPath(gv, g);
     
     // Tests
     node_id origin, dest;
@@ -55,18 +56,18 @@ int main() {
 //    g.dijkstraShortestPathWithMaxCost(origin, dest, 80); // comparar com preferencia de autocarro
 //    g.dijkstraShortestPathWithMaxCost(origin, dest, 105);
     
-    auto path = g.getPath(origin, dest);
-    auto edges = g.getPathEdges(origin, dest);
     
-    GraphViewer * gv = viewGraphComplete(g);
-    viewGraphPath(gv, path);
-    widenGraphPathEdges(gv, edges);
+//    auto path = g.getPath(origin, dest);
+//    auto edges = g.getPathEdges(origin, dest);
+//    viewGraphPath(gv, path);
+//    widenGraphPathEdges(gv, edges);
+
+//    printPathStats(g, origin, dest);
 
     // Print edges
 //    for (auto ptr : edges)
 //        cout << *ptr << endl;
     
-    printPathStats(g, origin, dest);
     
     return 0;
 }
