@@ -71,3 +71,16 @@
 128560437;Arca d'Água
 2605287581;Cintura Interna
 128560423;Carlos Amarante
+124365951;Estação Trindade
+280197618;Estação Faria Guimarães
+280198315;Estação Combatentes
+280199199;Estação Pólo Universitário
+280199207;Estação Salgueiros
+280200620;Estação IPO
+280200623;Estação Hospital São João
+3554953495;Estação Marquês
+3379782779;Estação Bolhão
+3397147910;Estação Carolina Michaelis
+3397147911;Estação Casa da Música
+3397147914;Estação Francos
+3397147915;Estação Lapa
