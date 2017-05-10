@@ -1,0 +1,73 @@
+2904508475;Trindade
+1110698245;Gonçalo Cristóvão
+4708512440;Praça da República
+353286182;Figueiroa
+475360049;Carvalhosa
+1416641674;Carolina Michaelis
+4749945219;Cruz Vermelha
+473849956;Quinta Amarela
+475355976;Carvalhido
+1202110494;Hospital da Prelada
+4573825393;Cintura Interna
+126604780;Parque da Prelada
+2489677590;Senhora do Porto
+2596033750;Monte dos Burgos
+296058886;C. Seixo (Sul)
+3241162403;Fogueteiros
+2196549040;Marquês
+3896082255;Faria Guimarães
+128560449;Antero de Quental
+474546948;Piscina (Constituição)
+3163927501;Sapadores Bombeiros
+474695389;BCG
+4505281862;Serpa Pinto
+2532268721;Avenida França
+1866347297;Rua Francisco Sanches
+1866347404;Domingos Sequeira
+1866347438;Casa da Música
+2094769995;Boavista Casa da Música
+335691888;Agramonte
+2225262331;Hospital São João
+4378186331;IPO (Circunvalação)
+2169139651;São Tomé
+112652012;Amial
+112652018;Capuchinhos
+112628000;Via Norte
+297370462;Monte dos Burgos
+3241140500;Congostas
+3456445898;Bairro Santo Eugénio
+3573222246;Hospital São João (Urgência)
+3573222154;Escola Superior Educação
+3573222104;Faculdade de Engenharia
+412249450;Faculdade de Economia
+2073943320;Manuel Laranjeira
+112597525;Outeiro
+444017063;Salgueiros
+4452315764;Augusto Lessa
+343634649;Aval de Cima
+343646655;Bento Júnior
+4526689733;Covelo
+435468997;Campo Lindo
+474793789;Vale Formoso
+474789323;Carvalhido
+474789315;Bica Velha
+4455723345;Natária
+4464000796;Carvalhido
+122432550;Casa de Saúde da Boavista
+126597343;Moreira de Sá
+1866347372;Casa da Música
+2094769995;Boavista Casa da Música
+137818312;Bom Sucesso
+2100595280;Praça da Galiza
+3092543636;Junta de Massarelos
+452682249;Trindade
+25632292;Mártires da Liberdade
+4708512440;Praça da República
+1422610104;Lapa
+137993249;Hospital Sta. Maria
+4573825411;Constituição
+4457851537;Vale Formoso
+474800927;Centro Saúde Paranhos
+128560437;Arca d'Água
+2605287581;Cintura Interna
+128560423;Carlos Amarante
