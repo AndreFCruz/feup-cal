@@ -34,6 +34,7 @@
 
 /* Begin PBXFileReference section */
 		6587DF981E9A4BE900A55DE4 /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Images; sourceTree = "<group>"; };
+		65A2690F1EC88E9600904402 /* map */ = {isa = PBXFileReference; lastKnownFileType = folder; path = map; sourceTree = "<group>"; };
 		65B21B3C1E96C88700D64F05 /* Coordinates.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Coordinates.cpp; sourceTree = "<group>"; };
 		65B21B3D1E96C88700D64F05 /* Coordinates.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Coordinates.hpp; sourceTree = "<group>"; };
 		65B21B3E1E96C88700D64F05 /* Edge.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Edge.cpp; sourceTree = "<group>"; };
@@ -56,8 +57,6 @@
 		65C7A6751E96C64F0003C18D /* connection.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = connection.cpp; sourceTree = "<group>"; };
 		65C7A6771E96C64F0003C18D /* graphviewer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = graphviewer.cpp; sourceTree = "<group>"; };
 		65C7A67B1E96C6570003C18D /* GraphViewerController.jar */ = {isa = PBXFileReference; lastKnownFileType = archive.jar; path = GraphViewerController.jar; sourceTree = "<group>"; };
-		65CB63E21E98EDDB00A7C785 /* map1 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = map1; sourceTree = "<group>"; };
-		65CB63E31E98EDDB00A7C785 /* map2 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = map2; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,9 +74,8 @@
 		65C7A65F1E96C6420003C18D = {
 			isa = PBXGroup;
 			children = (
+				65A2690F1EC88E9600904402 /* map */,
 				6587DF981E9A4BE900A55DE4 /* Images */,
-				65CB63E21E98EDDB00A7C785 /* map1 */,
-				65CB63E31E98EDDB00A7C785 /* map2 */,
 				65C7A66A1E96C6420003C18D /* CAL_Proj */,
 				65C7A6691E96C6420003C18D /* Products */,
 				65C7A67B1E96C6570003C18D /* GraphViewerController.jar */,

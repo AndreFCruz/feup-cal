@@ -79,6 +79,10 @@ public:
      */
     Node(istream & input);
     
+    /**
+     * Incomplete constructor for Node.
+     * Used only for Graph's copy constructor, as all other attributes aren't needed
+     */
     Node(node_id id, GeographicCoords coords);
     
     /**

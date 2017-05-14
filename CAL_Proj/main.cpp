@@ -17,7 +17,8 @@
 using namespace std;
 
 // Work Directory must be set to $PROJECT_DIR
-const string HOME = "./map2/";
+//const string HOME = "/Users/andre/Downloads/CAL-PROJ1-4efdfdcd8a35724ef52125bf7f6ba6c7a4bf771f/map2/";
+const string HOME = "./map/";
 
 const string EDGES_PATH = HOME + "edges.txt";
 const string NODES_PATH = HOME + "nodes.txt";
@@ -44,7 +45,7 @@ int main() {
     GraphViewer * gv = viewGraphComplete(g);
     
     // User Interface
-    askForPath(gv, g);
+//    askForPath(gv, g);
     
     // Tests
     node_id origin, dest;
@@ -52,17 +53,17 @@ int main() {
     dest = 4773399285LL;
     
 //    g.dijkstraShortestPath(origin, dest, Transport::FOOT, 12);
-    g.dijkstraShortestPath(origin, dest, Transport::BUS);
+    g.dijkstraShortestPath(origin, dest, Transport::BUS, 20);
 //    g.dijkstraShortestPathWithMaxCost(origin, dest, 80); // comparar com preferencia de autocarro
 //    g.dijkstraShortestPathWithMaxCost(origin, dest, 105);
     
     
-//    auto path = g.getPath(origin, dest);
-//    auto edges = g.getPathEdges(origin, dest);
-//    viewGraphPath(gv, path);
-//    widenGraphPathEdges(gv, edges);
+    auto path = g.getPath(origin, dest);
+    auto edges = g.getPathEdges(origin, dest);
+    viewGraphPath(gv, path);
+    widenGraphPathEdges(gv, edges);
 
-//    printPathStats(g, origin, dest);
+    printPathStats(g, origin, dest);
 
     // Print edges
 //    for (auto ptr : edges)
