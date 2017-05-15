@@ -50,7 +50,7 @@ public:
      */
     unsigned int getCost(Type t) const;
     
-    static const unsigned int MEAN_WAIT_TIME = 5 / 60;  /**< unsigned int MEAN_WAIT_TIME. Mean wait time for a transport, in hours. */
+    constexpr static const float MEAN_WAIT_TIME = 4. / 60;;  /**< unsigned int MEAN_WAIT_TIME. Mean wait time for a transport, in hours. */
     
 private:
 

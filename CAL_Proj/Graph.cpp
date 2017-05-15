@@ -504,8 +504,9 @@ float Graph::getPathLength(node_id src_id, node_id dest_id) const {
 
 float Graph::getPathDuration(node_id src_id, node_id dest_id) const {
     float duration = 0;
-    for (const Edge * edg : getPathEdges(src_id, dest_id))
+    for (const Edge * edg : getPathEdges(src_id, dest_id)) {
         duration += edg->getWeight();
+    }
     
     return duration;
 }
