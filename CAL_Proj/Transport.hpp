@@ -49,6 +49,8 @@ public:
      */
     unsigned int getCost(Type t) const;
     
+    const unsigned int MEAN_WAIT_TIME = 5;  /**< unsigned int MEAN_WAIT_TIME. Mean wait time for a transport, in minutes. */
+    
 private:
 
     /**

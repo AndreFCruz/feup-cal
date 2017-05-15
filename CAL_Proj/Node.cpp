@@ -29,9 +29,9 @@ Node::Node(istream & input) : parserID(count++) {
     
     float lat, lon;
     input >> lat;
-    input.ignore(3, ';');
+    input.ignore(1, ';');
     input >> lon;
-    input.ignore(3, '\n');
+    input.ignore(1, '\n');
     
     coords = GeographicCoords(lon, lat);
     

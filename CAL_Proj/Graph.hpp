@@ -81,18 +81,20 @@ private:
     void dijkstraShortestPathWithCost(Node * src, Node * destination, unsigned seekedCost);
     
 public:
-
     /**
      * Graph's constructor.
      * Creates a Graph with the data passed by the arguments input streams.
      *
-     * @param nodes The input stream to read from in order to populate the Nodes' Hash map.
-     * @param edges The input stream to read from in order to populate the Edges' Hash map.
-     * @param roads The input stream to read from in order to populate the Roads' Hash map.
-     * @param subway The input stream containing the Edges whose mean of transport is the Subway.
-     * @param bus The input stream containing the Edges whose mean of transport is the Bus.
+     * @param nodes_in The input stream to read from in order to populate the Nodes' Hash map.
+     * @param edges_in The input stream to read from in order to populate the Edges' Hash map.
+     * @param roads_in The input stream to read from in order to populate the Roads' Hash map.
+     * @param subway_edges The input stream containing the Edges whose means of transport is the Subway.
+     * @param bus_edges The input stream containing the Edges whose mean of transport is the Bus.
+     * @param transport_stops The input stream containing the TransportStops' names.
+     * @param subway_nodes The input stream containing the Nodes which are subway stops.
      */
-    Graph(istream & nodes, istream & edges, istream & roads, istream & subway, istream & bus);
+    Graph(istream & nodes_in, istream & edges_in, istream & roads_in, istream & subway_edges,
+          istream & bus_edges, istream & transport_stops, istream & subway_nodes);
     
     /**
      * Graph's Copy constructor.

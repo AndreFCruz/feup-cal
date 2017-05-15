@@ -19,7 +19,8 @@
 #include "Graph.hpp"
 
 
-Graph::Graph(istream & nodes_in, istream & roads_in, istream & edges_in, istream & subway, istream & bus) {
+Graph::Graph(istream & nodes_in, istream & edges_in, istream & roads_in, istream & subway_edges,
+             istream & bus_edges, istream & transport_stops, istream & subway_nodes) {
     
     // Load Nodes
     while (!nodes_in.eof()) {
@@ -58,13 +59,41 @@ Graph::Graph(istream & nodes_in, istream & roads_in, istream & edges_in, istream
         this->addEdge(tmp);
     }
     
+    string name;
+    // Load Transport Stops
+    while (! transport_stops.eof() ) {
+        node_id id;
+        transport_stops >> id;
+        transport_stops.ignore(1, ';');
+        getline(transport_stops, name);
+        
+        stops.insert(make_pair(nodes.at(id), new TransportStop(nodes.at(id), name)));
+    }
+    
+    // Load Subway Nodes/Stops
+    while (! subway_nodes.eof() ) {
+        node_id idStop, idClosest;
+        
+        subway_nodes >> idStop;
+        subway_nodes.ignore();
+        subway_nodes >> idClosest;
+        
+        try {
+            TransportStop * stop = stops.at(nodes.at(idStop));
+            subway_stops.insert(make_pair(stop, new SubwayStop(stop, nodes.at(idClosest))));
+        } catch (out_of_range & e) {
+            cout << "Load sybway nodes: " << e.what() << endl;
+        }
+    }
+    
+    // Add access edges to TransportStops
     
     
     // Load Subway Edges
-    loadTransportEdges(subway, Transport::SUBWAY);
+    loadTransportEdges(subway_edges, Transport::SUBWAY);
     
     // Load Bus Edges
-    loadTransportEdges(bus, Transport::BUS);
+    loadTransportEdges(bus_edges, Transport::BUS);
     
     /** Graph PreProcessing **/
     // Handle Two Way Roads
@@ -119,6 +148,8 @@ Graph::~Graph() {
     // Delete edges
     for (auto p : edges)
         delete p.second;
+    
+    // Delete
 }
 
 void Graph::loadTransportEdges(istream &input, Transport::Type type) {
