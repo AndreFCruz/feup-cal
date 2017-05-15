@@ -24,7 +24,8 @@ public:
     enum Type {
         FOOT,
         BUS,
-        SUBWAY
+        SUBWAY,
+        ACCESS
     };
     
     /**
@@ -49,7 +50,7 @@ public:
      */
     unsigned int getCost(Type t) const;
     
-    const unsigned int MEAN_WAIT_TIME = 5;  /**< unsigned int MEAN_WAIT_TIME. Mean wait time for a transport, in minutes. */
+    static const unsigned int MEAN_WAIT_TIME = 5 / 60;  /**< unsigned int MEAN_WAIT_TIME. Mean wait time for a transport, in hours. */
     
 private:
 
@@ -61,7 +62,7 @@ private:
     static Transport * singleton_instance;	/**< Transport * singleton_instance. Pointer to the current instance of Transport. */
             
     unsigned int velocities[3] {    // in km/h
-        5, 34, 45
+        5, 45, 60
     };	/**< int[] velocities. Array containing the velocities of the different means of transport, in km/ h. */
     
     unsigned int costs[3] {

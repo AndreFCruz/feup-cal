@@ -86,8 +86,20 @@ Graph::Graph(istream & nodes_in, istream & edges_in, istream & roads_in, istream
         }
     }
     
-    // Add access edges to TransportStops
-    
+    // Add access edges to SubwayStops
+    for (auto pair : subway_stops) {
+        TransportStop * stop = pair.first;
+        Node * closest = pair.second->getClosestNode();
+        
+        if (stop != pair.second->getTransportStop()) {
+            cerr << "Invalid transport stop association!\n";
+            throw logic_error::exception();
+        }
+        
+        this->addEdge(new Edge(closest, stop->getNode(), nullptr, Transport::ACCESS));
+        this->addEdge(new Edge(stop->getNode(), closest, nullptr, Transport::FOOT));
+        
+    }
     
     // Load Subway Edges
     loadTransportEdges(subway_edges, Transport::SUBWAY);
@@ -112,7 +124,7 @@ Graph::Graph(istream & nodes_in, istream & edges_in, istream & roads_in, istream
     for (auto & n : nodes) {
         n.second->initiatePoint(Node::getLatRange(), Node::getLonRange());
     }
-
+    
     // Check Graph conectivity
     if (this->isConnected())
         cerr << "Graph is connected.\n";
@@ -137,19 +149,25 @@ Graph::Graph(const Graph & obj) {
 
 Graph::~Graph() {
     
-    // Delete nodes
+    // Delete Nodes
     for (auto p : nodes)
         delete p.second;
     
-    // Delete roads
+    // Delete Roads
     for (auto p : roads)
         delete p.second;
     
-    // Delete edges
+    // Delete Edges
     for (auto p : edges)
         delete p.second;
     
-    // Delete
+    // Delete TransportStops
+    for (auto p : stops)
+        delete p.second;
+    
+    // Delete SubwayStops
+    for (auto p : subway_stops)
+        delete p.second;
 }
 
 void Graph::loadTransportEdges(istream &input, Transport::Type type) {
@@ -198,6 +216,7 @@ void Graph::resetNodes() {
     nodesReset = true;
 }
 
+// TODO ReCheck algorithm and copy constructor
 bool Graph::isConnected() {
 
     Graph copy(*this);
@@ -205,7 +224,7 @@ bool Graph::isConnected() {
     // Simulate Undirected
     for (auto p : copy.edges) {
         Edge * edg = p.second;
-        copy.addEdge(new Edge(edg->getDest(), edg->getOrigin(), nullptr, edg->getType()));
+        copy.addEdge(new Edge(edg->getDest(), edg->getOrigin(), nullptr));
     }
     
     // Find Clusters Through DFS

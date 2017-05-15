@@ -44,8 +44,6 @@ int main() {
     }
     
     Graph g(nodes_ifs, edges_ifs, roads_ifs, subway_edges_ifs, bus_edges_ifs, stops_ifs, subway_nodes_ifs);
-
-/*
     
     GraphViewer * gv = viewGraphComplete(g);
     
@@ -65,7 +63,7 @@ int main() {
     
     auto path = g.getPath(origin, dest);
     auto edges = g.getPathEdges(origin, dest);
-    viewGraphPath(gv, path);
+//    viewGraphPath(gv, path);
     widenGraphPathEdges(gv, edges);
 
     printPathStats(g, origin, dest);
@@ -74,7 +72,6 @@ int main() {
 //    for (auto ptr : edges)
 //        cout << *ptr << endl;
     
-*/
     
     return 0;
 }

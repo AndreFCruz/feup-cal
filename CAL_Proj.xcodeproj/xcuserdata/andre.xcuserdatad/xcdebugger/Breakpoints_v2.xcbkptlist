@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CAL_Proj/Graph.cpp"
-            timestampString = "516540804.159285"
+            timestampString = "516559438.611575"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "201"
-            endingLineNumber = "201"
-            landmarkName = "Graph::isConnected()"
+            startingLineNumber = "214"
+            endingLineNumber = "214"
+            landmarkName = "Graph::resetNodes()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CAL_Proj/Graph.cpp"
-            timestampString = "516540804.159285"
+            timestampString = "516559438.611575"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "508"
-            endingLineNumber = "508"
+            startingLineNumber = "521"
+            endingLineNumber = "521"
             landmarkName = "Graph::dfs(Node * v, vector&lt;Node*&gt; &amp; res)"
             landmarkType = "7">
          </BreakpointContent>
@@ -42,13 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CAL_Proj/Graph.cpp"
-            timestampString = "516540804.159285"
+            timestampString = "516559438.611575"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "507"
-            endingLineNumber = "507"
-            landmarkName = "Graph::dfs(Node * v, vector&lt;Node*&gt; &amp; res)"
-            landmarkType = "7">
+            startingLineNumber = "520"
+            endingLineNumber = "520">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -58,11 +56,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CAL_Proj/Graph.cpp"
-            timestampString = "516540804.159285"
+            timestampString = "516559438.611575"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "215"
-            endingLineNumber = "215"
+            startingLineNumber = "228"
+            endingLineNumber = "228"
             landmarkName = "Graph::isConnected()"
             landmarkType = "7">
          </BreakpointContent>
@@ -74,11 +72,25 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CAL_Proj/Graph.cpp"
-            timestampString = "516540804.159285"
+            timestampString = "516559438.611575"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "206"
-            endingLineNumber = "206"
+            startingLineNumber = "219"
+            endingLineNumber = "219">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CAL_Proj/Graph.cpp"
+            timestampString = "516559438.611575"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "224"
+            endingLineNumber = "224"
             landmarkName = "Graph::isConnected()"
             landmarkType = "7">
          </BreakpointContent>
@@ -90,11 +102,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CAL_Proj/Graph.cpp"
-            timestampString = "516540804.159285"
+            timestampString = "516559438.611575"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "211"
-            endingLineNumber = "211"
+            startingLineNumber = "223"
+            endingLineNumber = "223"
             landmarkName = "Graph::isConnected()"
             landmarkType = "7">
          </BreakpointContent>
@@ -106,27 +118,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CAL_Proj/Graph.cpp"
-            timestampString = "516540804.159285"
+            timestampString = "516559438.611575"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "210"
-            endingLineNumber = "210"
-            landmarkName = "Graph::isConnected()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CAL_Proj/Graph.cpp"
-            timestampString = "516540804.159285"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "212"
-            endingLineNumber = "212"
+            startingLineNumber = "225"
+            endingLineNumber = "225"
             landmarkName = "Graph::isConnected()"
             landmarkType = "7">
          </BreakpointContent>
@@ -198,15 +194,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CAL_Proj/Graph.cpp"
-            timestampString = "516540804.159285"
+            timestampString = "516541950.339501"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
             landmarkName = "Graph::Graph(istream &amp; nodes_in, istream &amp; edges_in, istream &amp; roads_in, istream &amp; subway_edges, istream &amp; bus_edges, istream &amp; transport_stops, istream &amp; subway_nodes)"
             landmarkType = "7">
          </BreakpointContent>
@@ -214,15 +210,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CAL_Proj/Graph.cpp"
-            timestampString = "516540804.159285"
+            timestampString = "516541950.339501"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
             landmarkName = "Graph::Graph(istream &amp; nodes_in, istream &amp; edges_in, istream &amp; roads_in, istream &amp; subway_edges, istream &amp; bus_edges, istream &amp; transport_stops, istream &amp; subway_nodes)"
             landmarkType = "7">
          </BreakpointContent>
@@ -246,7 +242,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CAL_Proj/Graph.cpp"
@@ -273,6 +269,54 @@
             endingLineNumber = "85"
             landmarkName = "class Graph"
             landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CAL_Proj/Graph.cpp"
+            timestampString = "516541408.77648"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
+            landmarkName = "Graph::Graph(istream &amp; nodes_in, istream &amp; edges_in, istream &amp; roads_in, istream &amp; subway_edges, istream &amp; bus_edges, istream &amp; transport_stops, istream &amp; subway_nodes)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CAL_Proj/main.cpp"
+            timestampString = "516542002.072742"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "main()"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CAL_Proj/Graph.cpp"
+            timestampString = "516559438.611575"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "129"
+            endingLineNumber = "129"
+            landmarkName = "Graph::Graph(istream &amp; nodes_in, istream &amp; edges_in, istream &amp; roads_in, istream &amp; subway_edges, istream &amp; bus_edges, istream &amp; transport_stops, istream &amp; subway_nodes)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

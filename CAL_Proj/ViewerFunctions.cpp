@@ -81,6 +81,10 @@ GraphViewer * viewGraphComplete(Graph & g) {
                 gv->setEdgeColor(edg->getID(), "red");
                 gv->setEdgeThickness(edg->getID(), 5);
                 break;
+            case Transport::ACCESS:
+                gv->setEdgeColor(edg->getID(), "green");
+                gv->setEdgeThickness(edg->getID(), 3);
+                break;
         }
         
         Road * road = edg->getRoad();
