@@ -17,6 +17,9 @@
 #include "Node.hpp"
 #include "Edge.hpp"
 #include "Road.hpp"
+#include "TransportStop.hpp"
+#include "SubwayStop.hpp"
+
 
 using namespace std;
 
@@ -31,6 +34,9 @@ private:
     unordered_map<node_id, Node *> nodes;	/**< unordered_map<node_id, Node *> nodes. Hash map containing all the Graph's Nodes. */
     unordered_map<edge_id, Edge *> edges;	/**< unordered_map<edge_id, Edge *> edges. Hash map containing all the Graph's Edges. */
     unordered_map<road_id, Road *> roads;	/**< unordered_map<road_id, Road *> roads. Hash map containing all the Graph's Roads. */
+    
+    unordered_map<Node*, TransportStop*> stops;   /**< unordered_map<Node*, TransportStop*> stops. Hash map containing all the Graph's TransportStops. */
+    unordered_map<TransportStop*, SubwayStop*> subway_stops;  /**< unordered_map<TransportStop*, SubwayStop*> subway_stops. Hash map containing all the Graph's SubwayStops. */
     
     unordered_map<int, node_id> nodeIDs;	/**< unordered_map<int, node_id> nodeIDs. Hash map containing all the Graph's node IDs. */
     

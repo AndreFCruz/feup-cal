@@ -86,6 +86,14 @@ public:
     Node(node_id id, GeographicCoords coords);
     
     /**
+     * Node's Copy constructor.
+     * Creates a new Node with the same attributes as the given Node.
+     *
+     * @param obj The Node that will be copied.
+     */
+    Node(const Node & obj);
+    
+    /**
      * Getter for Node's ID.
      * The ID is used to represent a Node, since there are no two Nodes with the same ID.
      *

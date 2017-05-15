@@ -58,6 +58,8 @@ Graph::Graph(istream & nodes_in, istream & roads_in, istream & edges_in, istream
         this->addEdge(tmp);
     }
     
+    
+    
     // Load Subway Edges
     loadTransportEdges(subway, Transport::SUBWAY);
     
@@ -92,7 +94,7 @@ Graph::Graph(istream & nodes_in, istream & roads_in, istream & edges_in, istream
 Graph::Graph(const Graph & obj) {
     for (auto p : obj.nodes) {
         Node * n = p.second;
-        nodes.insert(make_pair(p.first, new Node(n->getID(), n->getCoords())));
+        nodes.insert(make_pair(p.first, new Node(*n)));
     }
     
     for (auto p : obj.edges) {

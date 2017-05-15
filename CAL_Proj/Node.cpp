@@ -40,6 +40,9 @@ Node::Node(istream & input) : parserID(count++) {
 
 Node::Node(node_id id, GeographicCoords coords) : id(id), coords(coords) {}
 
+Node::Node(const Node & obj) : parserID(obj.getParserID()), id(obj.getID()), coords(obj.getCoords()), edges(obj.getEdges()) {}
+
+
 void Node::setStaticRange() const {
     float lat = coords.getLat();
     float lon = coords.getLon();

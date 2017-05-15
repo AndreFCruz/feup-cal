@@ -24,5 +24,4 @@ public:
     Node * getNode() const;
 };
 
-
 #endif /* TransportStop_hpp */

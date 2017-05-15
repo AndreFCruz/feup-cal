@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		65A269121EC8978500904402 /* TransportStop.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65A269101EC8978500904402 /* TransportStop.cpp */; };
+		65A269151EC8979B00904402 /* SubwayStop.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65A269131EC8979B00904402 /* SubwayStop.cpp */; };
 		65B21B491E96C88700D64F05 /* Coordinates.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65B21B3C1E96C88700D64F05 /* Coordinates.cpp */; };
 		65B21B4A1E96C88700D64F05 /* Edge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65B21B3E1E96C88700D64F05 /* Edge.cpp */; };
 		65B21B4B1E96C88700D64F05 /* Graph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65B21B401E96C88700D64F05 /* Graph.cpp */; };
@@ -35,6 +37,10 @@
 /* Begin PBXFileReference section */
 		6587DF981E9A4BE900A55DE4 /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Images; sourceTree = "<group>"; };
 		65A2690F1EC88E9600904402 /* map */ = {isa = PBXFileReference; lastKnownFileType = folder; path = map; sourceTree = "<group>"; };
+		65A269101EC8978500904402 /* TransportStop.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TransportStop.cpp; sourceTree = "<group>"; };
+		65A269111EC8978500904402 /* TransportStop.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TransportStop.hpp; sourceTree = "<group>"; };
+		65A269131EC8979B00904402 /* SubwayStop.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SubwayStop.cpp; sourceTree = "<group>"; };
+		65A269141EC8979B00904402 /* SubwayStop.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SubwayStop.hpp; sourceTree = "<group>"; };
 		65B21B3C1E96C88700D64F05 /* Coordinates.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Coordinates.cpp; sourceTree = "<group>"; };
 		65B21B3D1E96C88700D64F05 /* Coordinates.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Coordinates.hpp; sourceTree = "<group>"; };
 		65B21B3E1E96C88700D64F05 /* Edge.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Edge.cpp; sourceTree = "<group>"; };
@@ -113,6 +119,10 @@
 				65B21B471E96C88700D64F05 /* Transport.cpp */,
 				65B21B481E96C88700D64F05 /* Transport.hpp */,
 				65C7A6771E96C64F0003C18D /* graphviewer.cpp */,
+				65A269101EC8978500904402 /* TransportStop.cpp */,
+				65A269111EC8978500904402 /* TransportStop.hpp */,
+				65A269131EC8979B00904402 /* SubwayStop.cpp */,
+				65A269141EC8979B00904402 /* SubwayStop.hpp */,
 			);
 			path = CAL_Proj;
 			sourceTree = "<group>";
@@ -178,6 +188,8 @@
 				65B21B4E1E96C88700D64F05 /* Road.cpp in Sources */,
 				65B21B4F1E96C88700D64F05 /* Transport.cpp in Sources */,
 				65C7A67F1E96C7400003C18D /* connection.cpp in Sources */,
+				65A269151EC8979B00904402 /* SubwayStop.cpp in Sources */,
+				65A269121EC8978500904402 /* TransportStop.cpp in Sources */,
 				65C7A6811E96C7400003C18D /* graphviewer.cpp in Sources */,
 				65B21B491E96C88700D64F05 /* Coordinates.cpp in Sources */,
 				65B21B4C1E96C88700D64F05 /* main.cpp in Sources */,
