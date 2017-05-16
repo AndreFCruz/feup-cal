@@ -259,3 +259,55 @@ void printPathStats(const Graph & g, node_id src, node_id dest) {
 }
 
 
+/******************************************
+ * Main Menu
+ ******************************************/
+unsigned short int menuOptions() {
+    unsigned short int option;
+    
+    const string TAB = "   ";
+    
+    cout << "\n** Main Menu **\n";
+    cout << TAB << "1 - View Graph" << endl;
+    cout << TAB << "2 - Ask for path" << endl;
+    cout << TAB << "3 - Exact string matching" << endl;
+    cout << TAB << "4 - Approximate string matching" << endl;
+    cout << TAB << "5 - Exit program" << endl << endl;
+    string msg = TAB; msg += "Your option: ";
+    
+    do {
+        cin >> option;
+    } while (cin.fail() || (option < 1 && option > 5));
+    
+    cout << endl << endl;
+    
+    if (option == 5) {
+        cout << TAB << "Exiting program..." << endl;
+        return false;
+    }
+    
+    return option;
+}
+
+void mainMenu(Graph & g) {
+    unsigned int option;
+    GraphViewer * gv;
+    
+    while ((option = menuOptions()))
+        switch (option) {
+            case 1:
+                viewGraphComplete(g);
+                break;
+            case 2:
+                gv = viewGraphComplete(g);
+                askForPath(gv, g);
+                break;
+            case 3:
+                askExactMatch(g);
+                break;
+            case 4:
+                askApproximateMatch(g, 3);
+                break;
+        }
+}
+

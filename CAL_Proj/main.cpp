@@ -44,17 +44,9 @@ int main() {
     }
     
     Graph g(nodes_ifs, edges_ifs, roads_ifs, subway_edges_ifs, bus_edges_ifs, stops_ifs, subway_nodes_ifs);
-    
-    GraphViewer * gv = viewGraphComplete(g);
-    
-    // TODO
-//    mainMenu(); TODO
-    
-    // User Interface
-//    askForPath(gv, g);
-    
-//    askExactMatch(g);
-//    askApproximateMatch(g);
+
+    // Initiate Main Menu
+    mainMenu(g);
 
 /*
  
