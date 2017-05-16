@@ -54,6 +54,10 @@ GraphViewer * viewGraphComplete(Graph & g) {
 //        cout << id << ". " << node->getPoint().getX() << " . " << node->getPoint().getY() << endl;
         gv->addNode(node->getParserID(), node->getPoint().getX(), node->getPoint().getY());
         
+        TransportStop * stop;
+        if ( (stop = g.getTransportStop(node)) != nullptr )
+            gv->setVertexLabel(node->getParserID(), stop->getName());
+        
     }
     gv->defineVertexSize(1);
     
@@ -104,7 +108,7 @@ GraphViewer * viewGraphComplete(Graph & g) {
 GraphViewer * viewGraphPath(GraphViewer * gv, const vector<Node *> & path) {
     
     for (const Node * node : path) {
-        gv->setVertexSize(node->getParserID(), 80);
+        gv->setVertexSize(node->getParserID(), 75);
 
         if (node->edgePath == nullptr) {
             gv->setVertexIcon(node->getParserID(), "./images/walking.png");
@@ -113,6 +117,7 @@ GraphViewer * viewGraphPath(GraphViewer * gv, const vector<Node *> & path) {
         
         switch (node->edgePath->getType()) {
             case Transport::FOOT:
+            case Transport::ACCESS:
                 gv->setVertexIcon(node->getParserID(), "./images/walking.png");
                 break;
             case Transport::BUS:

@@ -120,6 +120,15 @@ public:
     node_id getNodeIDFromParserID(int parserID) const;
     
     /**
+     * Getter for a specific TransportStop
+     *
+     * @param node The given node.
+     *
+     * @return Correspondent TransportStop pointer.
+     */
+    TransportStop * getTransportStop(Node * node) const;
+    
+    /**
      * Getter for the Graph's Nodes.
      *
      * @return Hash map containing all the Graph's Nodes.

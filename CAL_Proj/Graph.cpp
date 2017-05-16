@@ -254,6 +254,14 @@ bool Graph::isConnected() {
     return clusters.size() <= 1;
 }
 
+TransportStop * Graph::getTransportStop(Node * node) const {
+    try {
+        return stops.at(node);
+    } catch (out_of_range & e) {
+        return nullptr;
+    }
+}
+
 node_id Graph::getNodeIDFromParserID(int parserID) const {
     return nodeIDs.at(parserID);
 }

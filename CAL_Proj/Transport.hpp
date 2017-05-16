@@ -65,9 +65,9 @@ private:
         5, 45, 60
     };	/**< int[] velocities. Array containing the velocities of the different means of transport, in km/ h. */
     
-    unsigned int costs[3] {
-        0, 20, 30
-    };	/**< int[] costs. Array containing the costs of the different means of transport, in cents/ km. */
+    unsigned int costs[4] {
+        0, 0, 0, 120
+    };	/**< int[] costs. Array containing the entry costs of the different means of transport, in cents. */
     
 };
 
