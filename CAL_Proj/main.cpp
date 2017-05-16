@@ -47,9 +47,17 @@ int main() {
     
     GraphViewer * gv = viewGraphComplete(g);
     
+    // TODO
+//    mainMenu(); TODO
+    
     // User Interface
 //    askForPath(gv, g);
     
+//    askExactMatch(g);
+//    askApproximateMatch(g);
+
+/*
+ 
     // Tests
     node_id origin, dest;
     origin = 430006697LL;
@@ -72,6 +80,7 @@ int main() {
 //    for (auto ptr : edges)
 //        cout << *ptr << endl;
     
+*/
     
     return 0;
 }

@@ -16,6 +16,7 @@
 #include <sstream>
 #include <stdexcept>
 #include <iomanip>
+#include <map>
 #include "Graph.hpp"
 
 
@@ -253,41 +254,107 @@ bool Graph::isConnected() {
     
     return clusters.size() <= 1;
 }
+unsigned Graph::minEditDistance(string word, string sentence) const {
+    stringstream ss(sentence);
+    string str;
+    unsigned min = word.size();
+    
+    while (ss >> str) {
+        unsigned tmp;
+        if ( (tmp = editDistance(word, str)) < min)
+            min = tmp;
+    }
+    
+    return min;
+}
 
-unsigned Graph::editDistance(string p, string t) const {
+unsigned Graph::editDistance(string str1, string str2) const {
     auto min_el = [](unsigned el1, unsigned el2, unsigned el3) {
-        if (el1 < el2)
-            return el1 < el3 ? el1 : el3;
-        else
-            return el2 < el3 ? el2 : el3;
+        return min(min(el1, el2), el3);
     };
     
-    // dynamic programming matrix
-    vector<unsigned> dist (t.size());
+    unsigned m = str1.length();
+    unsigned n = str2.length();
     
-    // inicialize matrix with edge values
-    for (unsigned j = 0; j < t.size(); j++)
-        dist[j] = j;
+    // Create a table to store results of subproblems
+    int dp[m+1][n+1];
     
-    // Recurrance
-    for (unsigned i = 1; i < p.size(); i++) {
-        unsigned old = dist[0];
-        dist[0] = i;
-        
-        for (unsigned j = 1; j < t.size(); j++) {
-            unsigned new_dist;
-            if (p.at(i) == t.at(j))
-                new_dist = old;
-            else
-                new_dist = 1 + min_el(old, dist[j], dist[j-1]);
+    // Fill d[][] in bottom up manner
+    for (int i = 0; i <= m; i++)
+    {
+        for (int j = 0; j <= n; j++)
+        {
+            // If first string is empty, only option is to
+            // isnert all characters of second string
+            if (i == 0)
+                dp[i][j] = j;  // Min. operations = j
             
-            old = dist[j];
-            dist[j] = new_dist;
+            // If second string is empty, only option is to
+            // remove all characters of second string
+            else if (j == 0)
+                dp[i][j] = i; // Min. operations = i
+            
+            // If last characters are same, ignore last char
+            // and recur for remaining string
+            else if (str1[i-1] == str2[j-1])
+                dp[i][j] = dp[i-1][j-1];
+            
+            // If last characters are different, consider all
+            // possibilities and find minimum
+            else
+                dp[i][j] = 1 + min_el(dp[i][j-1],   // Insert
+                                      dp[i-1][j],   // Remove
+                                      dp[i-1][j-1]); // Replace
         }
     }
     
-    return dist[t.size() - 1];
+    return dp[m][n];
 }
+
+void Graph::preKMP(string pattern, int f[]) const
+{
+    int m = pattern.length(), k;
+    f[0] = -1;
+    for (int i = 1; i < m; i++)
+    {
+        k = f[i - 1];
+        while (k >= 0)
+        {
+            if (pattern[k] == pattern[i - 1])
+                break;
+            else
+                k = f[k];
+        }
+        f[i] = k + 1;
+    }
+}
+
+bool Graph::KMP(string pattern, string target) const {
+    int m = pattern.length();
+    int n = target.length();
+    int f[m];
+    
+    preKMP(pattern, f);
+    int i = 0;
+    int k = 0;
+    
+    while (i < n)
+    {
+        if (k == -1) {
+            i++;
+            k = 0;
+        } else if (target[i] == pattern[k]) {
+            i++;
+            k++;
+            if (k == m)
+                return true;
+        } else
+            k = f[k];
+    }
+    
+    return false;
+}
+
 
 TransportStop * Graph::getTransportStop(Node * node) const {
     try {
@@ -576,3 +643,22 @@ void Graph::dfs(Node * v, vector<Node*> & res) {
     
     nodesReset = false;
 }
+
+map<unsigned,string> Graph::approximateMatch(string str) const {
+    map< unsigned, string > matches;
+    for (auto p : stops)
+        matches.insert(make_pair(minEditDistance(str, p.second->getName()), p.second->getName()));
+    
+    return matches;
+}
+
+vector<string> Graph::exactMatch(string str) const {
+    vector<string> matches;
+    for (auto p : stops)
+        if (KMP(str, p.second->getName()))
+            matches.push_back(p.second->getName());
+    
+    return matches;
+}
+
+

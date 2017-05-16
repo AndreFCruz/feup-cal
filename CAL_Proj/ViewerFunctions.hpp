@@ -88,4 +88,8 @@ vector<Node*> getPathFromEdges(const vector<Edge *> & edges);
  */
 void printPathStats(const Graph & g, node_id src, node_id dest);
 
+void askExactMatch(const Graph & g);
+
+void askApproximateMatch(const Graph & g, unsigned max_dist = 3);
+
 #endif /* ViewerFunctions_hpp */

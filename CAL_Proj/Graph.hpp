@@ -11,6 +11,7 @@
 
 #include <set>
 #include <vector>
+#include <map>
 #include <iostream>
 #include <unordered_map>
 #include "Coordinates.hpp"
@@ -81,12 +82,40 @@ private:
     void dijkstraShortestPathWithCost(Node * src, Node * destination, unsigned seekedCost);
     
     /**
+     * Minimum edit distance between a string and each of the space
+     * seperated words in the string sentence.
+     *
+     * @param word String to compare.
+     * @param sentence Text to compare.
+     * @return Minimum edit distance.
+     */
+    unsigned minEditDistance(string word, string sentence) const;
+
+    /**
      * Edit distance between given strings.
      * 
      * @param p Pattern string.
      * @Param t Text string.
+     * @return Edit distance between the given strins.
      */
     unsigned editDistance(string p, string t) const;
+    
+    /**
+     * Auxiliary function for pre-processing of KMP algorithm (prefix function).
+     *
+     * @param pattern Pattern to match.
+     * @param f Array of integers to store prefix table.
+     */
+    void preKMP(string pattern, int f[]) const;
+    
+    /**
+     * Exact string matching with Knuth–Morris–Pratt algorithm.
+     *
+     * @param str Pattern string to match.
+     * @param text Text to be matched in.
+     * @return Whether or not it matches.
+     */
+    bool KMP(string str, string text) const;
     
 public:
     /**
@@ -267,6 +296,18 @@ public:
      * @param res Vector to be filled
      */
     void dfs(Node * v, vector<Node*> & res);
+    
+    /* Performs approximate string matching with the Graph's TransportStops.
+     *
+     * @param str The string pattern to match.
+     */
+    map<unsigned,string> approximateMatch(string str) const;
+    
+    /* Performs exact string matching with the Graph's TransportStops.
+     *
+     * @param str The string pattern to match.
+     */
+    vector<string> exactMatch(string str) const;
     
 };
 

@@ -8,6 +8,7 @@
 
 #include <iostream>
 #include <iomanip>
+#include "Graph.hpp"
 #include "Edge.hpp"
 #include "Node.hpp"
 #include "Road.hpp"
@@ -207,6 +208,41 @@ bool askForPath(GraphViewer * gv, Graph & g) {
     printPathStats(g, origin, dest);
 
     return true;
+}
+
+void askExactMatch(const Graph & g) {
+    cout << "\n** Exact Match **" << endl;
+    cout << "Transport stop's name: ";
+    string s;
+    getline(cin, s);
+    
+    cout << "\nMatches:\n";
+    auto ret = g.exactMatch(s);
+    for (string s : ret)
+        cout << s << endl;
+    
+    if (ret.empty())
+        cout << "No match was found for \"" << s << "\"." << endl;}
+
+void askApproximateMatch(const Graph & g, unsigned max_dist) {
+    cout << "\n** Approximate Match **" << endl;
+    cout << "Transport stop's name: ";
+    string s;
+    getline(cin, s);
+    
+    unsigned match = false;
+    
+    cout << "\nMatches per proximity (w/ max. distance " << max_dist << ") :\n";
+    auto ret = g.approximateMatch(s);
+    for (auto p : ret) {
+        if (p.first > max_dist)
+            break;
+        cout << p.first << " -- " << p.second << endl;
+        match = true;
+    }
+    
+    if (! match)
+        cout << "No match was found for \"" << s << "\"." << endl;
 }
 
 void printPathStats(const Graph & g, node_id src, node_id dest) {
