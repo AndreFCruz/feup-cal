@@ -84,3 +84,13 @@
 3397147911;Estacao Casa da Musica
 3397147914;Estacao Francos
 3397147915;Estacao Lapa
+4751793166;Sto. Isidro
+4452315921;Esc. Aurélia Sousa
+1216751949;Carvalhido
+335740866;Castelos
+2211012591;Maria Lamas
+4598553373;Prelada
+257736401;Urbanização Prelada
+4598555508;Urbanização Prelada
+4457269831;Bairro Sto. Eugénio
+1561603976;Cotovias
