@@ -319,5 +319,178 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CAL_Proj/Graph.cpp"
+            timestampString = "516627435.807358"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "135"
+            endingLineNumber = "135"
+            landmarkName = "Graph::Graph(const Graph &amp; obj)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Graph::Graph(Graph const&amp;)"
+                  moduleName = "CAL_Proj"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andre/Documents/CAL_Proj/CAL_Proj/Graph.cpp"
+                  timestampString = "516628154.345893"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "135"
+                  endingLineNumber = "135"
+                  offsetFromSymbolStart = "693">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Graph::Graph(Graph const&amp;)"
+                  moduleName = "CAL_Proj"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andre/Documents/CAL_Proj/CAL_Proj/Graph.cpp"
+                  timestampString = "516628154.34831"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "135"
+                  endingLineNumber = "135"
+                  offsetFromSymbolStart = "20">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CAL_Proj/Graph.cpp"
+            timestampString = "516627439.609474"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "173"
+            endingLineNumber = "173"
+            landmarkName = "Graph::loadTransportEdges(istream &amp;input, Transport::Type type)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CAL_Proj/Graph.cpp"
+            timestampString = "516627450.924155"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "220"
+            endingLineNumber = "220"
+            landmarkName = "Graph::isConnected()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CAL_Proj/Graph.cpp"
+            timestampString = "516627530.800508"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "148"
+            endingLineNumber = "148"
+            landmarkName = "Graph::Graph(const Graph &amp; obj)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Graph::Graph(Graph const&amp;)"
+                  moduleName = "CAL_Proj"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andre/Documents/CAL_Proj/CAL_Proj/Graph.cpp"
+                  timestampString = "516628154.356805"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "148"
+                  endingLineNumber = "148"
+                  offsetFromSymbolStart = "11254">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Graph::Graph(Graph const&amp;)"
+                  moduleName = "CAL_Proj"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andre/Documents/CAL_Proj/CAL_Proj/Graph.cpp"
+                  timestampString = "516628154.358913"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "148"
+                  endingLineNumber = "148"
+                  offsetFromSymbolStart = "11305">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Graph::Graph(Graph const&amp;)"
+                  moduleName = "CAL_Proj"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andre/Documents/CAL_Proj/CAL_Proj/Graph.cpp"
+                  timestampString = "516628154.360763"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "148"
+                  endingLineNumber = "148"
+                  offsetFromSymbolStart = "12498">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Graph::Graph(Graph const&amp;)"
+                  moduleName = "CAL_Proj"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andre/Documents/CAL_Proj/CAL_Proj/Graph.cpp"
+                  timestampString = "516628154.362351"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "148"
+                  endingLineNumber = "148"
+                  offsetFromSymbolStart = "12530">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Graph::Graph(Graph const&amp;)"
+                  moduleName = "CAL_Proj"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andre/Documents/CAL_Proj/CAL_Proj/Graph.cpp"
+                  timestampString = "516628154.364382"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "148"
+                  endingLineNumber = "148"
+                  offsetFromSymbolStart = "29">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

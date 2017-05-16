@@ -135,7 +135,7 @@ Graph::Graph(istream & nodes_in, istream & edges_in, istream & roads_in, istream
 Graph::Graph(const Graph & obj) {
     for (auto p : obj.nodes) {
         Node * n = p.second;
-        nodes.insert(make_pair(p.first, new Node(*n)));
+        nodes.insert(make_pair(p.first, new Node(n->getID(), n->getCoords())));
     }
     
     for (auto p : obj.edges) {
