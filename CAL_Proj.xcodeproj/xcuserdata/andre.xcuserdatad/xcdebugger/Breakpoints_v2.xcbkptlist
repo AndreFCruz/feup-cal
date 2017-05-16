@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CAL_Proj/Graph.cpp"
-            timestampString = "516559438.611575"
+            timestampString = "516629958.165904"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "214"
-            endingLineNumber = "214"
+            startingLineNumber = "215"
+            endingLineNumber = "215"
             landmarkName = "Graph::resetNodes()"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CAL_Proj/Graph.cpp"
-            timestampString = "516629529.964978"
+            timestampString = "516629958.165904"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "530"
@@ -42,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CAL_Proj/Graph.cpp"
-            timestampString = "516629529.964978"
+            timestampString = "516629958.165904"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "529"
@@ -56,7 +56,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CAL_Proj/Graph.cpp"
-            timestampString = "516559438.611575"
+            timestampString = "516629958.165904"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "228"
@@ -72,21 +72,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CAL_Proj/Graph.cpp"
-            timestampString = "516559438.611575"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "219"
-            endingLineNumber = "219">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CAL_Proj/Graph.cpp"
-            timestampString = "516559438.611575"
+            timestampString = "516629958.165904"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "224"
@@ -102,7 +88,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CAL_Proj/Graph.cpp"
-            timestampString = "516559438.611575"
+            timestampString = "516629958.165904"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "223"
@@ -118,7 +104,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CAL_Proj/Graph.cpp"
-            timestampString = "516559438.611575"
+            timestampString = "516629958.165904"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "225"
@@ -326,11 +312,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CAL_Proj/Graph.cpp"
-            timestampString = "516627435.807358"
+            timestampString = "516629958.165904"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "135"
-            endingLineNumber = "135"
+            startingLineNumber = "136"
+            endingLineNumber = "136"
             landmarkName = "Graph::Graph(const Graph &amp; obj)"
             landmarkType = "7">
             <Locations>
@@ -374,11 +360,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CAL_Proj/Graph.cpp"
-            timestampString = "516627439.609474"
+            timestampString = "516629958.165904"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "173"
-            endingLineNumber = "173"
+            startingLineNumber = "174"
+            endingLineNumber = "174"
             landmarkName = "Graph::loadTransportEdges(istream &amp;input, Transport::Type type)"
             landmarkType = "7">
          </BreakpointContent>
@@ -390,7 +376,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CAL_Proj/Graph.cpp"
-            timestampString = "516627450.924155"
+            timestampString = "516629958.165904"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "220"
@@ -406,11 +392,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CAL_Proj/Graph.cpp"
-            timestampString = "516627530.800508"
+            timestampString = "516629958.165904"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "148"
-            endingLineNumber = "148"
+            startingLineNumber = "149"
+            endingLineNumber = "149"
             landmarkName = "Graph::Graph(const Graph &amp; obj)"
             landmarkType = "7">
             <Locations>
@@ -488,6 +474,204 @@
                   startingLineNumber = "148"
                   endingLineNumber = "148"
                   offsetFromSymbolStart = "29">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CAL_Proj/Graph.cpp"
+            timestampString = "516629958.165904"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
+            landmarkName = "Graph::Graph(istream &amp; nodes_in, istream &amp; edges_in, istream &amp; roads_in, istream &amp; subway_edges, istream &amp; bus_edges, istream &amp; transport_stops, istream &amp; subway_nodes)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Graph::Graph(std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;, std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;, std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;, std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;, std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;, std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;, std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;)"
+                  moduleName = "CAL_Proj"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andre/Documents/CAL_Proj/CAL_Proj/Graph.cpp"
+                  timestampString = "516629959.507848"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "134"
+                  endingLineNumber = "134"
+                  offsetFromSymbolStart = "15708">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Graph::Graph(std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;, std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;, std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;, std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;, std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;, std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;, std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;)"
+                  moduleName = "CAL_Proj"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andre/Documents/CAL_Proj/CAL_Proj/Graph.cpp"
+                  timestampString = "516629959.510709"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "134"
+                  endingLineNumber = "134"
+                  offsetFromSymbolStart = "15790">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Graph::Graph(std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;, std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;, std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;, std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;, std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;, std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;, std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;)"
+                  moduleName = "CAL_Proj"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andre/Documents/CAL_Proj/CAL_Proj/Graph.cpp"
+                  timestampString = "516629959.513024"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "134"
+                  endingLineNumber = "134"
+                  offsetFromSymbolStart = "23009">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Graph::Graph(std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;, std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;, std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;, std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;, std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;, std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;, std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;)"
+                  moduleName = "CAL_Proj"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andre/Documents/CAL_Proj/CAL_Proj/Graph.cpp"
+                  timestampString = "516629959.514762"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "134"
+                  endingLineNumber = "134"
+                  offsetFromSymbolStart = "25079">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Graph::Graph(std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;, std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;, std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;, std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;, std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;, std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;, std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;)"
+                  moduleName = "CAL_Proj"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andre/Documents/CAL_Proj/CAL_Proj/Graph.cpp"
+                  timestampString = "516629959.516372"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "134"
+                  endingLineNumber = "134"
+                  offsetFromSymbolStart = "31539">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Graph::Graph(std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;, std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;, std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;, std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;, std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;, std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;, std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;)"
+                  moduleName = "CAL_Proj"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andre/Documents/CAL_Proj/CAL_Proj/Graph.cpp"
+                  timestampString = "516629959.517968"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "134"
+                  endingLineNumber = "134"
+                  offsetFromSymbolStart = "37149">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Graph::Graph(std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;, std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;, std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;, std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;, std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;, std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;, std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;)"
+                  moduleName = "CAL_Proj"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andre/Documents/CAL_Proj/CAL_Proj/Graph.cpp"
+                  timestampString = "516629959.519612"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "134"
+                  endingLineNumber = "134"
+                  offsetFromSymbolStart = "37416">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Graph::Graph(std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;, std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;, std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;, std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;, std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;, std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;, std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;)"
+                  moduleName = "CAL_Proj"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andre/Documents/CAL_Proj/CAL_Proj/Graph.cpp"
+                  timestampString = "516629959.521194"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "134"
+                  endingLineNumber = "134"
+                  offsetFromSymbolStart = "38823">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Graph::Graph(std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;, std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;, std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;, std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;, std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;, std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;, std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;)"
+                  moduleName = "CAL_Proj"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andre/Documents/CAL_Proj/CAL_Proj/Graph.cpp"
+                  timestampString = "516629959.522753"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "134"
+                  endingLineNumber = "134"
+                  offsetFromSymbolStart = "40610">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Graph::Graph(std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;, std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;, std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;, std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;, std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;, std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;, std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;)"
+                  moduleName = "CAL_Proj"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andre/Documents/CAL_Proj/CAL_Proj/Graph.cpp"
+                  timestampString = "516629959.52525"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "134"
+                  endingLineNumber = "134"
+                  offsetFromSymbolStart = "40630">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Graph::Graph(std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;, std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;, std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;, std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;, std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;, std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;, std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;)"
+                  moduleName = "CAL_Proj"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andre/Documents/CAL_Proj/CAL_Proj/Graph.cpp"
+                  timestampString = "516629959.526938"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "134"
+                  endingLineNumber = "134"
+                  offsetFromSymbolStart = "41644">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Graph::Graph(std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;, std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;, std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;, std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;, std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;, std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;, std::__1::basic_istream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;)"
+                  moduleName = "CAL_Proj"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andre/Documents/CAL_Proj/CAL_Proj/Graph.cpp"
+                  timestampString = "516629959.528918"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "134"
+                  endingLineNumber = "134"
+                  offsetFromSymbolStart = "94">
                </Location>
             </Locations>
          </BreakpointContent>

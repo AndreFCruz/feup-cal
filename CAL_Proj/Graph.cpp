@@ -130,6 +130,7 @@ Graph::Graph(istream & nodes_in, istream & edges_in, istream & roads_in, istream
         cerr << "Graph is connected.\n";
     else
         cerr << "Graph is NOT connected.\n";
+    
 }
 
 Graph::Graph(const Graph & obj) {
@@ -216,7 +217,6 @@ void Graph::resetNodes() {
     nodesReset = true;
 }
 
-// TODO ReCheck algorithm and copy constructor
 bool Graph::isConnected() {
 
     Graph copy(*this);
@@ -245,13 +245,41 @@ bool Graph::isConnected() {
         
     }
     
-    cerr << "Nodes (s) : " << accumulated << " == " << copy.nodes.size() << endl;
-    cerr << "Cluster(s) :";
+    cerr << "Nodes:\t\t" << accumulated << " == " << copy.nodes.size() << endl;
+    cerr << "Cluster(s):\t";
     for (auto it = clusters.begin(); it != clusters.end(); ++it)
         cerr << " " << *it;
     cerr << ".\n";
     
     return clusters.size() <= 1;
+}
+
+unsigned Graph::editDistance(string p, string t) const {
+    // dynamic programming matrix
+    vector<unsigned> dist (t.size());
+    
+    // inicialize matrix with edge values
+    for (unsigned j = 0; j < t.size(); j++)
+        dist[j] = j;
+    
+    // Recurrance
+    for (unsigned i = 1; i < p.size(); i++) {
+        unsigned old = dist[0];
+        dist[0] = i;
+        
+        for (unsigned j = 1; j < t.size(); j++) {
+            unsigned new_dist;
+            if (p.at(i) == t.at(j))
+                new_dist = old;
+            else
+                new_dist = 1 + min(old, dist[j], dist[j-1]);
+            
+            old = dist[j];
+            dist[j] = new_dist;
+        }
+    }
+    
+    return dist[t.size() - 1];
 }
 
 TransportStop * Graph::getTransportStop(Node * node) const {

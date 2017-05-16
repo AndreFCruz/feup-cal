@@ -45,7 +45,7 @@ int main() {
     
     Graph g(nodes_ifs, edges_ifs, roads_ifs, subway_edges_ifs, bus_edges_ifs, stops_ifs, subway_nodes_ifs);
     
-//    GraphViewer * gv = viewGraphComplete(g);
+    GraphViewer * gv = viewGraphComplete(g);
     
     // User Interface
 //    askForPath(gv, g);
@@ -56,7 +56,7 @@ int main() {
     dest = 4773399285LL;
     
 //    g.dijkstraShortestPath(origin, dest, Transport::FOOT, 12);
-//    g.dijkstraShortestPath(origin, dest);
+    g.dijkstraShortestPath(origin, dest);
 //    g.dijkstraShortestPathWithMaxCost(origin, dest, 80); // comparar com preferencia de autocarro
 //    g.dijkstraShortestPathWithMaxCost(origin, dest, 105);
     

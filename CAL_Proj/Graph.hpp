@@ -80,6 +80,14 @@ private:
      */
     void dijkstraShortestPathWithCost(Node * src, Node * destination, unsigned seekedCost);
     
+    /**
+     * Edit distance between given strings.
+     * 
+     * @param p Pattern string.
+     * @Param t Text string.
+     */
+    unsigned editDistance(string p, string t) const;
+    
 public:
     /**
      * Graph's constructor.
