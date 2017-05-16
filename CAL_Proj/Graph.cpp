@@ -255,6 +255,13 @@ bool Graph::isConnected() {
 }
 
 unsigned Graph::editDistance(string p, string t) const {
+    auto min_el = [](unsigned el1, unsigned el2, unsigned el3) {
+        if (el1 < el2)
+            return el1 < el3 ? el1 : el3;
+        else
+            return el2 < el3 ? el2 : el3;
+    };
+    
     // dynamic programming matrix
     vector<unsigned> dist (t.size());
     
@@ -272,7 +279,7 @@ unsigned Graph::editDistance(string p, string t) const {
             if (p.at(i) == t.at(j))
                 new_dist = old;
             else
-                new_dist = 1 + min(old, dist[j], dist[j-1]);
+                new_dist = 1 + min_el(old, dist[j], dist[j-1]);
             
             old = dist[j];
             dist[j] = new_dist;

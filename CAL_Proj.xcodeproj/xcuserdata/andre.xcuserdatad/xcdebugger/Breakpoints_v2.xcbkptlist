@@ -31,7 +31,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "530"
             endingLineNumber = "530"
-            landmarkName = "Graph::dfs(Node * v, vector&lt;Node*&gt; &amp; res)"
+            landmarkName = "Graph::getPathEdges(node_id src_id, node_id dest_id)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -46,7 +46,9 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "529"
-            endingLineNumber = "529">
+            endingLineNumber = "529"
+            landmarkName = "Graph::getPathEdges(node_id src_id, node_id dest_id)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
