@@ -56,7 +56,7 @@ int main() {
     dest = 4773399285LL;
     
 //    g.dijkstraShortestPath(origin, dest, Transport::FOOT, 12);
-    g.dijkstraShortestPath(origin, dest);
+//    g.dijkstraShortestPath(origin, dest);
 //    g.dijkstraShortestPathWithMaxCost(origin, dest, 80); // comparar com preferencia de autocarro
 //    g.dijkstraShortestPathWithMaxCost(origin, dest, 105);
     
