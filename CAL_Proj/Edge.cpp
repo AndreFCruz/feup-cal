@@ -14,12 +14,13 @@ edge_id Edge::edge_count = 0;
 Edge::Edge(Node * origin, Node * dest, Road * road, Transport::Type type) : origin(origin), dest(dest), road(road), type(type), edgeID(edge_count++) {
     length = GeographicCoords::getDistance(origin->getCoords(), dest->getCoords());
     
-    if (type == Transport::ACCESS)
+    if (type == Transport::ACCESS) {
         weight = Transport::MEAN_WAIT_TIME;
-    else
+        cost = Transport::getInstance()->getCost(type);
+    } else {
         weight = this->length / Transport::getInstance()->getVel(type);
-    
-    cost = Transport::getInstance()->getCost(type);
+        cost = this->length * Transport::getInstance()->getCost(type);
+    }
 }
 
 unsigned Edge::getCost() const {

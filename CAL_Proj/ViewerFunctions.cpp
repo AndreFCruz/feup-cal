@@ -206,6 +206,8 @@ bool askForPath(GraphViewer * gv, Graph & g) {
     widenGraphPathEdges(gv, edges);
     
     printPathStats(g, origin, dest);
+    
+    cin.get();
 
     return true;
 }
@@ -299,7 +301,7 @@ unsigned short int menuOptions() {
 
 void mainMenu(Graph & g) {
     unsigned int option;
-    GraphViewer * gv;
+    GraphViewer * gv = nullptr;
     
     while ((option = menuOptions())) {
         switch (option) {
@@ -307,7 +309,8 @@ void mainMenu(Graph & g) {
                 viewGraphComplete(g);
                 break;
             case 2:
-                gv = viewGraphComplete(g);
+                if (gv == nullptr)
+                    gv = viewGraphComplete(g);
                 askForPath(gv, g);
                 break;
             case 3:
