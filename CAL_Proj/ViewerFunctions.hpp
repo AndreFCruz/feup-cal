@@ -88,6 +88,11 @@ vector<Node*> getPathFromEdges(const vector<Edge *> & edges);
  */
 void printPathStats(const Graph & g, node_id src, node_id dest);
 
+/**
+ * Main menu for user interaction. Enables the user to navigate through the available options.
+ *
+ * @param g Graph reference for menu functions.
+ */
 void mainMenu(Graph & g);
 
 #endif /* ViewerFunctions_hpp */
