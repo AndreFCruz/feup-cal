@@ -258,6 +258,9 @@ void printPathStats(const Graph & g, node_id src, node_id dest) {
     cout << "Path Duration (minutes): " << setprecision(4) << g.getPathDuration(src, dest) * 60 << endl;
 }
 
+void clearScreen() {
+    system("clear");
+}
 
 /******************************************
  * Main Menu
@@ -266,6 +269,8 @@ unsigned short int menuOptions() {
     unsigned short int option;
     
     const string TAB = "   ";
+    
+    clearScreen();
     
     cout << "\n** Main Menu **\n";
     cout << TAB << "1 - View Graph" << endl;
@@ -276,7 +281,10 @@ unsigned short int menuOptions() {
     string msg = TAB; msg += "Your option: ";
     
     do {
+        if (cin.fail())
+            cin.clear();
         cin >> option;
+        cin.ignore(1, '\n');
     } while (cin.fail() || (option < 1 && option > 5));
     
     cout << endl << endl;
@@ -293,7 +301,7 @@ void mainMenu(Graph & g) {
     unsigned int option;
     GraphViewer * gv;
     
-    while ((option = menuOptions()))
+    while ((option = menuOptions())) {
         switch (option) {
             case 1:
                 viewGraphComplete(g);
@@ -309,5 +317,10 @@ void mainMenu(Graph & g) {
                 askApproximateMatch(g, 3);
                 break;
         }
+        
+        cout << "\n\nPress any key to continue...";
+        cin.get();
+    }
+    
 }
 

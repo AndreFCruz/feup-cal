@@ -18,7 +18,8 @@ using namespace std;
 
 // Work Directory must be set to $PROJECT_DIR
 //const string HOME = "/Users/andre/Downloads/CAL-PROJ1-4efdfdcd8a35724ef52125bf7f6ba6c7a4bf771f/map2/";
-const string HOME = "./map/";
+//const string HOME = "./map/";
+const string HOME = "/Users/andre/Documents/CAL_Proj/map/";
 
 const string EDGES_PATH = HOME + "edges.txt";
 const string NODES_PATH = HOME + "nodes.txt";

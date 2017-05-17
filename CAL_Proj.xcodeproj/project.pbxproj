@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		654774A61ECC6FA2003821AE /* GraphViewerController.jar in Frameworks */ = {isa = PBXBuildFile; fileRef = 654774A51ECC6FA2003821AE /* GraphViewerController.jar */; };
 		65A269121EC8978500904402 /* TransportStop.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65A269101EC8978500904402 /* TransportStop.cpp */; };
 		65A269151EC8979B00904402 /* SubwayStop.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65A269131EC8979B00904402 /* SubwayStop.cpp */; };
 		65B21B491E96C88700D64F05 /* Coordinates.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65B21B3C1E96C88700D64F05 /* Coordinates.cpp */; };
@@ -35,6 +36,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		654774A51ECC6FA2003821AE /* GraphViewerController.jar */ = {isa = PBXFileReference; lastKnownFileType = archive.jar; name = GraphViewerController.jar; path = CAL_Proj/GraphViewerController.jar; sourceTree = "<group>"; };
 		6587DF981E9A4BE900A55DE4 /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Images; sourceTree = "<group>"; };
 		65A2690F1EC88E9600904402 /* map */ = {isa = PBXFileReference; lastKnownFileType = folder; path = map; sourceTree = "<group>"; };
 		65A269101EC8978500904402 /* TransportStop.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TransportStop.cpp; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				654774A61ECC6FA2003821AE /* GraphViewerController.jar in Frameworks */,
 				65C7A67C1E96C6570003C18D /* GraphViewerController.jar in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -77,6 +80,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		654774A41ECC6FA1003821AE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				654774A51ECC6FA2003821AE /* GraphViewerController.jar */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		65C7A65F1E96C6420003C18D = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +96,7 @@
 				65C7A66A1E96C6420003C18D /* CAL_Proj */,
 				65C7A6691E96C6420003C18D /* Products */,
 				65C7A67B1E96C6570003C18D /* GraphViewerController.jar */,
+				654774A41ECC6FA1003821AE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -292,6 +304,7 @@
 		65C7A6701E96C6420003C18D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				OTHER_CPLUSPLUSFLAGS = "$(OTHER_CFLAGS)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -300,6 +313,7 @@
 		65C7A6711E96C6420003C18D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				OTHER_CPLUSPLUSFLAGS = "$(OTHER_CFLAGS)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
