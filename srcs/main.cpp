@@ -18,8 +18,7 @@ using namespace std;
 
 // Work Directory must be set to $PROJECT_DIR
 //const string HOME = "./map/";
-//const string HOME = "/Users/andre/Documents/CAL_Proj/map/";
-const string HOME = "map/";
+const string HOME = "../map/";
 
 const string EDGES_PATH = HOME + "edges.txt";
 const string NODES_PATH = HOME + "nodes.txt";
@@ -49,31 +48,6 @@ int main() {
     // Initiate Main Menu
     mainMenu(g);
 
-/*
- 
-    // Tests
-    node_id origin, dest;
-    origin = 430006697LL;
-    dest = 4773399285LL;
-    
-//    g.dijkstraShortestPath(origin, dest, Transport::FOOT, 12);
-    g.dijkstraShortestPath(origin, dest);
-//    g.dijkstraShortestPathWithMaxCost(origin, dest, 80); // comparar com preferencia de autocarro
-//    g.dijkstraShortestPathWithMaxCost(origin, dest, 105);
-    
-    
-    auto path = g.getPath(origin, dest);
-    auto edges = g.getPathEdges(origin, dest);
-//    viewGraphPath(gv, path);
-//    widenGraphPathEdges(gv, edges);
 
-    printPathStats(g, origin, dest);
-
-    // Print edges
-//    for (auto ptr : edges)
-//        cout << *ptr << endl;
-    
-*/
-    
     return 0;
 }

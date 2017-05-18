@@ -112,22 +112,22 @@ GraphViewer * viewGraphPath(GraphViewer * gv, const vector<Node *> & path) {
         gv->setVertexSize(node->getParserID(), 75);
 
         if (node->edgePath == nullptr) {
-            gv->setVertexIcon(node->getParserID(), "./images/walking.png");
+            gv->setVertexIcon(node->getParserID(), "../images/walking.png");
             continue;
         }
         
         switch (node->edgePath->getType()) {
             case Transport::FOOT:
             case Transport::ACCESS:
-                gv->setVertexIcon(node->getParserID(), "./images/walking.png");
+                gv->setVertexIcon(node->getParserID(), "../images/walking.png");
                 break;
             case Transport::BUS:
-                gv->setVertexIcon(node->edgePath->getOrigin()->getParserID(), "./images/stcp.png");
-                gv->setVertexIcon(node->getParserID(), "./images/stcp.png");
+                gv->setVertexIcon(node->edgePath->getOrigin()->getParserID(), "../images/stcp.png");
+                gv->setVertexIcon(node->getParserID(), "../images/stcp.png");
                 break;
             case Transport::SUBWAY:
-                gv->setVertexIcon(node->edgePath->getOrigin()->getParserID(), "./images/metro.png");
-                gv->setVertexIcon(node->getParserID(), "./images/metro.png");
+                gv->setVertexIcon(node->edgePath->getOrigin()->getParserID(), "../images/metro.png");
+                gv->setVertexIcon(node->getParserID(), "../images/metro.png");
                 break;
         }
         
