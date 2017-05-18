@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['nodes_5fpath',['NODES_PATH',['../main_8cpp.html#a9a4959369769759e111c09499a794eab',1,'main.cpp']]]
+  ['mean_5fwait_5ftime',['MEAN_WAIT_TIME',['../class_transport.html#a40222f8cbeb3114a848c091bb9b78c61',1,'Transport']]]
 ];

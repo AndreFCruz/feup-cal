@@ -17,13 +17,15 @@ Collaboration diagram for Graph\+:
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_graph_aadb341e62a5548bf406c05834aa187da}{Graph} (istream \&nodes, istream \&edges, istream \&roads, istream \&subway, istream \&bus)
+\hyperlink{class_graph_ae183fb1b13b88958a01c626ca35b004a}{Graph} (istream \&nodes\+\_\+in, istream \&edges\+\_\+in, istream \&roads\+\_\+in, istream \&subway\+\_\+edges, istream \&bus\+\_\+edges, istream \&transport\+\_\+stops, istream \&subway\+\_\+nodes)
 \item 
 \hyperlink{class_graph_a7a3f0c7dceffa85819bf122c49fd973c}{Graph} (const \hyperlink{class_graph}{Graph} \&obj)
 \item 
 \hyperlink{class_graph_a902c5b3eacb66d60752525ab23297a95}{$\sim$\+Graph} ()
 \item 
 \hyperlink{_node_8hpp_a9d6265804805c2375068fd7484840dc6}{node\+\_\+id} \hyperlink{class_graph_aec10981cceac64d033e2e0de5b34c995}{get\+Node\+I\+D\+From\+Parser\+ID} (int parser\+ID) const
+\item 
+\hyperlink{class_transport_stop}{Transport\+Stop} $\ast$ \hyperlink{class_graph_a8d4d4d9dc6b4f1eaf7a0c5b9bfb5979d}{get\+Transport\+Stop} (\hyperlink{class_node}{Node} $\ast$node) const
 \item 
 unordered\+\_\+map$<$ \hyperlink{_node_8hpp_a9d6265804805c2375068fd7484840dc6}{node\+\_\+id}, \hyperlink{class_node}{Node} $\ast$ $>$ \hyperlink{class_graph_aa64f6696d40b6a8e0d92df399ed11310}{get\+Nodes} () const
 \item 
@@ -35,9 +37,9 @@ void \hyperlink{class_graph_a819fb225997f026a192ec5df1b17df84}{dijkstra\+Shortes
 \item 
 void \hyperlink{class_graph_a0fc41701fa170ab69282ae8a571fdc04}{dijkstra\+Shortest\+Path} (\hyperlink{class_node}{Node} $\ast$src, \hyperlink{class_node}{Node} $\ast$destination=nullptr)
 \item 
-void \hyperlink{class_graph_a751cdeb2ca841f9d44d921cf1a43ddd0}{dijkstra\+Shortest\+Path} (\hyperlink{_node_8hpp_a9d6265804805c2375068fd7484840dc6}{node\+\_\+id} src\+\_\+id, \hyperlink{_node_8hpp_a9d6265804805c2375068fd7484840dc6}{node\+\_\+id} dest\+\_\+id, \hyperlink{class_transport_a1879cecfed0d4238e5a7af6d085db317}{Transport\+::\+Type} type, unsigned int scale=5)
+void \hyperlink{class_graph_a0637f00ddc591f0cf9e785f84861b0cd}{dijkstra\+Shortest\+Path} (\hyperlink{_node_8hpp_a9d6265804805c2375068fd7484840dc6}{node\+\_\+id} src\+\_\+id, \hyperlink{_node_8hpp_a9d6265804805c2375068fd7484840dc6}{node\+\_\+id} dest\+\_\+id, \hyperlink{class_transport_a1879cecfed0d4238e5a7af6d085db317}{Transport\+::\+Type} type, unsigned int scale=6)
 \item 
-void \hyperlink{class_graph_afe77f6a03cad266807c741d1a3178541}{dijkstra\+Shortest\+Path} (\hyperlink{class_node}{Node} $\ast$src, \hyperlink{class_node}{Node} $\ast$dest, \hyperlink{class_transport_a1879cecfed0d4238e5a7af6d085db317}{Transport\+::\+Type} type, unsigned int scale=5)
+void \hyperlink{class_graph_a221f840da4ef4b6827d52c96f132b886}{dijkstra\+Shortest\+Path} (\hyperlink{class_node}{Node} $\ast$src, \hyperlink{class_node}{Node} $\ast$dest, \hyperlink{class_transport_a1879cecfed0d4238e5a7af6d085db317}{Transport\+::\+Type} type, unsigned int scale=6)
 \item 
 void \hyperlink{class_graph_a284736e6b467032dce3bfd69213c31f0}{dijkstra\+Shortest\+Path\+With\+Max\+Cost} (\hyperlink{_node_8hpp_a9d6265804805c2375068fd7484840dc6}{node\+\_\+id} src\+\_\+id, \hyperlink{_node_8hpp_a9d6265804805c2375068fd7484840dc6}{node\+\_\+id} dest\+\_\+id, unsigned max\+Cost)
 \item 
@@ -52,6 +54,10 @@ float \hyperlink{class_graph_a2d69a99fb35fee10aadc243c468ad9b2}{get\+Path\+Durat
 unsigned \hyperlink{class_graph_a9d5ab1a266d948f146e78866ef19673d}{get\+Path\+Cost} (\hyperlink{_node_8hpp_a9d6265804805c2375068fd7484840dc6}{node\+\_\+id} src\+\_\+id, \hyperlink{_node_8hpp_a9d6265804805c2375068fd7484840dc6}{node\+\_\+id} dest\+\_\+id) const
 \item 
 void \hyperlink{class_graph_ab596c4b805ecdf622c4f3d952f894a50}{dfs} (\hyperlink{class_node}{Node} $\ast$v, vector$<$ \hyperlink{class_node}{Node} $\ast$$>$ \&res)
+\item 
+map$<$ unsigned, string $>$ \hyperlink{class_graph_afc490a45976a80278106a4e49fe479b2}{approximate\+Match} (string str) const
+\item 
+vector$<$ string $>$ \hyperlink{class_graph_a41326c707607848d329e65dba0981747}{exact\+Match} (string str) const
 \end{DoxyCompactItemize}
 
 
@@ -59,25 +65,29 @@ void \hyperlink{class_graph_ab596c4b805ecdf622c4f3d952f894a50}{dfs} (\hyperlink{
 Class used to represent a \hyperlink{class_graph}{Graph}. Every \hyperlink{class_graph}{Graph} has a set Nodes as well as a set of Edges, linking the Nodes. The Graphs are also associated to Rodes. 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{class_graph_aadb341e62a5548bf406c05834aa187da}{}\label{class_graph_aadb341e62a5548bf406c05834aa187da} 
+\hypertarget{class_graph_ae183fb1b13b88958a01c626ca35b004a}{}\label{class_graph_ae183fb1b13b88958a01c626ca35b004a} 
 \index{Graph@{Graph}!Graph@{Graph}}
 \index{Graph@{Graph}!Graph@{Graph}}
 \subsubsection{\texorpdfstring{Graph()}{Graph()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily Graph\+::\+Graph (\begin{DoxyParamCaption}\item[{istream \&}]{nodes,  }\item[{istream \&}]{edges,  }\item[{istream \&}]{roads,  }\item[{istream \&}]{subway,  }\item[{istream \&}]{bus }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Graph\+::\+Graph (\begin{DoxyParamCaption}\item[{istream \&}]{nodes\+\_\+in,  }\item[{istream \&}]{edges\+\_\+in,  }\item[{istream \&}]{roads\+\_\+in,  }\item[{istream \&}]{subway\+\_\+edges,  }\item[{istream \&}]{bus\+\_\+edges,  }\item[{istream \&}]{transport\+\_\+stops,  }\item[{istream \&}]{subway\+\_\+nodes }\end{DoxyParamCaption})}
 
 \hyperlink{class_graph}{Graph}\textquotesingle{}s constructor. Creates a \hyperlink{class_graph}{Graph} with the data passed by the arguments input streams.
 
 
 \begin{DoxyParams}{Parameters}
-{\em nodes} & The input stream to read from in order to populate the Nodes\textquotesingle{} Hash map. \\
+{\em nodes\+\_\+in} & The input stream to read from in order to populate the Nodes\textquotesingle{} Hash map. \\
 \hline
-{\em edges} & The input stream to read from in order to populate the Edges\textquotesingle{} Hash map. \\
+{\em edges\+\_\+in} & The input stream to read from in order to populate the Edges\textquotesingle{} Hash map. \\
 \hline
-{\em roads} & The input stream to read from in order to populate the Roads\textquotesingle{} Hash map. \\
+{\em roads\+\_\+in} & The input stream to read from in order to populate the Roads\textquotesingle{} Hash map. \\
 \hline
-{\em subway} & The input stream containing the Edges whose mean of transport is the Subway. \\
+{\em subway\+\_\+edges} & The input stream containing the Edges whose means of transport is the Subway. \\
 \hline
-{\em bus} & The input stream containing the Edges whose mean of transport is the Bus. \\
+{\em bus\+\_\+edges} & The input stream containing the Edges whose mean of transport is the Bus. \\
+\hline
+{\em transport\+\_\+stops} & The input stream containing the Transport\+Stops\textquotesingle{} names. \\
+\hline
+{\em subway\+\_\+nodes} & The input stream containing the Nodes which are subway stops. \\
 \hline
 \end{DoxyParams}
 \hyperlink{class_graph}{Graph} Pre\+Processing \hypertarget{class_graph_a7a3f0c7dceffa85819bf122c49fd973c}{}\label{class_graph_a7a3f0c7dceffa85819bf122c49fd973c} 
@@ -102,6 +112,12 @@ Class used to represent a \hyperlink{class_graph}{Graph}. Every \hyperlink{class
 \hyperlink{class_graph}{Graph}\textquotesingle{}s Destructor. Deallocates all the memory used by a \hyperlink{class_graph}{Graph}. 
 
 \subsection{Member Function Documentation}
+\hypertarget{class_graph_afc490a45976a80278106a4e49fe479b2}{}\label{class_graph_afc490a45976a80278106a4e49fe479b2} 
+\index{Graph@{Graph}!approximate\+Match@{approximate\+Match}}
+\index{approximate\+Match@{approximate\+Match}!Graph@{Graph}}
+\subsubsection{\texorpdfstring{approximate\+Match()}{approximateMatch()}}
+{\footnotesize\ttfamily map$<$ unsigned, string $>$ Graph\+::approximate\+Match (\begin{DoxyParamCaption}\item[{string}]{str }\end{DoxyParamCaption}) const}
+
 \hypertarget{class_graph_ab596c4b805ecdf622c4f3d952f894a50}{}\label{class_graph_ab596c4b805ecdf622c4f3d952f894a50} 
 \index{Graph@{Graph}!dfs@{dfs}}
 \index{dfs@{dfs}!Graph@{Graph}}
@@ -147,11 +163,11 @@ Implementation of Dijkstra\textquotesingle{}s shortest path algorithm. The short
 {\em destination} & The destiny \hyperlink{class_node}{Node}. If no value is given, it defaults to nullptr. \\
 \hline
 \end{DoxyParams}
-\hypertarget{class_graph_a751cdeb2ca841f9d44d921cf1a43ddd0}{}\label{class_graph_a751cdeb2ca841f9d44d921cf1a43ddd0} 
+\hypertarget{class_graph_a0637f00ddc591f0cf9e785f84861b0cd}{}\label{class_graph_a0637f00ddc591f0cf9e785f84861b0cd} 
 \index{Graph@{Graph}!dijkstra\+Shortest\+Path@{dijkstra\+Shortest\+Path}}
 \index{dijkstra\+Shortest\+Path@{dijkstra\+Shortest\+Path}!Graph@{Graph}}
 \subsubsection{\texorpdfstring{dijkstra\+Shortest\+Path()}{dijkstraShortestPath()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
-{\footnotesize\ttfamily void Graph\+::dijkstra\+Shortest\+Path (\begin{DoxyParamCaption}\item[{\hyperlink{_node_8hpp_a9d6265804805c2375068fd7484840dc6}{node\+\_\+id}}]{src\+\_\+id,  }\item[{\hyperlink{_node_8hpp_a9d6265804805c2375068fd7484840dc6}{node\+\_\+id}}]{dest\+\_\+id,  }\item[{\hyperlink{class_transport_a1879cecfed0d4238e5a7af6d085db317}{Transport\+::\+Type}}]{type,  }\item[{unsigned int}]{scale = {\ttfamily 5} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Graph\+::dijkstra\+Shortest\+Path (\begin{DoxyParamCaption}\item[{\hyperlink{_node_8hpp_a9d6265804805c2375068fd7484840dc6}{node\+\_\+id}}]{src\+\_\+id,  }\item[{\hyperlink{_node_8hpp_a9d6265804805c2375068fd7484840dc6}{node\+\_\+id}}]{dest\+\_\+id,  }\item[{\hyperlink{class_transport_a1879cecfed0d4238e5a7af6d085db317}{Transport\+::\+Type}}]{type,  }\item[{unsigned int}]{scale = {\ttfamily 6} }\end{DoxyParamCaption})}
 
 Implementation of Dijkstra\textquotesingle{}s shortest path algorithm. The shortest path will be fastest one. This Dijkstra implementation takes into consideration the mean of \hyperlink{class_transport}{Transport} used.
 
@@ -163,14 +179,14 @@ Implementation of Dijkstra\textquotesingle{}s shortest path algorithm. The short
 \hline
 {\em type} & Mean of \hyperlink{class_transport}{Transport} used. \\
 \hline
-{\em scale} & Mean of transport preference scale (bigger scale means higher preference). If no value is given it defaults to 5. \\
+{\em scale} & Mean of transport preference scale (bigger scale means higher preference). If no value is given it defaults to 6. \\
 \hline
 \end{DoxyParams}
-\hypertarget{class_graph_afe77f6a03cad266807c741d1a3178541}{}\label{class_graph_afe77f6a03cad266807c741d1a3178541} 
+\hypertarget{class_graph_a221f840da4ef4b6827d52c96f132b886}{}\label{class_graph_a221f840da4ef4b6827d52c96f132b886} 
 \index{Graph@{Graph}!dijkstra\+Shortest\+Path@{dijkstra\+Shortest\+Path}}
 \index{dijkstra\+Shortest\+Path@{dijkstra\+Shortest\+Path}!Graph@{Graph}}
 \subsubsection{\texorpdfstring{dijkstra\+Shortest\+Path()}{dijkstraShortestPath()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
-{\footnotesize\ttfamily void Graph\+::dijkstra\+Shortest\+Path (\begin{DoxyParamCaption}\item[{\hyperlink{class_node}{Node} $\ast$}]{src,  }\item[{\hyperlink{class_node}{Node} $\ast$}]{dest,  }\item[{\hyperlink{class_transport_a1879cecfed0d4238e5a7af6d085db317}{Transport\+::\+Type}}]{type,  }\item[{unsigned int}]{scale = {\ttfamily 5} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Graph\+::dijkstra\+Shortest\+Path (\begin{DoxyParamCaption}\item[{\hyperlink{class_node}{Node} $\ast$}]{src,  }\item[{\hyperlink{class_node}{Node} $\ast$}]{dest,  }\item[{\hyperlink{class_transport_a1879cecfed0d4238e5a7af6d085db317}{Transport\+::\+Type}}]{type,  }\item[{unsigned int}]{scale = {\ttfamily 6} }\end{DoxyParamCaption})}
 
 Implementation of Dijkstra\textquotesingle{}s shortest path algorithm. The shortest path will be the fastest one that takes less time to go through. This Dijkstra implementation takes into consideration the mean of \hyperlink{class_transport}{Transport} used.
 
@@ -182,7 +198,7 @@ Implementation of Dijkstra\textquotesingle{}s shortest path algorithm. The short
 \hline
 {\em type} & Mean of \hyperlink{class_transport}{Transport} used. \\
 \hline
-{\em scale} & Mean of transport preference scale (bigger scale means higher preference). If no value is given it defaults to 5. \\
+{\em scale} & Mean of transport preference scale (bigger scale means higher preference). If no value is given it defaults to 6. \\
 \hline
 \end{DoxyParams}
 \hypertarget{class_graph_a284736e6b467032dce3bfd69213c31f0}{}\label{class_graph_a284736e6b467032dce3bfd69213c31f0} 
@@ -202,6 +218,12 @@ Altered implementation of Dijkstra\textquotesingle{}s shortest path algorithm, t
 {\em max\+Cost} & Path\textquotesingle{}s maximum cost. \\
 \hline
 \end{DoxyParams}
+\hypertarget{class_graph_a41326c707607848d329e65dba0981747}{}\label{class_graph_a41326c707607848d329e65dba0981747} 
+\index{Graph@{Graph}!exact\+Match@{exact\+Match}}
+\index{exact\+Match@{exact\+Match}!Graph@{Graph}}
+\subsubsection{\texorpdfstring{exact\+Match()}{exactMatch()}}
+{\footnotesize\ttfamily vector$<$ string $>$ Graph\+::exact\+Match (\begin{DoxyParamCaption}\item[{string}]{str }\end{DoxyParamCaption}) const}
+
 \hypertarget{class_graph_a7dd776ad17a9d14b14f044373c79a9bc}{}\label{class_graph_a7dd776ad17a9d14b14f044373c79a9bc} 
 \index{Graph@{Graph}!get\+Edges@{get\+Edges}}
 \index{get\+Edges@{get\+Edges}!Graph@{Graph}}
@@ -340,6 +362,22 @@ Getter for the \hyperlink{class_graph}{Graph}\textquotesingle{}s Roads.
 
 \begin{DoxyReturn}{Returns}
 Hash map containing all the \hyperlink{class_graph}{Graph}\textquotesingle{}s Roads. 
+\end{DoxyReturn}
+\hypertarget{class_graph_a8d4d4d9dc6b4f1eaf7a0c5b9bfb5979d}{}\label{class_graph_a8d4d4d9dc6b4f1eaf7a0c5b9bfb5979d} 
+\index{Graph@{Graph}!get\+Transport\+Stop@{get\+Transport\+Stop}}
+\index{get\+Transport\+Stop@{get\+Transport\+Stop}!Graph@{Graph}}
+\subsubsection{\texorpdfstring{get\+Transport\+Stop()}{getTransportStop()}}
+{\footnotesize\ttfamily \hyperlink{class_transport_stop}{Transport\+Stop} $\ast$ Graph\+::get\+Transport\+Stop (\begin{DoxyParamCaption}\item[{\hyperlink{class_node}{Node} $\ast$}]{node }\end{DoxyParamCaption}) const}
+
+Getter for a specific \hyperlink{class_transport_stop}{Transport\+Stop}
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & The given node.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Correspondent \hyperlink{class_transport_stop}{Transport\+Stop} pointer. 
 \end{DoxyReturn}
 
 

@@ -29,13 +29,13 @@
 335691888;Agramonte
 2225262331;Hospital Sao Joao
 4378186331;IPO (Circunvalacao)
-2169139651;Sao Tomé
+2169139651;Sao Tome
 112652012;Amial
 112652018;Capuchinhos
 112628000;Via Norte
 297370462;Monte dos Burgos
 3241140500;Congostas
-3456445898;Bairro Santo Eugénio
+3456445898;Bairro Santo Eugenio
 3573222246;Hospital Sao Joao (Urgencia)
 3573222154;Escola Superior Educacao
 3573222104;Faculdade de Engenharia
@@ -85,12 +85,12 @@
 3397147914;Estacao Francos
 3397147915;Estacao Lapa
 4751793166;Sto. Isidro
-4452315921;Esc. Aurélia Sousa
+4452315921;Esc. Aurelia Sousa
 1216751949;Carvalhido
 335740866;Castelos
 2211012591;Maria Lamas
 4598553373;Prelada
-257736401;Urbanização Prelada
-4598555508;Urbanização Prelada
-4457269831;Bairro Sto. Eugénio
+257736401;Urbanizacao Prelada
+4598555508;Urbanizacao Prelada
+4457269831;Bairro Sto. Eugenio
 1561603976;Cotovias

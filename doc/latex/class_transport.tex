@@ -11,7 +11,7 @@ Collaboration diagram for Transport\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=163pt]{class_transport__coll__graph}
+\includegraphics[width=193pt]{class_transport__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Types}
@@ -19,7 +19,8 @@ Collaboration diagram for Transport\+:
 \item 
 enum \hyperlink{class_transport_a1879cecfed0d4238e5a7af6d085db317}{Type} \{ \hyperlink{class_transport_a1879cecfed0d4238e5a7af6d085db317a9eb45a1db8620c55d48eeee34f09980c}{F\+O\+OT}, 
 \hyperlink{class_transport_a1879cecfed0d4238e5a7af6d085db317a03910f9910b1cda89566027b1c4f2740}{B\+US}, 
-\hyperlink{class_transport_a1879cecfed0d4238e5a7af6d085db317a1e7a9bb5192d54bdccb9bc99bd35849b}{S\+U\+B\+W\+AY}
+\hyperlink{class_transport_a1879cecfed0d4238e5a7af6d085db317a1e7a9bb5192d54bdccb9bc99bd35849b}{S\+U\+B\+W\+AY}, 
+\hyperlink{class_transport_a1879cecfed0d4238e5a7af6d085db317ae0cc8f327733360f7ccf5abf2b5e7454}{A\+C\+C\+E\+SS}
  \}
 \end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
@@ -33,6 +34,11 @@ unsigned int \hyperlink{class_transport_a943eecabe9f2435fcbf2bd3a41a4ea3a}{get\+
 \begin{DoxyCompactItemize}
 \item 
 static \hyperlink{class_transport}{Transport} $\ast$ \hyperlink{class_transport_a2265878b8225332acf586bece5f1b324}{get\+Instance} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr const float \hyperlink{class_transport_a40222f8cbeb3114a848c091bb9b78c61}{M\+E\+A\+N\+\_\+\+W\+A\+I\+T\+\_\+\+T\+I\+ME} = 4. / 60
 \end{DoxyCompactItemize}
 
 
@@ -57,6 +63,10 @@ B\+US&\\
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{S\+U\+B\+W\+AY@{S\+U\+B\+W\+AY}!Transport@{Transport}}\index{Transport@{Transport}!S\+U\+B\+W\+AY@{S\+U\+B\+W\+AY}}}\hypertarget{class_transport_a1879cecfed0d4238e5a7af6d085db317a1e7a9bb5192d54bdccb9bc99bd35849b}{}\label{class_transport_a1879cecfed0d4238e5a7af6d085db317a1e7a9bb5192d54bdccb9bc99bd35849b} 
 S\+U\+B\+W\+AY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+C\+C\+E\+SS@{A\+C\+C\+E\+SS}!Transport@{Transport}}\index{Transport@{Transport}!A\+C\+C\+E\+SS@{A\+C\+C\+E\+SS}}}\hypertarget{class_transport_a1879cecfed0d4238e5a7af6d085db317ae0cc8f327733360f7ccf5abf2b5e7454}{}\label{class_transport_a1879cecfed0d4238e5a7af6d085db317ae0cc8f327733360f7ccf5abf2b5e7454} 
+A\+C\+C\+E\+SS&\\
 \hline
 
 \end{DoxyEnumFields}
@@ -96,6 +106,15 @@ Getter for the velocity of the current mean of \hyperlink{class_transport}{Trans
 \begin{DoxyReturn}{Returns}
 Velocity of the current mean of \hyperlink{class_transport}{Transport}. 
 \end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_transport_a40222f8cbeb3114a848c091bb9b78c61}{}\label{class_transport_a40222f8cbeb3114a848c091bb9b78c61} 
+\index{Transport@{Transport}!M\+E\+A\+N\+\_\+\+W\+A\+I\+T\+\_\+\+T\+I\+ME@{M\+E\+A\+N\+\_\+\+W\+A\+I\+T\+\_\+\+T\+I\+ME}}
+\index{M\+E\+A\+N\+\_\+\+W\+A\+I\+T\+\_\+\+T\+I\+ME@{M\+E\+A\+N\+\_\+\+W\+A\+I\+T\+\_\+\+T\+I\+ME}!Transport@{Transport}}
+\subsubsection{\texorpdfstring{M\+E\+A\+N\+\_\+\+W\+A\+I\+T\+\_\+\+T\+I\+ME}{MEAN\_WAIT\_TIME}}
+{\footnotesize\ttfamily constexpr const float Transport\+::\+M\+E\+A\+N\+\_\+\+W\+A\+I\+T\+\_\+\+T\+I\+ME = 4. / 60\hspace{0.3cm}{\ttfamily [static]}}
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

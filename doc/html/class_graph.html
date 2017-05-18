@@ -77,14 +77,16 @@ Collaboration diagram for Graph:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aadb341e62a5548bf406c05834aa187da"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_graph.html#aadb341e62a5548bf406c05834aa187da">Graph</a> (istream &amp;nodes, istream &amp;edges, istream &amp;roads, istream &amp;subway, istream &amp;bus)</td></tr>
-<tr class="separator:aadb341e62a5548bf406c05834aa187da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae183fb1b13b88958a01c626ca35b004a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_graph.html#ae183fb1b13b88958a01c626ca35b004a">Graph</a> (istream &amp;nodes_in, istream &amp;edges_in, istream &amp;roads_in, istream &amp;subway_edges, istream &amp;bus_edges, istream &amp;transport_stops, istream &amp;subway_nodes)</td></tr>
+<tr class="separator:ae183fb1b13b88958a01c626ca35b004a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7a3f0c7dceffa85819bf122c49fd973c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_graph.html#a7a3f0c7dceffa85819bf122c49fd973c">Graph</a> (const <a class="el" href="class_graph.html">Graph</a> &amp;obj)</td></tr>
 <tr class="separator:a7a3f0c7dceffa85819bf122c49fd973c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a902c5b3eacb66d60752525ab23297a95"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_graph.html#a902c5b3eacb66d60752525ab23297a95">~Graph</a> ()</td></tr>
 <tr class="separator:a902c5b3eacb66d60752525ab23297a95"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aec10981cceac64d033e2e0de5b34c995"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_node_8hpp.html#a9d6265804805c2375068fd7484840dc6">node_id</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_graph.html#aec10981cceac64d033e2e0de5b34c995">getNodeIDFromParserID</a> (int parserID) const</td></tr>
 <tr class="separator:aec10981cceac64d033e2e0de5b34c995"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d4d4d9dc6b4f1eaf7a0c5b9bfb5979d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_transport_stop.html">TransportStop</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_graph.html#a8d4d4d9dc6b4f1eaf7a0c5b9bfb5979d">getTransportStop</a> (<a class="el" href="class_node.html">Node</a> *node) const</td></tr>
+<tr class="separator:a8d4d4d9dc6b4f1eaf7a0c5b9bfb5979d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa64f6696d40b6a8e0d92df399ed11310"><td class="memItemLeft" align="right" valign="top">unordered_map&lt; <a class="el" href="_node_8hpp.html#a9d6265804805c2375068fd7484840dc6">node_id</a>, <a class="el" href="class_node.html">Node</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_graph.html#aa64f6696d40b6a8e0d92df399ed11310">getNodes</a> () const</td></tr>
 <tr class="separator:aa64f6696d40b6a8e0d92df399ed11310"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7dd776ad17a9d14b14f044373c79a9bc"><td class="memItemLeft" align="right" valign="top">unordered_map&lt; <a class="el" href="_edge_8hpp.html#ad7d18d7b90a45b6625704e92d10aa3a0">edge_id</a>, <a class="el" href="class_edge.html">Edge</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_graph.html#a7dd776ad17a9d14b14f044373c79a9bc">getEdges</a> () const</td></tr>
@@ -95,10 +97,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a819fb225997f026a192ec5df1b17df84"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0fc41701fa170ab69282ae8a571fdc04"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_graph.html#a0fc41701fa170ab69282ae8a571fdc04">dijkstraShortestPath</a> (<a class="el" href="class_node.html">Node</a> *src, <a class="el" href="class_node.html">Node</a> *destination=nullptr)</td></tr>
 <tr class="separator:a0fc41701fa170ab69282ae8a571fdc04"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a751cdeb2ca841f9d44d921cf1a43ddd0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_graph.html#a751cdeb2ca841f9d44d921cf1a43ddd0">dijkstraShortestPath</a> (<a class="el" href="_node_8hpp.html#a9d6265804805c2375068fd7484840dc6">node_id</a> src_id, <a class="el" href="_node_8hpp.html#a9d6265804805c2375068fd7484840dc6">node_id</a> dest_id, <a class="el" href="class_transport.html#a1879cecfed0d4238e5a7af6d085db317">Transport::Type</a> type, unsigned int scale=5)</td></tr>
-<tr class="separator:a751cdeb2ca841f9d44d921cf1a43ddd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe77f6a03cad266807c741d1a3178541"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_graph.html#afe77f6a03cad266807c741d1a3178541">dijkstraShortestPath</a> (<a class="el" href="class_node.html">Node</a> *src, <a class="el" href="class_node.html">Node</a> *dest, <a class="el" href="class_transport.html#a1879cecfed0d4238e5a7af6d085db317">Transport::Type</a> type, unsigned int scale=5)</td></tr>
-<tr class="separator:afe77f6a03cad266807c741d1a3178541"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0637f00ddc591f0cf9e785f84861b0cd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_graph.html#a0637f00ddc591f0cf9e785f84861b0cd">dijkstraShortestPath</a> (<a class="el" href="_node_8hpp.html#a9d6265804805c2375068fd7484840dc6">node_id</a> src_id, <a class="el" href="_node_8hpp.html#a9d6265804805c2375068fd7484840dc6">node_id</a> dest_id, <a class="el" href="class_transport.html#a1879cecfed0d4238e5a7af6d085db317">Transport::Type</a> type, unsigned int scale=6)</td></tr>
+<tr class="separator:a0637f00ddc591f0cf9e785f84861b0cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a221f840da4ef4b6827d52c96f132b886"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_graph.html#a221f840da4ef4b6827d52c96f132b886">dijkstraShortestPath</a> (<a class="el" href="class_node.html">Node</a> *src, <a class="el" href="class_node.html">Node</a> *dest, <a class="el" href="class_transport.html#a1879cecfed0d4238e5a7af6d085db317">Transport::Type</a> type, unsigned int scale=6)</td></tr>
+<tr class="separator:a221f840da4ef4b6827d52c96f132b886"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a284736e6b467032dce3bfd69213c31f0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_graph.html#a284736e6b467032dce3bfd69213c31f0">dijkstraShortestPathWithMaxCost</a> (<a class="el" href="_node_8hpp.html#a9d6265804805c2375068fd7484840dc6">node_id</a> src_id, <a class="el" href="_node_8hpp.html#a9d6265804805c2375068fd7484840dc6">node_id</a> dest_id, unsigned maxCost)</td></tr>
 <tr class="separator:a284736e6b467032dce3bfd69213c31f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae4c66eaf1b29f53bf90ad6266baa6819"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="class_node.html">Node</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_graph.html#ae4c66eaf1b29f53bf90ad6266baa6819">getPath</a> (<a class="el" href="_node_8hpp.html#a9d6265804805c2375068fd7484840dc6">node_id</a> src_id, <a class="el" href="_node_8hpp.html#a9d6265804805c2375068fd7484840dc6">node_id</a> dest_id) const</td></tr>
@@ -113,12 +115,16 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a9d5ab1a266d948f146e78866ef19673d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab596c4b805ecdf622c4f3d952f894a50"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_graph.html#ab596c4b805ecdf622c4f3d952f894a50">dfs</a> (<a class="el" href="class_node.html">Node</a> *v, vector&lt; <a class="el" href="class_node.html">Node</a> *&gt; &amp;res)</td></tr>
 <tr class="separator:ab596c4b805ecdf622c4f3d952f894a50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc490a45976a80278106a4e49fe479b2"><td class="memItemLeft" align="right" valign="top">map&lt; unsigned, string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_graph.html#afc490a45976a80278106a4e49fe479b2">approximateMatch</a> (string str) const</td></tr>
+<tr class="separator:afc490a45976a80278106a4e49fe479b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41326c707607848d329e65dba0981747"><td class="memItemLeft" align="right" valign="top">vector&lt; string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_graph.html#a41326c707607848d329e65dba0981747">exactMatch</a> (string str) const</td></tr>
+<tr class="separator:a41326c707607848d329e65dba0981747"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class used to represent a <a class="el" href="class_graph.html">Graph</a>. Every <a class="el" href="class_graph.html">Graph</a> has a set Nodes as well as a set of Edges, linking the Nodes. The Graphs are also associated to Rodes. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="aadb341e62a5548bf406c05834aa187da"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aadb341e62a5548bf406c05834aa187da">&sect;&nbsp;</a></span>Graph() <span class="overload">[1/2]</span></h2>
+<a id="ae183fb1b13b88958a01c626ca35b004a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae183fb1b13b88958a01c626ca35b004a">&sect;&nbsp;</a></span>Graph() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -127,31 +133,43 @@ Public Member Functions</h2></td></tr>
           <td class="memname">Graph::Graph </td>
           <td>(</td>
           <td class="paramtype">istream &amp;&#160;</td>
-          <td class="paramname"><em>nodes</em>, </td>
+          <td class="paramname"><em>nodes_in</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">istream &amp;&#160;</td>
-          <td class="paramname"><em>edges</em>, </td>
+          <td class="paramname"><em>edges_in</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">istream &amp;&#160;</td>
-          <td class="paramname"><em>roads</em>, </td>
+          <td class="paramname"><em>roads_in</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">istream &amp;&#160;</td>
-          <td class="paramname"><em>subway</em>, </td>
+          <td class="paramname"><em>subway_edges</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">istream &amp;&#160;</td>
-          <td class="paramname"><em>bus</em>&#160;</td>
+          <td class="paramname"><em>bus_edges</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">istream &amp;&#160;</td>
+          <td class="paramname"><em>transport_stops</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">istream &amp;&#160;</td>
+          <td class="paramname"><em>subway_nodes</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -163,11 +181,13 @@ Public Member Functions</h2></td></tr>
 <p><a class="el" href="class_graph.html">Graph</a>'s constructor. Creates a <a class="el" href="class_graph.html">Graph</a> with the data passed by the arguments input streams.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">nodes</td><td>The input stream to read from in order to populate the Nodes' Hash map. </td></tr>
-    <tr><td class="paramname">edges</td><td>The input stream to read from in order to populate the Edges' Hash map. </td></tr>
-    <tr><td class="paramname">roads</td><td>The input stream to read from in order to populate the Roads' Hash map. </td></tr>
-    <tr><td class="paramname">subway</td><td>The input stream containing the Edges whose mean of transport is the Subway. </td></tr>
-    <tr><td class="paramname">bus</td><td>The input stream containing the Edges whose mean of transport is the Bus. </td></tr>
+    <tr><td class="paramname">nodes_in</td><td>The input stream to read from in order to populate the Nodes' Hash map. </td></tr>
+    <tr><td class="paramname">edges_in</td><td>The input stream to read from in order to populate the Edges' Hash map. </td></tr>
+    <tr><td class="paramname">roads_in</td><td>The input stream to read from in order to populate the Roads' Hash map. </td></tr>
+    <tr><td class="paramname">subway_edges</td><td>The input stream containing the Edges whose means of transport is the Subway. </td></tr>
+    <tr><td class="paramname">bus_edges</td><td>The input stream containing the Edges whose mean of transport is the Bus. </td></tr>
+    <tr><td class="paramname">transport_stops</td><td>The input stream containing the TransportStops' names. </td></tr>
+    <tr><td class="paramname">subway_nodes</td><td>The input stream containing the Nodes which are subway stops. </td></tr>
   </table>
   </dd>
 </dl>
@@ -219,6 +239,24 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="afc490a45976a80278106a4e49fe479b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc490a45976a80278106a4e49fe479b2">&sect;&nbsp;</a></span>approximateMatch()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">map&lt; unsigned, string &gt; Graph::approximateMatch </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>str</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ab596c4b805ecdf622c4f3d952f894a50"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab596c4b805ecdf622c4f3d952f894a50">&sect;&nbsp;</a></span>dfs()</h2>
 
@@ -327,8 +365,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a751cdeb2ca841f9d44d921cf1a43ddd0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a751cdeb2ca841f9d44d921cf1a43ddd0">&sect;&nbsp;</a></span>dijkstraShortestPath() <span class="overload">[3/4]</span></h2>
+<a id="a0637f00ddc591f0cf9e785f84861b0cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0637f00ddc591f0cf9e785f84861b0cd">&sect;&nbsp;</a></span>dijkstraShortestPath() <span class="overload">[3/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -355,7 +393,7 @@ Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>scale</em> = <code>5</code>&#160;</td>
+          <td class="paramname"><em>scale</em> = <code>6</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -370,15 +408,15 @@ Public Member Functions</h2></td></tr>
     <tr><td class="paramname">src_id</td><td>The id of the origin <a class="el" href="class_node.html">Node</a>. </td></tr>
     <tr><td class="paramname">dest_id</td><td>The id of the destiny <a class="el" href="class_node.html">Node</a>. </td></tr>
     <tr><td class="paramname">type</td><td>Mean of <a class="el" href="class_transport.html">Transport</a> used. </td></tr>
-    <tr><td class="paramname">scale</td><td>Mean of transport preference scale (bigger scale means higher preference). If no value is given it defaults to 5. </td></tr>
+    <tr><td class="paramname">scale</td><td>Mean of transport preference scale (bigger scale means higher preference). If no value is given it defaults to 6. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="afe77f6a03cad266807c741d1a3178541"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afe77f6a03cad266807c741d1a3178541">&sect;&nbsp;</a></span>dijkstraShortestPath() <span class="overload">[4/4]</span></h2>
+<a id="a221f840da4ef4b6827d52c96f132b886"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a221f840da4ef4b6827d52c96f132b886">&sect;&nbsp;</a></span>dijkstraShortestPath() <span class="overload">[4/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -405,7 +443,7 @@ Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>scale</em> = <code>5</code>&#160;</td>
+          <td class="paramname"><em>scale</em> = <code>6</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -420,7 +458,7 @@ Public Member Functions</h2></td></tr>
     <tr><td class="paramname">src</td><td>The origin <a class="el" href="class_node.html">Node</a>. </td></tr>
     <tr><td class="paramname">dest</td><td>The destiny <a class="el" href="class_node.html">Node</a>. </td></tr>
     <tr><td class="paramname">type</td><td>Mean of <a class="el" href="class_transport.html">Transport</a> used. </td></tr>
-    <tr><td class="paramname">scale</td><td>Mean of transport preference scale (bigger scale means higher preference). If no value is given it defaults to 5. </td></tr>
+    <tr><td class="paramname">scale</td><td>Mean of transport preference scale (bigger scale means higher preference). If no value is given it defaults to 6. </td></tr>
   </table>
   </dd>
 </dl>
@@ -467,6 +505,24 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a41326c707607848d329e65dba0981747"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41326c707607848d329e65dba0981747">&sect;&nbsp;</a></span>exactMatch()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt; string &gt; Graph::exactMatch </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>str</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -735,6 +791,32 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Getter for the <a class="el" href="class_graph.html">Graph</a>'s Roads.</p>
 <dl class="section return"><dt>Returns</dt><dd>Hash map containing all the <a class="el" href="class_graph.html">Graph</a>'s Roads. </dd></dl>
+
+</div>
+</div>
+<a id="a8d4d4d9dc6b4f1eaf7a0c5b9bfb5979d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d4d4d9dc6b4f1eaf7a0c5b9bfb5979d">&sect;&nbsp;</a></span>getTransportStop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_transport_stop.html">TransportStop</a> * Graph::getTransportStop </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_node.html">Node</a> *&#160;</td>
+          <td class="paramname"><em>node</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Getter for a specific <a class="el" href="class_transport_stop.html">TransportStop</a></p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">node</td><td>The given node.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Correspondent <a class="el" href="class_transport_stop.html">TransportStop</a> pointer. </dd></dl>
 
 </div>
 </div>

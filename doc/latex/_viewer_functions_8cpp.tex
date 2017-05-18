@@ -2,6 +2,7 @@
 \label{_viewer_functions_8cpp}\index{Viewer\+Functions.\+cpp@{Viewer\+Functions.\+cpp}}
 {\ttfamily \#include $<$iostream$>$}\newline
 {\ttfamily \#include $<$iomanip$>$}\newline
+{\ttfamily \#include \char`\"{}Graph.\+hpp\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}Edge.\+hpp\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}Node.\+hpp\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}Road.\+hpp\char`\"{}}\newline
@@ -30,11 +31,33 @@ vector$<$ \hyperlink{class_node}{Node} $\ast$ $>$ \hyperlink{_viewer_functions_8
 \item 
 bool \hyperlink{_viewer_functions_8cpp_a24a5fbb304da20526dedf57bd0154a36}{ask\+For\+Path} (\hyperlink{class_graph_viewer}{Graph\+Viewer} $\ast$gv, \hyperlink{class_graph}{Graph} \&g)
 \item 
+void \hyperlink{_viewer_functions_8cpp_a93b5d5e0a0d5b44b0d85b706d8804012}{ask\+Exact\+Match} (const \hyperlink{class_graph}{Graph} \&g)
+\item 
+void \hyperlink{_viewer_functions_8cpp_ae7fa3bc191bcebc71f209dc9b85f320e}{ask\+Approximate\+Match} (const \hyperlink{class_graph}{Graph} \&g, unsigned max\+\_\+dist)
+\item 
 void \hyperlink{_viewer_functions_8cpp_a0a6071504fd38aaeddbf2be515777235}{print\+Path\+Stats} (const \hyperlink{class_graph}{Graph} \&g, \hyperlink{_node_8hpp_a9d6265804805c2375068fd7484840dc6}{node\+\_\+id} src, \hyperlink{_node_8hpp_a9d6265804805c2375068fd7484840dc6}{node\+\_\+id} dest)
+\item 
+void \hyperlink{_viewer_functions_8cpp_a9d7e8af417b6d543da691e9c0e2f6f9f}{clear\+Screen} ()
+\item 
+unsigned short int \hyperlink{_viewer_functions_8cpp_ae9edcd89f886cdc7a66b4f42897764cf}{menu\+Options} ()
+\item 
+void \hyperlink{_viewer_functions_8cpp_a0467e96b3d36ecbbfb05a40228498596}{main\+Menu} (\hyperlink{class_graph}{Graph} \&g)
 \end{DoxyCompactItemize}
 
 
 \subsection{Function Documentation}
+\hypertarget{_viewer_functions_8cpp_ae7fa3bc191bcebc71f209dc9b85f320e}{}\label{_viewer_functions_8cpp_ae7fa3bc191bcebc71f209dc9b85f320e} 
+\index{Viewer\+Functions.\+cpp@{Viewer\+Functions.\+cpp}!ask\+Approximate\+Match@{ask\+Approximate\+Match}}
+\index{ask\+Approximate\+Match@{ask\+Approximate\+Match}!Viewer\+Functions.\+cpp@{Viewer\+Functions.\+cpp}}
+\subsubsection{\texorpdfstring{ask\+Approximate\+Match()}{askApproximateMatch()}}
+{\footnotesize\ttfamily void ask\+Approximate\+Match (\begin{DoxyParamCaption}\item[{const \hyperlink{class_graph}{Graph} \&}]{g,  }\item[{unsigned}]{max\+\_\+dist }\end{DoxyParamCaption})}
+
+\hypertarget{_viewer_functions_8cpp_a93b5d5e0a0d5b44b0d85b706d8804012}{}\label{_viewer_functions_8cpp_a93b5d5e0a0d5b44b0d85b706d8804012} 
+\index{Viewer\+Functions.\+cpp@{Viewer\+Functions.\+cpp}!ask\+Exact\+Match@{ask\+Exact\+Match}}
+\index{ask\+Exact\+Match@{ask\+Exact\+Match}!Viewer\+Functions.\+cpp@{Viewer\+Functions.\+cpp}}
+\subsubsection{\texorpdfstring{ask\+Exact\+Match()}{askExactMatch()}}
+{\footnotesize\ttfamily void ask\+Exact\+Match (\begin{DoxyParamCaption}\item[{const \hyperlink{class_graph}{Graph} \&}]{g }\end{DoxyParamCaption})}
+
 \hypertarget{_viewer_functions_8cpp_a24a5fbb304da20526dedf57bd0154a36}{}\label{_viewer_functions_8cpp_a24a5fbb304da20526dedf57bd0154a36} 
 \index{Viewer\+Functions.\+cpp@{Viewer\+Functions.\+cpp}!ask\+For\+Path@{ask\+For\+Path}}
 \index{ask\+For\+Path@{ask\+For\+Path}!Viewer\+Functions.\+cpp@{Viewer\+Functions.\+cpp}}
@@ -53,6 +76,12 @@ Function used to calculated the User\textquotesingle{}s Path given a certain Gra
 \begin{DoxyReturn}{Returns}
 bool corresponding to whether the user input was successful 
 \end{DoxyReturn}
+\hypertarget{_viewer_functions_8cpp_a9d7e8af417b6d543da691e9c0e2f6f9f}{}\label{_viewer_functions_8cpp_a9d7e8af417b6d543da691e9c0e2f6f9f} 
+\index{Viewer\+Functions.\+cpp@{Viewer\+Functions.\+cpp}!clear\+Screen@{clear\+Screen}}
+\index{clear\+Screen@{clear\+Screen}!Viewer\+Functions.\+cpp@{Viewer\+Functions.\+cpp}}
+\subsubsection{\texorpdfstring{clear\+Screen()}{clearScreen()}}
+{\footnotesize\ttfamily void clear\+Screen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
 \hypertarget{_viewer_functions_8cpp_ad16701753650a6222653d3930b18d3b8}{}\label{_viewer_functions_8cpp_ad16701753650a6222653d3930b18d3b8} 
 \index{Viewer\+Functions.\+cpp@{Viewer\+Functions.\+cpp}!get\+Path\+From\+Edges@{get\+Path\+From\+Edges}}
 \index{get\+Path\+From\+Edges@{get\+Path\+From\+Edges}!Viewer\+Functions.\+cpp@{Viewer\+Functions.\+cpp}}
@@ -85,6 +114,25 @@ Getter for Path Length.
 \begin{DoxyReturn}{Returns}
 The path length value. 
 \end{DoxyReturn}
+\hypertarget{_viewer_functions_8cpp_a0467e96b3d36ecbbfb05a40228498596}{}\label{_viewer_functions_8cpp_a0467e96b3d36ecbbfb05a40228498596} 
+\index{Viewer\+Functions.\+cpp@{Viewer\+Functions.\+cpp}!main\+Menu@{main\+Menu}}
+\index{main\+Menu@{main\+Menu}!Viewer\+Functions.\+cpp@{Viewer\+Functions.\+cpp}}
+\subsubsection{\texorpdfstring{main\+Menu()}{mainMenu()}}
+{\footnotesize\ttfamily void main\+Menu (\begin{DoxyParamCaption}\item[{\hyperlink{class_graph}{Graph} \&}]{g }\end{DoxyParamCaption})}
+
+Main menu for user interaction. Enables the user to navigate through the available options.
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & \hyperlink{class_graph}{Graph} reference for menu functions. \\
+\hline
+\end{DoxyParams}
+\hypertarget{_viewer_functions_8cpp_ae9edcd89f886cdc7a66b4f42897764cf}{}\label{_viewer_functions_8cpp_ae9edcd89f886cdc7a66b4f42897764cf} 
+\index{Viewer\+Functions.\+cpp@{Viewer\+Functions.\+cpp}!menu\+Options@{menu\+Options}}
+\index{menu\+Options@{menu\+Options}!Viewer\+Functions.\+cpp@{Viewer\+Functions.\+cpp}}
+\subsubsection{\texorpdfstring{menu\+Options()}{menuOptions()}}
+{\footnotesize\ttfamily unsigned short int menu\+Options (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
 \hypertarget{_viewer_functions_8cpp_a0a6071504fd38aaeddbf2be515777235}{}\label{_viewer_functions_8cpp_a0a6071504fd38aaeddbf2be515777235} 
 \index{Viewer\+Functions.\+cpp@{Viewer\+Functions.\+cpp}!print\+Path\+Stats@{print\+Path\+Stats}}
 \index{print\+Path\+Stats@{print\+Path\+Stats}!Viewer\+Functions.\+cpp@{Viewer\+Functions.\+cpp}}

@@ -62,6 +62,7 @@ $(function() {
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="class_transport-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Transport Class Reference</div>  </div>
@@ -81,7 +82,8 @@ Collaboration diagram for Transport:</div>
 Public Types</h2></td></tr>
 <tr class="memitem:a1879cecfed0d4238e5a7af6d085db317"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_transport.html#a1879cecfed0d4238e5a7af6d085db317">Type</a> { <a class="el" href="class_transport.html#a1879cecfed0d4238e5a7af6d085db317a9eb45a1db8620c55d48eeee34f09980c">FOOT</a>, 
 <a class="el" href="class_transport.html#a1879cecfed0d4238e5a7af6d085db317a03910f9910b1cda89566027b1c4f2740">BUS</a>, 
-<a class="el" href="class_transport.html#a1879cecfed0d4238e5a7af6d085db317a1e7a9bb5192d54bdccb9bc99bd35849b">SUBWAY</a>
+<a class="el" href="class_transport.html#a1879cecfed0d4238e5a7af6d085db317a1e7a9bb5192d54bdccb9bc99bd35849b">SUBWAY</a>, 
+<a class="el" href="class_transport.html#a1879cecfed0d4238e5a7af6d085db317ae0cc8f327733360f7ccf5abf2b5e7454">ACCESS</a>
  }</td></tr>
 <tr class="separator:a1879cecfed0d4238e5a7af6d085db317"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -96,6 +98,11 @@ Public Member Functions</h2></td></tr>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a2265878b8225332acf586bece5f1b324"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_transport.html">Transport</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_transport.html#a2265878b8225332acf586bece5f1b324">getInstance</a> ()</td></tr>
 <tr class="separator:a2265878b8225332acf586bece5f1b324"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:a40222f8cbeb3114a848c091bb9b78c61"><td class="memItemLeft" align="right" valign="top">static constexpr const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_transport.html#a40222f8cbeb3114a848c091bb9b78c61">MEAN_WAIT_TIME</a> = 4. / 60</td></tr>
+<tr class="separator:a40222f8cbeb3114a848c091bb9b78c61"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class used to represent means of <a class="el" href="class_transport.html">Transport</a>. The difference between means of <a class="el" href="class_transport.html">Transport</a> is the velocity with which they can traverse a certain route. </p>
@@ -116,6 +123,7 @@ Static Public Member Functions</h2></td></tr>
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a1879cecfed0d4238e5a7af6d085db317a9eb45a1db8620c55d48eeee34f09980c"></a>FOOT&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a1879cecfed0d4238e5a7af6d085db317a03910f9910b1cda89566027b1c4f2740"></a>BUS&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a1879cecfed0d4238e5a7af6d085db317a1e7a9bb5192d54bdccb9bc99bd35849b"></a>SUBWAY&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a1879cecfed0d4238e5a7af6d085db317ae0cc8f327733360f7ccf5abf2b5e7454"></a>ACCESS&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
 </div>
@@ -185,6 +193,29 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Getter for the velocity of the current mean of <a class="el" href="class_transport.html">Transport</a>.</p>
 <dl class="section return"><dt>Returns</dt><dd>Velocity of the current mean of <a class="el" href="class_transport.html">Transport</a>. </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a40222f8cbeb3114a848c091bb9b78c61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40222f8cbeb3114a848c091bb9b78c61">&sect;&nbsp;</a></span>MEAN_WAIT_TIME</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr const float Transport::MEAN_WAIT_TIME = 4. / 60</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>

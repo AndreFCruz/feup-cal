@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['clearscreen',['clearScreen',['../_viewer_functions_8cpp.html#a9d7e8af417b6d543da691e9c0e2f6f9f',1,'ViewerFunctions.cpp']]],
   ['closewindow',['closeWindow',['../class_graph_viewer.html#a85990c1eaac7feed3950960d4bd2fd4c',1,'GraphViewer']]],
   ['connection',['Connection',['../class_connection.html',1,'Connection'],['../class_connection.html#a8089476d48ba545f44e691cd4bd0278d',1,'Connection::Connection()']]],
   ['connection_2ecpp',['connection.cpp',['../connection_8cpp.html',1,'']]],

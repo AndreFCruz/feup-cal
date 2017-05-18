@@ -12,5 +12,6 @@ var searchData=
   ['setvertexicon',['setVertexIcon',['../class_graph_viewer.html#a02d5f7393eab9a2d1b66719039597a64',1,'GraphViewer']]],
   ['setvertexlabel',['setVertexLabel',['../class_graph_viewer.html#ac25d7d007022fda16799808ba136e909',1,'GraphViewer']]],
   ['setvertexsize',['setVertexSize',['../class_graph_viewer.html#ae930dfdfcdeb7a871eefb6028d74b9f9',1,'GraphViewer']]],
-  ['setvisited',['setVisited',['../class_node.html#a9d8e32dbc9c7a9e488b08f4fd1ce178f',1,'Node']]]
+  ['setvisited',['setVisited',['../class_node.html#a9d8e32dbc9c7a9e488b08f4fd1ce178f',1,'Node']]],
+  ['subwaystop',['SubwayStop',['../class_subway_stop.html#ae29e3908fe6203af1123150c03b026fe',1,'SubwayStop']]]
 ];

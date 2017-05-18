@@ -1,0 +1,74 @@
+\hypertarget{class_subway_stop}{}\section{Subway\+Stop Class Reference}
+\label{class_subway_stop}\index{Subway\+Stop@{Subway\+Stop}}
+
+
+{\ttfamily \#include $<$Subway\+Stop.\+hpp$>$}
+
+
+
+Collaboration diagram for Subway\+Stop\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=188pt]{class_subway_stop__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_subway_stop_ae29e3908fe6203af1123150c03b026fe}{Subway\+Stop} (\hyperlink{class_transport_stop}{Transport\+Stop} $\ast$stop, \hyperlink{class_node}{Node} $\ast$closest\+\_\+node)
+\item 
+\hyperlink{class_node}{Node} $\ast$ \hyperlink{class_subway_stop_a575f9f1c940378cb193b2690ad972cf8}{get\+Closest\+Node} () const
+\item 
+\hyperlink{class_transport_stop}{Transport\+Stop} $\ast$ \hyperlink{class_subway_stop_a5cc277b4da7f0decf74518de16b2966b}{get\+Transport\+Stop} () const
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_subway_stop_ae29e3908fe6203af1123150c03b026fe}{}\label{class_subway_stop_ae29e3908fe6203af1123150c03b026fe} 
+\index{Subway\+Stop@{Subway\+Stop}!Subway\+Stop@{Subway\+Stop}}
+\index{Subway\+Stop@{Subway\+Stop}!Subway\+Stop@{Subway\+Stop}}
+\subsubsection{\texorpdfstring{Subway\+Stop()}{SubwayStop()}}
+{\footnotesize\ttfamily Subway\+Stop\+::\+Subway\+Stop (\begin{DoxyParamCaption}\item[{\hyperlink{class_transport_stop}{Transport\+Stop} $\ast$}]{stop,  }\item[{\hyperlink{class_node}{Node} $\ast$}]{closest\+\_\+node }\end{DoxyParamCaption})}
+
+\hyperlink{class_subway_stop}{Subway\+Stop}\textquotesingle{}s constructor. Creates a \hyperlink{class_subway_stop}{Subway\+Stop} associated with the given \hyperlink{class_transport_stop}{Transport\+Stop} and \hyperlink{class_node}{Node}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em stop} & Pointer to associated \hyperlink{class_transport_stop}{Transport\+Stop}. \\
+\hline
+{\em closest\+\_\+node} & Pointer to associated \hyperlink{class_node}{Node}, closest do the stop\textquotesingle{}s \hyperlink{class_node}{Node}. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_subway_stop_a575f9f1c940378cb193b2690ad972cf8}{}\label{class_subway_stop_a575f9f1c940378cb193b2690ad972cf8} 
+\index{Subway\+Stop@{Subway\+Stop}!get\+Closest\+Node@{get\+Closest\+Node}}
+\index{get\+Closest\+Node@{get\+Closest\+Node}!Subway\+Stop@{Subway\+Stop}}
+\subsubsection{\texorpdfstring{get\+Closest\+Node()}{getClosestNode()}}
+{\footnotesize\ttfamily \hyperlink{class_node}{Node} $\ast$ Subway\+Stop\+::get\+Closest\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Getter for the closest road node to this subway stop.
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_node}{Node} associated with this instance. 
+\end{DoxyReturn}
+\hypertarget{class_subway_stop_a5cc277b4da7f0decf74518de16b2966b}{}\label{class_subway_stop_a5cc277b4da7f0decf74518de16b2966b} 
+\index{Subway\+Stop@{Subway\+Stop}!get\+Transport\+Stop@{get\+Transport\+Stop}}
+\index{get\+Transport\+Stop@{get\+Transport\+Stop}!Subway\+Stop@{Subway\+Stop}}
+\subsubsection{\texorpdfstring{get\+Transport\+Stop()}{getTransportStop()}}
+{\footnotesize\ttfamily \hyperlink{class_transport_stop}{Transport\+Stop} $\ast$ Subway\+Stop\+::get\+Transport\+Stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Getter for the \hyperlink{class_transport_stop}{Transport\+Stop} which has this \hyperlink{class_subway_stop}{Subway\+Stop}\textquotesingle{}s information.
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_transport_stop}{Transport\+Stop} associated with this instance. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_subway_stop_8hpp}{Subway\+Stop.\+hpp}\item 
+\hyperlink{_subway_stop_8cpp}{Subway\+Stop.\+cpp}\end{DoxyCompactItemize}
