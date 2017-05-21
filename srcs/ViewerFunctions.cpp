@@ -282,11 +282,13 @@ unsigned short int menuOptions() {
     cout << TAB << "5 - Exit program" << endl << endl;
     string msg = TAB; msg += "Your option: ";
     
+    string trail;
     do {
         if (cin.fail())
             cin.clear();
+        cout << TAB << "-> ";
         cin >> option;
-        cin.ignore(1, '\n');
+        getline(cin, trail);
     } while (cin.fail() || (option < 1 && option > 5));
     
     cout << endl << endl;
@@ -321,8 +323,9 @@ void mainMenu(Graph & g) {
                 break;
         }
         
-        cout << "\n\nPress any key to continue...";
-        cin.get();
+        cout << "\n\tPress ENTER to continue...";
+        string trail;
+        getline(cin, trail);
     }
     
 }

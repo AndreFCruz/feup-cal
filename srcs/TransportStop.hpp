@@ -11,6 +11,11 @@
 
 #include "Node.hpp"
 
+
+/**
+ * Class used to store information for a Transport Stop.
+ * Every stop has a name and an associated Node.
+ */
 class TransportStop {
 private:
     string name;    /**< string name. The TransportStop's name. */

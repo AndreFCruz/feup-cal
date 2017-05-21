@@ -12,6 +12,10 @@
 #include "Node.hpp"
 #include "TransportStop.hpp"
 
+/**
+ * Class used to store information for a Subway Stop.
+ * Every subway stop has an associated TransportStop and its closest in-road Node.
+ */
 class SubwayStop {
 private:
     Node * closest_node;    /**< Node * closest_node. Pointer to the road Node closest to this stop. */

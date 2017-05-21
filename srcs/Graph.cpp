@@ -257,7 +257,7 @@ bool Graph::isConnected() {
 unsigned Graph::minEditDistance(string word, string sentence) const {
     stringstream ss(sentence);
     string str;
-    unsigned min = word.size();
+    unsigned min = editDistance(word, sentence);
 
     while (ss >> str) {
         unsigned tmp;
@@ -646,17 +646,29 @@ void Graph::dfs(Node * v, vector<Node*> & res) {
 
 map<unsigned,string> Graph::approximateMatch(string str) const {
     map< unsigned, string > matches;
-    for (auto p : stops)
-        matches.insert(make_pair(minEditDistance(str, p.second->getName()), p.second->getName()));
+    transform(str.begin(), str.end(), str.begin(), ::tolower);
+
+    for (auto p : stops) {
+        string cmp = p.second->getName();
+        transform(cmp.begin(), cmp.end(), cmp.begin(), ::tolower);
+        
+        matches.insert(make_pair(minEditDistance(str, cmp), p.second->getName()));
+    }
 
     return matches;
 }
 
 vector<string> Graph::exactMatch(string str) const {
     vector<string> matches;
-    for (auto p : stops)
-        if (KMP(str, p.second->getName()))
+    transform(str.begin(), str.end(), str.begin(), ::tolower);
+    
+    for (auto p : stops) {
+        string cmp = p.second->getName();
+    	transform(cmp.begin(), cmp.end(), cmp.begin(), ::tolower);
+        
+        if (KMP(str, cmp))
             matches.push_back(p.second->getName());
+    }
 
     return matches;
 }

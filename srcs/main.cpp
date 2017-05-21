@@ -44,6 +44,8 @@ int main() {
     }
     
     Graph g(nodes_ifs, edges_ifs, roads_ifs, subway_edges_ifs, bus_edges_ifs, stops_ifs, subway_nodes_ifs);
+    cout << "\n\tPress ENTER to continue...";
+    string trail; getline(cin, trail);
 
     // Initiate Main Menu
     mainMenu(g);
