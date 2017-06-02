@@ -1,9 +1,7 @@
 //
 //  Graph.hpp
-//  CAL_GraphParser
 //
 //  Created by Andre Cruz on 28/03/2017.
-//  Copyright © 2017 Andre Cruz. All rights reserved.
 //
 
 #ifndef Graph_h

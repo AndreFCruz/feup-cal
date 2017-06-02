@@ -1,9 +1,7 @@
 //
 //  TransportStop.hpp
-//  CAL_Proj
 //
 //  Created by Andre Cruz on 14/05/2017.
-//  Copyright © 2017 Andre Cruz. All rights reserved.
 //
 
 #ifndef TransportStop_hpp

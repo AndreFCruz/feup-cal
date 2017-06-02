@@ -1,9 +1,7 @@
 //
 //  Transport.cpp
-//  CAL_GraphParser
 //
 //  Created by Andre Cruz on 01/04/2017.
-//  Copyright © 2017 Andre Cruz. All rights reserved.
 //
 
 #include "Transport.hpp"
