@@ -50,10 +50,15 @@ private:
 public:
     
     bool visited = false;			/**< bool visited. Flag: If true, Node was already visited in the path, otherwise was not. */
+    
     bool processing = false;		/**< bool processing. Flag: If true, Node is being processed in the Dijkstra algorithm, otherwise is not. */
+    
     float dist = numeric_limits<float>::infinity();		/**< float dist. Distance used for calculus in the Dijkstra algorithm. Represents the minimum distance from the Node to the origin Node. */
+        
     Node * path = nullptr;			/**< Node* path. Pointer to the previous Node in the path. */
+    
     Edge * edgePath = nullptr;		/**< Edge* path. Pointer to the Edge, linking the Node to the previous one in the path. */
+    
     
     /**
      * Function the returns the Latitude Range.

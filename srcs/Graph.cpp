@@ -498,20 +498,6 @@ void Graph::dijkstraShortestPathWithCost(Node * src, Node * destination, unsigne
 
     nodesReset = false;
 
-    // Order predicate in heap
-/*
-    auto greater_than = [=] (const pair<Node*, unsigned> & p1, const pair<Node*, unsigned> & p2) {
-        if (p1.second <= cost && p2.second <= cost)
-            return p1.first->dist > p2.first->dist;
-        else if (p1.second < cost && p2.second > cost)
-            return false;
-        else if (p1.second > cost && p2.second < cost)
-            return true;
-        else
-            return p1.first->dist > p2.first->dist;
-    };
-*/
-
     while( !pq.empty() ) {
         auto p = pq.front();
         v = p.first;
@@ -670,3 +656,92 @@ vector<string> Graph::exactMatch(string str) const {
 
     return matches;
 }
+
+vector<Edge *> Graph::dijkstraWithMaxCost(node_id src_id, node_id dest_id, unsigned maxCost) {
+    return dijkstraWithMaxCost(nodes[src_id], nodes[dest_id], maxCost);
+}
+
+// TODO: NOT WORKING -- FINISH
+// 2D Dynamic Programming approach to Dijkstra's shortest path (minimize length/weight with maximum cost)
+vector<Edge *> Graph::dijkstraWithMaxCost(Node * src, Node * destination, unsigned maxCost) {
+    typedef pair<Node*, unsigned> Vertex;
+    
+    // DP Matrices
+    unordered_map< Node*, vector<float> > dist;   // Minimum length at node at money left
+    unordered_map< Node*, vector<Edge*> > path;    // Path at node at money left
+    unordered_map< Node*, vector<bool> > visited;
+    
+    // Initialize matrices
+    for (auto p : nodes) {
+        vector<float> lengthAtCost (maxCost + 1, numeric_limits<float>::infinity());
+        
+        dist.insert( { p.second, lengthAtCost } );
+        path.insert( { p.second, vector<Edge*>(maxCost + 1, nullptr) } );
+        visited.insert( { p.second, vector<bool> (maxCost + 1, false) } );
+    }
+    
+    // Order predicate in heap
+    auto greater_than = [&] (const pair<Node*, unsigned> & p1, const pair<Node*, unsigned> & p2) {
+        return dist[p1.first][p1.second] > dist[p2.first][p2.second];
+    };
+    
+    Vertex v = make_pair(src, 0);
+    dist[src][maxCost] = 0;
+    
+    vector< Vertex > pq;
+    pq.push_back(v);
+    make_heap(pq.begin(), pq.end());
+    
+    while( !pq.empty() ) {
+        v = pq.front();
+        pop_heap(pq.begin(), pq.end()); pq.pop_back();
+        
+        Node * currentNode = v.first;
+
+        if (currentNode == destination)
+            break;
+        
+        for(Edge * edg : currentNode->getEdges()) {
+            Node * destNode = edg->getDest();
+            
+            int moneyLeft = v.second - edg->getCost();
+            
+            // Shortest path to destNode found ?
+            if (moneyLeft >= 0 and
+                dist[destNode][moneyLeft] > dist[currentNode][v.second] + edg->getWeight())
+            {
+                dist[destNode][moneyLeft] = dist[currentNode][v.second] + edg->getWeight();
+                path[destNode][moneyLeft] = edg;
+            
+                // if already in pq only update
+                if(! visited[destNode][moneyLeft])
+                {
+                    visited[destNode][moneyLeft] = true;
+                    pq.push_back(make_pair(destNode, moneyLeft));
+                }
+                
+                make_heap(pq.begin(), pq.end(), greater_than);
+            }
+        }
+    }
+    
+    // Make path's vector
+    float minDist = numeric_limits<float>::infinity();
+    unsigned moneyLeft;
+    for (unsigned i = 0; i < maxCost + 1; i++) {
+        if (dist[destination][i] <= minDist) {
+            minDist = dist[destination][i];
+            
+            if (i > moneyLeft)
+                moneyLeft = i;
+        }
+    }
+    
+    cout << "Money left : " << moneyLeft << endl;
+    cout << "Distance : " << minDist << endl;
+    
+    // TODO traceback path
+    
+    return vector<Edge*>();
+}
+

@@ -228,13 +228,33 @@ public:
     
     /**
      * Altered implementation of Dijkstra's shortest path algorithm, takes into account a maximum cost.
-     * The shortest path will be the fastest one, but without never costing more than the maximum Cost.
+     * Resulting path will be the shortest one with cost less than maxCost.
      *
      * @param src_id The id of the source Node.
-     * @param dest_id The id o destiny Node.
+     * @param dest_id The id o end Node.
      * @param maxCost Path's maximum cost.
      */
     void dijkstraShortestPathWithMaxCost(node_id src_id, node_id dest_id, unsigned maxCost);
+    
+    /**
+     * Altered implementation of Dijkstra's shortest path algorithm, takes into account a maximum cost. Uses a conditioned Dynamic Programming approach.
+     * Resulting path will be the shortest one with cost less than maxCost.
+     *
+     * @param src_id The id of the source Node.
+     * @param dest_id The id of the destination Node.
+     * @param maxCost Path's maximum cost.
+     */
+    vector<Edge *> dijkstraWithMaxCost(node_id src_id, node_id dest_id, unsigned maxCost);
+    
+    /**
+     * Altered implementation of Dijkstra's shortest path algorithm, takes into account a maximum cost. Uses a conditioned Dynamic Programming approach.
+     * Resulting path will be the shortest one with cost less than maxCost.
+     *
+     * @param src The source Node.
+     * @param destination The destination Node.
+     * @param maxCost Path's maximum cost.
+     */
+    vector<Edge *> dijkstraWithMaxCost(Node * src, Node * destination, unsigned maxCost);
     
     /**
      * Calculates the path between to given nodes, represented by their IDs.

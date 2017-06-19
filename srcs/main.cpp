@@ -15,7 +15,6 @@
 using namespace std;
 
 // Work Directory must be set to $PROJECT_DIR
-//const string HOME = "./map/";
 const string HOME = "../map/";
 
 const string EDGES_PATH = HOME + "edges.txt";
@@ -46,7 +45,14 @@ int main() {
     string trail; getline(cin, trail);
 
     // Initiate Main Menu
-    mainMenu(g);
+//    mainMenu(g);
+    
+    // Tests
+    node_id origin, dest;
+    origin = 430006697LL;
+    dest = 4773399285LL;
+    
+    g.dijkstraWithMaxCost(origin, dest, 100);
 
 
     return 0;
